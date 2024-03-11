@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Archive models
-        run: tar -czvf all_models-${{github.ref_name}}.tar.gz cims/models/
+        run: tar -czvf all_models-${{github.ref_name}}.tar.gz models/
       - name: Release
         uses: softprops/action-gh-release@v2
       - name: Release
