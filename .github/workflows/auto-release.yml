@@ -1,0 +1,23 @@
+name: auto-release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Archive models
+        run: tar -czvf all_models-${{github.ref_name}}.tar.gz /models/
+      - name: Release
+        uses: softprops/action-gh-release@v2
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            all_models-${{github.ref_name}}.tar.gz            
+            LICENSE
