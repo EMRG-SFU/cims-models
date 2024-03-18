@@ -5,18 +5,16 @@ on:
     tags:
       - "v*.*.*"
       
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Rename model directory
+        uses: mv models ${{github.ref_name}}
       - name: Archive models
-        run: tar -czvf all_models-${{github.ref_name}}.tar.gz models/*
-      - name: Release
-        uses: softprops/action-gh-release@v2
+        run: tar -czvf all_models-${{github.ref_name}}.tar.gz ${{github.ref_name}}
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
