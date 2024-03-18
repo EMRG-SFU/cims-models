@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Rename model directory
-        run: mv models ${{github.ref_name}}
+        run: mv models all_models-${{github.ref_name}}
       - name: Archive models
         run: tar -czvf all_models-${{github.ref_name}}.tar.gz ${{github.ref_name}}
       - name: Release
