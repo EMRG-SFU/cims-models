@@ -1,0 +1,3 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Fuel,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN,Region,,CAN,,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,30,81.45206825,135.056377,125.723729,117.5083544,110.0871834,103.3903853,
