@@ -1,0 +1,333 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.ON.Transportation Personal.Mode.Intercity Air,Service,ON,Transportation Personal,Intercity Air,,Load factor,,,,Air Canada,person/vehicle,200,200,200,200,200,200,200,200,200,200,200,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,,Load factor,,,,CIMS,person/vehicle,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,10.6,
+CIMS.CAN.ON.Transportation Personal.Transit.Rapid Transit,Service,ON,Transportation Personal,Rapid Transit,,Load factor,,,,Translink,person/vehicle,100,100,100,100,100,100,100,100,100,100,100,
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,,Load factor,,,,CIMS,person/vehicle,18.2,18.2,18.2,18.2,18.2,18.2,18.2,18.2,18.2,18.2,18.2,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Intercity Rail,,Load factor,,,,Translink,person/vehicle,120,120,120,120,120,120,120,120,120,120,120,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,,Load factor,,,,CIMS,tonne/vehicle,3.62,3.62,3.62,3.62,3.62,3.62,3.62,3.62,3.62,3.62,3.62,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,,Load factor,,,,CIMS,tonne/vehicle,17.0097,17.0097,17.0097,17.0097,17.0097,17.0097,17.0097,17.0097,17.0097,17.0097,17.0097,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,,Load factor,,,,Rail Assoc Canada,tonne/vehicle,6840,6840,6840,6840,6840,6840,6840,6840,6840,6840,6840,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,,Load factor,,,,Wikipedia,tonne/vehicle,25000,25000,25000,25000,25000,25000,25000,25000,25000,25000,25000,
+CIMS.CAN.ON.Transportation Freight.Freight.Air,Service,ON,Transportation Freight,Air,,Load factor,,,,Wikipedia,tonne/vehicle,50,50,50,50,50,50,50,50,50,50,50,
+CIMS.CAN.ON.Transportation Freight.Off Road,Service,ON,Transportation Freight,Off Road,,Load factor,,,,Guess,tonne/vehicle,1,1,1,1,1,1,1,1,1,1,1,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV,DCC_class,Solar PV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Onshore,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Onshore,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Onshore,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Onshore,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Onshore,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Offshore,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Offshore,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Offshore,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Offshore,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind Offshore,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Nuclear SMR,DCC_class,SMR,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Nuclear SMR,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Nuclear SMR,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Nuclear SMR,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Nuclear SMR,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV + Battery,DCC_class,Solar PV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV + Battery,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV + Battery,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV + Battery,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Solar PV + Battery,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Battery,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Battery,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Battery,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Battery,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Battery,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Seasonal,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Seasonal,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Seasonal,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Seasonal,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Base Load,Service,ON,Electricity,Base Load,Wind + Seasonal,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Solar PV + Battery,DCC_class,Solar PV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Solar PV + Battery,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Solar PV + Battery,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Solar PV + Battery,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Solar PV + Battery,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Battery,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Battery,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Battery,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Battery,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Battery,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Seasonal,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Seasonal,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Seasonal,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Seasonal,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Shoulder Load,Service,ON,Electricity,Shoulder Load,Wind + Seasonal,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Utility Generation.Peak Load,Service,ON,Electricity,Peak Load,Wind + Seasonal,DCC_class,Wind,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Utility Generation.Peak Load,Service,ON,Electricity,Peak Load,Wind + Seasonal,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Utility Generation.Peak Load,Service,ON,Electricity,Peak Load,Wind + Seasonal,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Utility Generation.Peak Load,Service,ON,Electricity,Peak Load,Wind + Seasonal,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Utility Generation.Peak Load,Service,ON,Electricity,Peak Load,Wind + Seasonal,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Storage.Battery,Service,ON,Electricity,Battery,Battery,DCC_class,Battery,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Storage.Battery,Service,ON,Electricity,Battery,Battery,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Storage.Battery,Service,ON,Electricity,Battery,Battery,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Storage.Battery,Service,ON,Electricity,Battery,Battery,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Storage.Battery,Service,ON,Electricity,Battery,Battery,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.Storage.Seasonal,Service,ON,Electricity,Seasonal,Seasonal,DCC_class,Seasonal,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.Storage.Seasonal,Service,ON,Electricity,Seasonal,Seasonal,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.Storage.Seasonal,Service,ON,Electricity,Seasonal,Seasonal,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.Storage.Seasonal,Service,ON,Electricity,Seasonal,Seasonal,DCC_capacity_1,,,,,MWh,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,54000000,
+CIMS.CAN.ON.Electricity.Storage.Seasonal,Service,ON,Electricity,Seasonal,Seasonal,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Electricity.CCS.CCS_Coal,Service,AB,Electricity,CCS_Coal,CCS,DCC_class,CCS,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.CCS.CCS_Coal,Service,AB,Electricity,CCS_Coal,CCS,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.CCS.CCS_Coal,Service,AB,Electricity,CCS_Coal,CCS,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.CCS.CCS_Coal,Service,AB,Electricity,CCS_Coal,CCS,DCC_capacity_1,,,,,tCO2,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,
+CIMS.CAN.ON.Electricity.CCS.CCS_Coal,Service,AB,Electricity,CCS_Coal,CCS,DCC_progress ratio_1,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
+CIMS.CAN.ON.Electricity.CCS.CCS_Biomass,Service,AB,Electricity,CCS_Biomass,CCS,DCC_class,CCS,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.CCS.CCS_Biomass,Service,AB,Electricity,CCS_Biomass,CCS,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.CCS.CCS_Biomass,Service,AB,Electricity,CCS_Biomass,CCS,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.CCS.CCS_Biomass,Service,AB,Electricity,CCS_Biomass,CCS,DCC_capacity_1,,,,,tCO2,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,
+CIMS.CAN.ON.Electricity.CCS.CCS_Biomass,Service,AB,Electricity,CCS_Biomass,CCS,DCC_progress ratio_1,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
+CIMS.CAN.ON.Electricity.CCS.CCS_Natural Gas,Service,AB,Electricity,CCS_Natural Gas,CCS,DCC_class,CCS,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Electricity.CCS.CCS_Natural Gas,Service,AB,Electricity,CCS_Natural Gas,CCS,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Electricity.CCS.CCS_Natural Gas,Service,AB,Electricity,CCS_Natural Gas,CCS,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Electricity.CCS.CCS_Natural Gas,Service,AB,Electricity,CCS_Natural Gas,CCS,DCC_capacity_1,,,,,tCO2,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,
+CIMS.CAN.ON.Electricity.CCS.CCS_Natural Gas,Service,AB,Electricity,CCS_Natural Gas,CCS,DCC_progress ratio_1,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
+CIMS.CAN.ON.Ethanol.Production.Cellulosic,Service,ON,Ethanol,Cellulosic,Cellulosic,DCC_class,Cellulosic ethanol,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Ethanol.Production.Cellulosic,Service,ON,Ethanol,Cellulosic,Cellulosic,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Ethanol.Production.Cellulosic,Service,ON,Ethanol,Cellulosic,Cellulosic,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Ethanol.Production.Cellulosic,Service,ON,Ethanol,Cellulosic,Cellulosic,DCC_capacity_1,,,,,GJ,7668000,7668000,7668000,7668000,7668000,7668000,7668000,7668000,7668000,7668000,7668000,
+CIMS.CAN.ON.Ethanol.Production.Cellulosic,Service,ON,Ethanol,Cellulosic,Cellulosic,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Coal gasification_centralised_CCS,DCC_class,Gasification,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Coal gasification_centralised_CCS,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Coal gasification_centralised_CCS,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Coal gasification_centralised_CCS,DCC_capacity_1,,,,NREL H2A,kg,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Coal gasification_centralised_CCS,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised,DCC_class,Steam methane reforming,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised,DCC_capacity_1,,,,NREL H2A,kg,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised_CCS,DCC_class,Steam methane reforming,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised_CCS,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised_CCS,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised_CCS,DCC_capacity_1,,,,NREL H2A,kg,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_centralised_CCS,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised,DCC_class,Gasification,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised,DCC_capacity_1,,,,NREL H2A,kg,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised_CCS,DCC_class,Gasification,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised_CCS,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised_CCS,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised_CCS,DCC_capacity_1,,,,NREL H2A,kg,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Biomass gasification_centralised_CCS,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_centralised,DCC_class,Electrolysis,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_centralised,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_centralised,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_centralised,DCC_capacity_1,,,,NREL H2A,kg,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_centralised,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_distributed,DCC_class,Steam methane reforming,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_distributed,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_distributed,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_distributed,DCC_capacity_1,,,,NREL H2A,kg,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,125000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Steam methane reforming_distributed,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Ethanol_distributed,DCC_class,Steam methane reforming,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Ethanol_distributed,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Ethanol_distributed,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Ethanol_distributed,DCC_capacity_1,,,,NREL H2A,kg,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,50000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Ethanol_distributed,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_distributed,DCC_class,Electrolysis,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_distributed,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_distributed,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_distributed,DCC_capacity_1,,,,NREL H2A,kg,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,20000000,
+CIMS.CAN.ON.Hydrogen.Production,Service,ON,Hydrogen,Production,Electrolysis_distributed,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Hydrogen.Infrastructure,Service,ON,Hydrogen,Infrastructure,Infrastructure,DCC_class,H2 pipeline,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Hydrogen.Infrastructure,Service,ON,Hydrogen,Infrastructure,Infrastructure,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Hydrogen.Infrastructure,Service,ON,Hydrogen,Infrastructure,Infrastructure,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Hydrogen.Infrastructure,Service,ON,Hydrogen,Infrastructure,Infrastructure,DCC_capacity_1,,,,EMRG assumption,kg,200000000,200000000,200000000,200000000,200000000,200000000,200000000,200000000,200000000,200000000,200000000,
+CIMS.CAN.ON.Hydrogen.Infrastructure,Service,ON,Hydrogen,Infrastructure,Infrastructure,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/NG backup,DCC_class,Electric heat pump air,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/NG backup,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/NG backup,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/NG backup,DCC_capacity_1,,,,,GJ,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/NG backup,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/Electric backup,DCC_class,Electric heat pump air,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/Electric backup,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/Electric backup,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/Electric backup,DCC_capacity_1,,,,,GJ,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump/Electric backup,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric ground source heat pump,DCC_class,Electric heat pump ground,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric ground source heat pump,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric ground source heat pump,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric ground source heat pump,DCC_capacity_1,,,,,GJ,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric ground source heat pump,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump,DCC_class,Electric heat pump air,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump,DCC_capacity_1,,,,,GJ,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,3303090.679,
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Electric heat pump,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid,DCC_limit,,,,,%,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid Biodiesel,DCC_class,Electric motor,,,,,,,,,,,,,,,,Note that this used to have a separate class called Biofuel Motor.  No need for a separate biofuel class. They are all electric motors.
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid Biodiesel,DCC_limit,,,,,%,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid Biodiesel,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid Biodiesel,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hybrid Biodiesel,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hydrogen,DCC_limit,,,,,%,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,Copied from Fuel Cell 300
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hydrogen,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,Copied from Fuel Cell 300
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hydrogen,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Intercity Bus,Service,ON,Transportation Personal,Intercity Bus,Bus Intercity Hydrogen,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,Copied from Fuel Cell 300
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Electric,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Electric,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Electric,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Electric,DCC_capacity_1,,,,,k*pkm,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,"80,000,000 pkm annual * 25 yr lifetime * 100 trains / 5 years"
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Electric,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Hydrogen,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Hydrogen,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Hydrogen,DCC_capacity_1,,,,,k*pkm,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,"80,000,000 pkm annual * 25 yr lifetime * 100 trains / 5 years"
+CIMS.CAN.ON.Transportation Personal.Intercity Rail,Service,ON,Transportation Personal,Rail,Rail Intercity Hydrogen,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid Biodiesel,DCC_class,Electric motor,,,,,,,,,,,,,,,,Note that this used to have a separate class called Biofuel Motor.  No need for a separate biofuel class. They are all electric motors.
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid Biodiesel,DCC_limit,,,,,%,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid Biodiesel,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid Biodiesel,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid Biodiesel,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid,DCC_limit,,,,,%,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,0.72,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,Copied from Hybrid Diesel Motor
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hydrogen,DCC_limit,,,,,%,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,Copied from Fuel Cell 300
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hydrogen,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,Copied from Fuel Cell 300
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hydrogen,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hydrogen,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,Copied from Fuel Cell 300
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Electric,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Electric,DCC_limit,,,,,%,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,Copied from BEV 300 Motors
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Electric,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,Copied from BEV 300 Motors
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Electric,DCC_capacity_1,,,,,k*pkm,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,160000,"800,000 km service life * 1000 buses manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Electric,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,Copied from BEV 300 Motors
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Hybrid,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Hybrid,DCC_limit,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Hybrid,DCC_min learning,,,,,%,0.002,0.002,0.002,0.002,0.002,0.002,0.002,0.002,0.002,0.002,0.002,50% reduction to 2050 full innovation FCC target
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Hybrid,DCC_capacity_1,,,,,100 vkm (avg car eq),2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,"320,000 km service life * 3600 cars manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Hybrid,DCC_progress ratio_1,,,,,%,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,0.98,Calibrated to achieve DCC limit in 10 doublings or sustained 1/3 market share penetration of 30 years to 2050
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 500,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 500,DCC_limit,,,,,%,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 500,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,50% reduction to 2050 full innovation FCC target
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 500,DCC_capacity_1,,,,,100 vkm (avg car eq),2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,"320,000 km service life * 3600 cars manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 500,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,Calibrated to achieve DCC limit in 10 doublings or sustained 1/3 market share penetration of 30 years to 2050
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 800,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 800,DCC_limit,,,,,%,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 800,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,50% reduction to 2050 full innovation FCC target
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 800,DCC_capacity_1,,,,,100 vkm (avg car eq),2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,"320,000 km service life * 3600 cars manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 800,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,Calibrated to achieve DCC limit in 10 doublings or sustained 1/3 market share penetration of 30 years to 2050
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Fuel Cell 650,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Fuel Cell 650,DCC_limit,,,,,%,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Fuel Cell 650,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,50% reduction to 2050 full innovation FCC target
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Fuel Cell 650,DCC_capacity_1,,,,,100 vkm (avg car eq),2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,"320,000 km service life * 3600 cars manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Fuel Cell 650,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,Calibrated to achieve DCC limit in 10 doublings or sustained 1/3 market share penetration of 30 years to 2050
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Plug-in Hybrid,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Plug-in Hybrid,DCC_limit,,,,,%,0.44,0.44,0.44,0.44,0.44,0.44,0.44,0.44,0.44,0.44,0.44,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Plug-in Hybrid,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,50% reduction to 2050 full innovation FCC target
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Plug-in Hybrid,DCC_capacity_1,,,,,100 vkm (avg car eq),2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,"320,000 km service life * 3600 cars manufacutred per year per plant / divided by 5 years intervals"
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Plug-in Hybrid,DCC_progress ratio_1,,,,,%,0.92,0.92,0.92,0.92,0.92,0.92,0.92,0.92,0.92,0.92,0.92,Calibrated to achieve DCC limit in 10 doublings or sustained 1/3 market share penetration of 30 years to 2050
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Diesel Efficient,DCC_class,Fossil fuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Diesel Efficient,DCC_limit,,,,,%,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Diesel Efficient,DCC_min learning,,,,,%,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Diesel Efficient,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Diesel Efficient,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Gasoline Efficient,DCC_class,Fossil fuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Gasoline Efficient,DCC_limit,,,,,%,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Gasoline Efficient,DCC_min learning,,,,,%,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Gasoline Efficient,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Gasoline Efficient,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,E85,DCC_class,Biofuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,E85,DCC_limit,,,,,%,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,E85,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,E85,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,E85,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Biodiesel,DCC_class,Biofuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Biodiesel,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Biodiesel,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Biodiesel,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Biodiesel,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Hydrogen,DCC_limit,,,,,%,0.31,0.31,0.31,0.31,0.31,0.31,0.31,0.31,0.31,0.31,0.31,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Hydrogen,DCC_min learning,,,,,%,0.003,0.003,0.003,0.003,0.003,0.003,0.003,0.003,0.003,0.003,0.003,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Hydrogen,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Hydrogen,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Electric,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Electric,DCC_limit,,,,,%,0.39,0.39,0.39,0.39,0.39,0.39,0.39,0.39,0.39,0.39,0.39,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Electric,DCC_min learning,,,,,%,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Electric,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Electric,DCC_progress ratio_1,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Plug-in Hybrid,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Plug-in Hybrid,DCC_limit,,,,,%,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,0.52,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Plug-in Hybrid,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Plug-in Hybrid,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Light Medium,Service,ON,Transportation Freight,Light Medium,Plug-in Hybrid,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Natural Gas,DCC_class,CNG,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Natural Gas,DCC_limit,,,,,%,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,0.7,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Natural Gas,DCC_min learning,,,,,%,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Natural Gas,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Natural Gas,DCC_progress ratio_1,,,,,%,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,0.97,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Biodiesel,DCC_class,Biofuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Biodiesel,DCC_limit,,,,,%,0.87,0.87,0.87,0.87,0.87,0.87,0.87,0.87,0.87,0.87,0.87,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Biodiesel,DCC_min learning,,,,,%,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Biodiesel,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Biodiesel,DCC_progress ratio_1,,,,,%,0.91,0.91,0.91,0.91,0.91,0.91,0.91,0.91,0.91,0.91,0.91,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Hydrogen,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Hydrogen,DCC_min learning,,,,,%,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Hydrogen,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Hydrogen,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Electric,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Electric,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Electric,DCC_min learning,,,,,%,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Electric,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Electric,DCC_progress ratio_1,,,,,%,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Plug-in Hybrid,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Plug-in Hybrid,DCC_limit,,,,,%,0.67,0.67,0.67,0.67,0.67,0.67,0.67,0.67,0.67,0.67,0.67,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Plug-in Hybrid,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Plug-in Hybrid,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Plug-in Hybrid,DCC_progress ratio_1,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Catenary,DCC_class,Catenary,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Catenary,DCC_limit,,,,,%,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Catenary,DCC_min learning,,,,,%,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,0.004,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Catenary,DCC_capacity_1,,,,,k*tkm,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,552691200,86358000 tkm annual * 16 yr lifetime * 2000 per plant (wild guess) / 5 yr
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Trucks,Service,ON,Transportation Freight,Trucks,Catenary,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Biodiesel,DCC_class,Biofuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Biodiesel,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Biodiesel,DCC_min learning,,,,,%,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Biodiesel,DCC_capacity_1,,,,,k*tkm,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,"80,000,000 tkm annual * 25 yr lifetime * 100 trains / 5 years"
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Biodiesel,DCC_progress ratio_1,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Hydrogen,DCC_limit,,,,,%,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45,0.45,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Hydrogen,DCC_min learning,,,,,%,0.025,0.025,0.025,0.025,0.025,0.025,0.025,0.025,0.025,0.025,0.025,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Hydrogen,DCC_capacity_1,,,,,k*tkm,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,"80,000,000 tkm annual * 25 yr lifetime * 100 trains / 5 years"
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Hydrogen,DCC_progress ratio_1,,,,,%,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Electric,DCC_class,Electric motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Electric,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Electric,DCC_min learning,,,,,%,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Electric,DCC_capacity_1,,,,,k*tkm,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,40000000,"80,000,000 tkm annual * 25 yr lifetime * 100 trains / 5 years"
+CIMS.CAN.ON.Transportation Freight.Freight.Land.Heavy.Rail,Service,ON,Transportation Freight,Rail,Electric,DCC_progress ratio_1,,,,,%,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.8,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Biodiesel,DCC_class,Biofuel motor,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Biodiesel,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Biodiesel,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Biodiesel,DCC_capacity_1,,,,,k*tkm,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,"800,000,000 tkm annual * 35 yr lifetime * 100 ships / 5 years"
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Biodiesel,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Hydrogen,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Hydrogen,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Hydrogen,DCC_capacity_1,,,,,k*tkm,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,560000000,"800,000,000 tkm annual * 35 yr lifetime * 100 ships / 5 years"
+CIMS.CAN.ON.Transportation Freight.Freight.Marine,Service,ON,Transportation Freight,Marine,Hydrogen,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
+CIMS.CAN.ON.Agriculture.Tractors,Service,ON,Agriculture,Tractors,Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Agriculture.Tractors,Service,ON,Agriculture,Tractors,Hydrogen,DCC_limit,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
+CIMS.CAN.ON.Agriculture.Tractors,Service,ON,Agriculture,Tractors,Hydrogen,DCC_min learning,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
+CIMS.CAN.ON.Agriculture.Tractors,Service,ON,Agriculture,Tractors,Hydrogen,DCC_capacity_1,,,,,vkm,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,
+CIMS.CAN.ON.Agriculture.Tractors,Service,ON,Agriculture,Tractors,Hydrogen,DCC_progress ratio_1,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
