@@ -1,0 +1,9 @@
+﻿Inheritable,Competition
+Price multiplier,Root
+Discount rate_financial,Region
+Discount rate_retrofit,Sector
+Retrofit_heterogeneity,Fixed Ratio
+Retrofit_existing_max,Tech Compete
+Retrofit_existing_min,Supply - Fixed Price
+Retirement intercept,Supply - Cost Curve Annual
+,Supply - Cost Curve Cumulative

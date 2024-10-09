@@ -1,4 +1,4 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,2000,2005,2010,2015,2019,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.SK,Service,SK,Electricity,,,Service requested,Utility Generation,,CIMS.CAN.SK.Electricity.Utility Generation,,MWh,15466235.64,17573595.73,17621717.02,20894802.26,21389590.36,22480674.43,23627414.76,24832650.37,26099365.11,27430695.03,28829936.16,Includes transmission losses
+CIMS.CAN.SK,Service,SK,Electricity,,,Service requested,Utility Generation,,CIMS.CAN.SK.Electricity.Utility Generation,,MWh,17126819.22,19460443,19513731,23138241.86,23949108,25170753.2,26454714.58,27804170.9,29222463.05,30713102.35,32279779.24,Need to include transmission losses
 CIMS.CAN.SK.Electricity,Sector,SK,Electricity,,,Service requested,Utility Generation,,CIMS.CAN.SK.Electricity.Utility Generation,,MWh,0,0,0,0,0,0,0,0,0,0,0,

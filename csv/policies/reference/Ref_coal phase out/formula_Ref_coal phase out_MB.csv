@@ -1,4 +1,0 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
-Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.MB.Electricity.Utility Generation.Base Load,Service,MB,Electricity,Base Load,Coal,Unavailable,,,,,Year,2001,=M3,=N3,=O3,=P3,=Q3,=R3,=S3,=T3,=U3,=V3,
-CIMS.CAN.MB.Electricity.Utility Generation.Base Load,Service,MB,Electricity,Base Load,Coal,Retrofit_existing_min,,,,,%,0,0,0.8,0.9,1,=Q4,=R4,=S4,=T4,=U4,=V4,
