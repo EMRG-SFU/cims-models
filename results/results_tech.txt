@@ -1,8 +1,17 @@
+price
+price_subsidy
+price multiplier
+lcc_financial
+lcc_competition
 capital cost
-fom
-fic
-dic
-fixed cost rate
-subsidy
 output
 crf
+subsidy
+fom
+service provided
+service requested
+cumul_emissions_cost_rate
+fixed cost rate
+fic
+dic
+competition type
