@@ -1,6 +1,6 @@
-﻿CIMS.CAN.ON.Mining.Final Product.Metal Underground.Unassigned Energy,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿CIMS.CAN.ON.Mining.Final Product.Metal Underground.Size Reduced Product.Raw Product,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.ON,Region,ON,Mining,,,Service requested,,,CIMS.CAN.ON.Mining,,tonne,25919122,27267080,23302369,28679137,33246082.,35814982,38582378,41563609,44775198,48234943.,51962020,
+CIMS.CAN.ON,Region,ON,Mining,,,Service requested,,,CIMS.CAN.ON.Mining,,tonne,25919122.4188976,27267079.7222224,27973108.4323897,28679137.142557,33246082.1441001,34511413.6784834,35824903.1848337,37188383.5347745,38603757.3582325,40072999.6984077,41598160.7677918,
 CIMS.CAN.ON.Mining,Sector,ON,,,,Service provided,,,,,tonne,,,,,,,,,,,,
 CIMS.CAN.ON.Mining,Sector,ON,,,,Competition type,Sector,,,,,,,,,,,,,,,,
 CIMS.CAN.ON.Mining,Sector,ON,Mining,,,Price multiplier,,,CIMS.CAN.ON.Biodiesel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
