@@ -30,6 +30,8 @@ CIMS.CAN.BC.Coal Mining.Machine Drive.Size 6,Service,BC,Coal Mining,Size 6,Eff A
 CIMS.CAN.BC.Coal Mining.Machine Drive.Size 6,Service,BC,Coal Mining,Size 6,DC solid state motor 500 hp,Market share new_max,,,,,%,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35,
 CIMS.CAN.BC.Coal Mining.Machine Drive.Size 6,Service,BC,Coal Mining,Size 6,DC solid state motor 500 hp,Market share new_min,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
 CIMS.CAN.BC.Petroleum Crude.Steam,Service,BC,Petroleum Crude,Steam,NG Eff CCS,Market share new_max,,,,,%,0,0,0,0,0.001,1,1,1,1,1,1,
+CIMS.CAN.BC.Petroleum Crude.Steam,Service,BC,Petroleum Crude,Steam,NG COGEN,Market share new_max,,,,,%,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,
+CIMS.CAN.BC.Petroleum Crude.Steam,Service,BC,Petroleum Crude,Steam,NG COGEN Eff,Market share new_max,,,,,%,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,
 CIMS.CAN.BC.Mining.Ventilation,Service,BC,Mining,Ventilation,High Eff backward inclined fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
 CIMS.CAN.BC.Mining.Ventilation,Service,BC,Mining,Ventilation,High Eff airfoil fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
 CIMS.CAN.BC.Mining.Ventilation,Service,BC,Mining,Ventilation,High Eff vane axial tube axial fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
@@ -234,8 +236,8 @@ CIMS.CAN.BC.Residential.Clothes Drying.Machine,Service,BC,Residential,Machine,NG
 CIMS.CAN.BC.Residential.Clothes Drying.Machine,Service,BC,Residential,Machine,NG Std,Retrofit_new_max,,,,,%,0,0,0,0,0,0,0,0,0,0,0,
 CIMS.CAN.BC.Residential.Clothes Drying.Machine,Service,BC,Residential,Machine,NG heat pump,Retrofit_new_max,,,,,%,0,0,0,0,0,0,0,0,0,0,0,
 CIMS.CAN.BC.Residential.Water Heating.House,Service,BC,Residential,House,Oil existing,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,
-CIMS.CAN.BC.Transportation Personal.Transit.Public Bus,Service,BC,Transportation Personal,Public Bus,Ferry Urban,Market share new_max,,,,,%,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,0.000285714,
-CIMS.CAN.BC.Transportation Personal.Transit.Public Bus,Service,BC,Transportation Personal,Public Bus,Bus Urban Electric,Market share new_min,,,,,%,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,5.11E-08,Included to keep Vancouver electric trolley share minimum
+CIMS.CAN.BC.Transportation Personal.Transit.Public Bus,Service,BC,Transportation Personal,Public Bus,Ferry Urban,Market share new_max,,,,,%,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,0.00028571428571,
+CIMS.CAN.BC.Transportation Personal.Transit.Public Bus,Service,BC,Transportation Personal,Public Bus,Bus Urban Electric,Market share new_min,,,,,%,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,0.00000005114374,Included to keep Vancouver electric trolley share minimum
 CIMS.CAN.BC.Transportation Personal.Transit.Rapid Transit,Service,BC,Transportation Personal,Rapid Transit,Light Rail,Market share new_min,,,,,%,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Waste.Sites.Large Sites,Service,BC,Waste,Large Sites,Large Sites No Control,Market share new_max,,,,,%,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,
 CIMS.CAN.BC.Agriculture.Process.Soils,Service,BC,Agriculture,Soils,Zero Tillage,Market share new_max,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
