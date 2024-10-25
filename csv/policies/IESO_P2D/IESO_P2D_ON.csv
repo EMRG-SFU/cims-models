@@ -1,0 +1,57 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,Oil existing,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,Oil New,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,Oil improved,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,NG Cogeneration,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,NG existing,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,NG new,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,NG improved,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,Propane existing,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.HVAC,Service,ON,Commercial,HVAC,Propane new,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Hot Water,Service,ON,Commercial,Hot Water,Avg Eff NG,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Hot Water,Service,ON,Commercial,Hot Water,Avg Eff NG service load reduction,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Hot Water,Service,ON,Commercial,Hot Water,Improved Eff NG,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Hot Water,Service,ON,Commercial,Hot Water,Avg Eff NG solar heat,Market share new_max,,,,,%,1,1,1,1,1,0.1,0.05,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Cooking,Service,ON,Commercial,Cooking,NG,Market share new_max,,,,,%,1,1,1,1,1,0.05,0,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Cooking,Service,ON,Commercial,Cooking,Propane,Market share new_max,,,,,%,1,1,1,1,1,0.05,0,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Cooking,Service,ON,Commercial,Cooking,NG,Retrofit_existing_min,,,,,%,0,0,0,0,0,0.1,0.5,1,1,1,1,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Commercial.Buildings.Cooking,Service,ON,Commercial,Cooking,Propane,Retrofit_existing_min,,,,,%,0,0,0,0,0,0.1,0.5,1,1,1,1,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,NG furnace existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,NG furnace standard,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,NG furnace efficient,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Oil furnace existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Oil furnace standard,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Oil furnace efficient,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Wood stove efficient,Market share new_max,,,,,%,0.027,0.027,0.027,0.027,0.027,0.027,0.014,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Space Heating,Service,ON,Residential,Space Heating,Wood stove efficient,Market share new_min,,,,,%,0.026,0.026,0.026,0.026,0.026,0,0,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.House,Service,ON,Residential,House,Oil existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.House,Service,ON,Residential,House,NG existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.House,Service,ON,Residential,House,NG Std,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.House,Service,ON,Residential,House,NG condensing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.House,Service,ON,Residential,House,NG instant tankless,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.Apartment,Service,ON,Residential,Apartment,NG existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.Apartment,Service,ON,Residential,Apartment,NG Std,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Water Heating.Apartment,Service,ON,Residential,Apartment,NG condensing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Buildings.Ranges,Service,ON,Residential,Ranges,NG existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Buildings.Ranges,Service,ON,Residential,Ranges,NG Std,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Clothes Drying.Machine,Service,ON,Residential,Machine,NG existing,Market share new_max,,,,,%,1,1,1,1,1,0.98,0.48,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Clothes Drying.Machine,Service,ON,Residential,Machine,NG Std,Market share new_max,,,,,%,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Residential.Clothes Drying.Machine,Service,ON,Residential,Machine,NG heat pump,Market share new_max,,,,,%,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0,0,0,0,Need to get split of GTA vs ON to apply 5 years earlier
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,,Market share_class_min,ZEV,,,,%,0,0,0,0,0,0.18,0.6,0.99,0.99,0.99,0.99,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Plug-in Hybrid,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,E85,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 500,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,BEV 800,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Passenger Vehicle Motors,Service,ON,Transportation Personal,Passenger Vehicle Motors,Fuel Cell 650,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,,Market share_class_min,ZEV,,,,%,0,0,0,0,0,0.2,0.99,0.99,0.99,0.99,0.99,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid Biodiesel,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hydrogen,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Electric,Market share_class,ZEV,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Diesel,Retrofit_existing_min,,,,,%,0,0,0,0,0,0.1,0.2,0.4,1,1,1,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban Hybrid,Retrofit_existing_min,,,,,%,0,0,0,0,0,0.1,0.2,0.4,1,1,1,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Bus Urban NG,Retrofit_existing_min,,,,,%,0,0,0,0,0,0.1,0.2,0.4,1,1,1,
+CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,Service,ON,Transportation Personal,Public Bus,Ferry Urban,Retrofit_existing_min,,,,,%,0,0,0,0,0,0.1,0.2,0.4,1,1,1,
+CIMS.CAN.ON.Transportation Personal.Transit,Service,ON,Transportation Personal,Transit,,Service requested,,,CIMS.CAN.ON.Transportation Personal.Transit.Public Bus,,pkm,0.732686241,0.7,0.7,0.7,0.7,0.7,0.69,0.68,0.67,0.67,0.67,
+CIMS.CAN.ON.Transportation Personal.Transit,Service,ON,Transportation Personal,Transit,,Service requested,,,CIMS.CAN.ON.Transportation Personal.Transit.Rapid Transit,,pkm,0.267313759,0.3,0.3,0.3,0.3,0.3,0.31,0.32,0.33,0.33,0.33,
+CIMS.CAN.ON.Transportation Freight,Sector,ON,Transportation Freight,,,Service requested,,,CIMS.CAN.ON.Transportation Freight.Off Road,,tkm,0,0,0,0,0,0,0,0,0,0,0,
