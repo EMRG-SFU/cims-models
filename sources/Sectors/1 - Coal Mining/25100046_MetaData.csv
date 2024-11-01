@@ -1,0 +1,56 @@
+﻿"Cube Title","Product Id","CANSIM Id",URL,"Cube Notes","Archive Status",Frequency,"Start Reference Period","End Reference Period","Total number of dimensions"
+"Coal, monthly production and exports","25100046","135-0002","https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2510004601",1,"null","null","2008-01-01","2023-07-01","3",
+
+"Dimension ID","Dimension name","Dimension Notes","Dimension Definitions"
+"1","Geography",,""
+"2","Coal types and uses",,""
+"3","Coal volume",,""
+
+"Dimension ID","Member Name","Classification Code","Member ID","Parent Member ID",Terminated,"Member Notes","Member Definitions"
+"1","Nova Scotia","[12]","2","1","",,
+"1","New Brunswick","[13]","3","1","",,
+"1","Saskatchewan","[47]","4","1","",,
+"1","Alberta","[48]","5","1","",,
+"1","British Columbia","[59]","6","1","",,
+"1","Canada","[11124]","1","","",,
+"2","Bituminous, all uses","","2","1","",2,
+"2","Sub-bituminous, thermal","","5","1","",5,
+"2","Lignite, thermal","","6","1","",6,
+"2","Bituminous, metallurgical","","3","2","",3,
+"2","Bituminous, thermal","","4","2","",4,
+"2","Total all coal types and uses","","1","","",,
+"3","Production","","1","","",,
+"3","Exports","","2","","",,
+
+Symbol Legend
+Description,Symbol
+"not available for a specific reference period","..",
+"less than the limit of detection","<LOD",
+"value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded","0s",
+"data quality: excellent","A",
+"data quality: very good","B",
+"data quality: good","C",
+"data quality: acceptable","D",
+"use with caution","E",
+"too unreliable to be published","F",
+"not applicable","...",
+"preliminary","p",
+"revised","r",
+"suppressed to meet the confidentiality requirements of the Statistics Act","x",
+"terminated","t",
+
+"Survey Code","Survey Name"
+"2147","Monthly Coal Supply and Disposition Survey"
+
+"Subject Code","Subject Name"
+"25","Energy"
+
+"Note ID",Note
+1,"For monthly data prior to January 2008, please see archived table 25-10-0048. For current monthly data on coal coke plant statistics, see also table 25-10-0045."
+2,"Bituminous: a dense, black coal, often with well-defined bands of bright and dull material with a moisture content usually less than 20%. Used primarily for generating electricity, making coke and space heating."
+3,"Coal to be used in metallurgical process (ultimate production of steel)."
+4,"Coal to be used in combustion process to produce steam (in industrial process or electricity generation)."
+5,"Subbituminous: a black coal used primarily for thermal generation with a moisture content between 15% and 30%."
+6,"Lignite: a brownish-black coal of low rank containing 30% to 40% moisture and volatile matter. Used almost exclusively for electric power generation."
+
+"Correction ID","Correction Date","Correction Note"

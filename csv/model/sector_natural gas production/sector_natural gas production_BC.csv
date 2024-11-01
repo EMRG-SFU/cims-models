@@ -1,4 +1,4 @@
-﻿CIMS.CAN.BC.Light Industrial.Water Heating,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.BC,Region,BC,Natural Gas Production,,,Service requested,,,CIMS.CAN.BC.Natural Gas Production,ES,1000 m3,23988694.2293355,29894439.6257286,33265271.8744637,48256082.4617946,61185261.5164027,79488653.7821115,95413534.7544545,112872795.293413,134720124.560316,150860679.007532,150339287.331831,
 CIMS.CAN.BC.Natural Gas Production,Sector,BC,,,,Service provided,,,CIMS.CAN.BC.Natural Gas Production,ES,1000 m3,,,,,,,,,,,,
