@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ARG_OPTIONAL_SINGLE([venv-name],[n],[Specify the name of the virtual environment],[cims-env])
-# ARG_OPTIONAL_BOOLEAN([no-jupyter],[j],[Do not launch Jupyter Lab])
-# ARG_OPTIONAL_BOOLEAN([skip-update],[s],[Do not update Python dependencies])
+# ARG_OPTIONAL_BOOLEAN([jupyter],[j],[Launch Jupyter Lab],[on])
+# ARG_OPTIONAL_BOOLEAN([update],[s],[Update Python dependencies in existing virtual environment],[on])
 # ARG_HELP([This script sets up a CIMS virtual environment, installs any required dependencies, and launches a modeling notebook in Jupyter Lab.])
 # ARG_VERSION([echo setup.sh 1.0])
 # ARG_DEFAULTS_POS([])
@@ -33,17 +33,17 @@ begins_with_short_option()
 
 # THE DEFAULTS INITIALIZATION - OPTIONALS
 _arg_venv_name="cims-env"
-_arg_no_jupyter="off"
-_arg_skip_update="off"
+_arg_jupyter="on"
+_arg_update="on"
 
 
 print_help()
 {
 	printf '%s\n' "This script sets up a CIMS virtual environment, installs any required dependencies, and launches a modeling notebook in Jupyter Lab."
-	printf 'Usage: %s [-n|--venv-name <arg>] [-j|--(no-)no-jupyter] [-s|--(no-)skip-update] [-h|--help] [-v|--version]\n' "$0"
+	printf 'Usage: %s [-n|--venv-name <arg>] [-j|--(no-)jupyter] [-s|--(no-)update] [-h|--help] [-v|--version]\n' "$0"
 	printf '\t%s\n' "-n, --venv-name: Specify the name of the virtual environment (default: 'cims-env')"
-	printf '\t%s\n' "-j, --no-jupyter, --no-no-jupyter: Do not launch Jupyter Lab (off by default)"
-	printf '\t%s\n' "-s, --skip-update, --no-skip-update: Do not update Python dependencies (off by default)"
+	printf '\t%s\n' "-j, --jupyter, --no-jupyter: Launch Jupyter Lab (on by default)"
+	printf '\t%s\n' "-s, --update, --no-update: Update Python dependencies in existing virtual environment (on by default)"
 	printf '\t%s\n' "-h, --help: Prints help"
 	printf '\t%s\n' "-v, --version: Prints version"
 }
@@ -66,24 +66,24 @@ parse_commandline()
 			-n*)
 				_arg_venv_name="${_key##-n}"
 				;;
-			-j|--no-no-jupyter|--no-jupyter)
-				_arg_no_jupyter="on"
-				test "${1:0:5}" = "--no-" && _arg_no_jupyter="off"
+			-j|--no-jupyter|--jupyter)
+				_arg_jupyter="on"
+				test "${1:0:5}" = "--no-" && _arg_jupyter="off"
 				;;
 			-j*)
-				_arg_no_jupyter="on"
+				_arg_jupyter="on"
 				_next="${_key##-j}"
 				if test -n "$_next" -a "$_next" != "$_key"
 				then
 					{ begins_with_short_option "$_next" && shift && set -- "-j" "-${_next}" "$@"; } || die "The short option '$_key' can't be decomposed to ${_key:0:2} and -${_key:2}, because ${_key:0:2} doesn't accept value and '-${_key:2:1}' doesn't correspond to a short option."
 				fi
 				;;
-			-s|--no-skip-update|--skip-update)
-				_arg_skip_update="on"
-				test "${1:0:5}" = "--no-" && _arg_skip_update="off"
+			-s|--no-update|--update)
+				_arg_update="on"
+				test "${1:0:5}" = "--no-" && _arg_update="off"
 				;;
 			-s*)
-				_arg_skip_update="on"
+				_arg_update="on"
 				_next="${_key##-s}"
 				if test -n "$_next" -a "$_next" != "$_key"
 				then
@@ -227,7 +227,7 @@ if [ "$CREATE_NEW_ENV" = true ]; then
     pip install -q --upgrade pip
     pip install -q -r requirements.txt
     print_color "DONE\n" "$LGRN"
-elif [ "$_arg_skip_update" = "off" ]; then
+elif [ "$_arg_update" = "on" ]; then
     print_color "Updating dependencies..." "$LBLUE"
     pip install -q --upgrade pip
     pip install -q -r requirements.txt
@@ -235,12 +235,11 @@ elif [ "$_arg_skip_update" = "off" ]; then
 fi
 
 # Step 4: Launch JupyterLab (if not disabled)
-if [ "$_arg_no_jupyter" = "on" ]; then
+if [ "$_arg_jupyter" = "on" ]; then
     print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$LBLUE"
     jupyter lab --log-level=40 ./scenarios/Reference.ipynb
     print_color "Closing Jupyter Lab..." "$LBLUE"
 	print_color "DONE\n" "$LGRN"
-
 fi
 
 # Deactivate the virtual environment
