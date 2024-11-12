@@ -117,9 +117,9 @@ The `launch_cims` script includes several optional parameters that advanced user
      ```
 
 3. **Skip Dependency Update**:
-   - To skip updating the dependencies during the launch process, use the `--skip-update` flag:
+   - To skip updating the dependencies during the launch process, use the `--no-update` flag:
      ```bash
-     ./launch_cims --skip-update
+     ./launch_cims --no-update
      ```
 
 4. **Help**:
