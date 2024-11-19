@@ -237,7 +237,7 @@ fi
 # Step 4: Launch JupyterLab (if not disabled)
 if [ "$_arg_jupyter" = "on" ]; then
     print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$LBLUE"
-    jupyter lab --log-level=40 ./scenarios/Reference.ipynb
+    jupyter lab --log-level=40 --notebook-dir=./ ./scenarios/Reference.ipynb
     print_color "Closing Jupyter Lab..." "$LBLUE"
 	print_color "DONE\n" "$LGRN"
 fi
