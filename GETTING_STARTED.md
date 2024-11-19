@@ -1,3 +1,4 @@
+GETTING_STARTED.txt
 # Getting Started with CIMS Modelling
 
 Welcome to the CIMS Modelling repository! This guide will help you set up and run the CIMS Python package for economic climate modeling.
@@ -16,7 +17,6 @@ Before you begin, ensure you have the following installed on your computer:
   - **Linux**: Use Terminal.
 
 ## Step-by-Step Guide
-
 ### 1. Clone the Modelling Repository
 
 1. **Open Your Terminal**:
@@ -28,12 +28,28 @@ Before you begin, ensure you have the following installed on your computer:
      ```bash
      cd ~/Documents/projects/
      ```
-3. **Clone the Repository**:
-   - Run the following command to clone the repository:
+
+3. **Generate a Personal Access Token (PAT)**:
+   - Go to GitHub's [Personal Access Tokens](https://github.com/settings/tokens) page.
+   - Click on **Generate new token** (if given an option, choose _Generate New Token (classic)_).
+   - Give your token a descriptive name, such as "CIMS Setup Token".
+   - Select the scopes or permissions you need. For most cases, you will only need `repo` permissions.
+   - Click **Generate token**.
+   - **Important**: Copy the token now. You won't be able to see it again! **Consider saving the PAT in a credential manager such as OnePassword or LastPass.** 
+
+4. **Clone the Repository Using the PAT**:
+   - Run the following command to clone the repository. When prompted for your GitHub password, use the PAT instead of your GitHub password:
      ```bash
      git clone https://github.com/EMRG-SFU/cims-models.git
      ```
-4. **Navigate to the Cloned Directory**:
+     - Example:
+       ```bash
+       git clone https://github.com/EMRG-SFU/cims-models.git
+       Username: your-github-username
+       Password: <paste your PAT here>
+       ```
+
+5. **Navigate to the Cloned Directory**:
    - Change to the directory of the cloned repository:
      ```bash
      cd cims-models
