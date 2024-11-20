@@ -1,15 +1,15 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON,Region,ON,Residential,,,Service requested,,,CIMS.CAN.ON.Residential,Census,household,4467553,4845367,5153651,5443987,5835796,6255803.87198132,6706040.11598358,7188680.2971235,7706056.55803957,8260668.88792737,8855197.20261841,
-CIMS.CAN.ON.Residential,Sector,ON,,,,Service provided,,,CIMS.CAN.ON.Residential,,household,,,,,,,,,,,,
-CIMS.CAN.ON.Residential,Sector,ON,,,,Competition type,Sector,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Service provided,,,CIMS.CAN.ON.Residential,,household,,,,,,,,,,,,
+CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Competition type,Sector,,,,,,,,,,,,,,,,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,0.83402835696414,0.83402835696414,2.79507133592737,4.53103448275862,3.41454202077432,4.00442967884828,3.54509803921569,3.34814814814815,3.18871252204586,3.18871252204586,3.18871252204586,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,0.33888366,0.669977105,1.137202716,1.402319096,1.614736849,1.76093578,1.896264659,2.014263704,2.084550458,2.099680814,2.125628774,
-CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,CER,,2,2,2,2,2,2,2,2,2,2,2,TO DO: Fix these multipliers once the electricity sector is calibrated to have a production cost.
+CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,CER,,2,2,2,2,2,2,2,2,2,2,2,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,CER,,1.136950638,1.136950638,1.164030715,1.11721623,1.136695992,1.10778843,1.12334405,1.11976149,1.114459445,1.104554057,1.091720318,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,Price multiplier,,,,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,

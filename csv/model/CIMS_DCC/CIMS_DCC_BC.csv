@@ -534,5 +534,5 @@ CIMS.CAN.BC.Transportation Freight.Freight.Marine,Service,BC,Transportation Frei
 CIMS.CAN.BC.Agriculture.Tractors,Service,BC,Agriculture,Tractors,Hydrogen,DCC_class,Hydrogen fuel cell,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Agriculture.Tractors,Service,BC,Agriculture,Tractors,Hydrogen,DCC_limit,,,,,%,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2,
 CIMS.CAN.BC.Agriculture.Tractors,Service,BC,Agriculture,Tractors,Hydrogen,DCC_min learning,,,,,%,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.015,
-CIMS.CAN.BC.Agriculture.Tractors,Service,BC,Agriculture,Tractors,Hydrogen,DCC_capacity_1,,,,,vkm,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,92227251.1753704,
+CIMS.CAN.BC.Agriculture.Tractors,Service,BC,Agriculture,Tractors,Hydrogen,DCC_capacity_1,,,,,vkm,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,92227251.18,
 CIMS.CAN.BC.Agriculture.Tractors,Service,BC,Agriculture,Tractors,Hydrogen,DCC_progress ratio_1,,,,,%,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85,

@@ -1,4 +1,4 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.ON,Service,ON,Electricity,,,Service requested,Utility Generation,,CIMS.CAN.ON.Electricity.Utility Generation,,MWh,148192721.8,153455154,144444350.6,154779429,148800204,156390509.9,164367997.6,172752417.4,181564526.9,190826142.5,200560193.6,Need to include transmission losses
-CIMS.CAN.ON.Electricity,Sector,ON,Electricity,,,Service requested,Utility Generation,,CIMS.CAN.ON.Electricity.Utility Generation,,MWh,0,0,0,0,0,0,0,0,0,0,0,
+CIMS.CAN.ON,Service,ON,Electricity,,,Service requested,,,CIMS.CAN.ON.Electricity.Utility Generation,activity_data_region,MWh,148192721.810274,153455154,144444350.560675,154779429,148800204,150345277.367145,158014397.497941,166074719.830833,174546199.609747,183449809.996605,192807593.995367,Need to include transmission losses for exog demand
+CIMS.CAN.ON.Electricity,Sector,ON,Electricity,,,Service requested,,,CIMS.CAN.ON.Electricity.Utility Generation,,MWh,0,0,0,0,0,0,0,0,0,0,0,
