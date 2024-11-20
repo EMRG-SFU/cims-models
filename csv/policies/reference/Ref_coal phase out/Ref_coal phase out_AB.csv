@@ -4,5 +4,5 @@ CIMS.CAN.AB.Electricity.Utility Generation.Base Load,Service,AB,Electricity,Base
 CIMS.CAN.AB.Electricity.Utility Generation.Base Load,Service,AB,Electricity,Base Load,Coal,Retrofit_existing_min,,,,,%,0,0,0,0,0.3,0.5,1,1,1,1,1,
 CIMS.CAN.AB.Electricity.Utility Generation.Shoulder Load,Service,AB,Electricity,Shoulder Load,Coal,Unavailable,,,,,Year,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,
 CIMS.CAN.AB.Electricity.Utility Generation.Shoulder Load,Service,AB,Electricity,Shoulder Load,Coal,Retrofit_existing_min,,,,,%,0,0,0,0,0.3,0.5,1,1,1,1,1,
-CIMS.CAN.AB.Electricity.Utility Generation.Peak Load,Service,AB,Electricity,Peak Load,Coal,Unavailable,,,,,Year,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,
-CIMS.CAN.AB.Electricity.Utility Generation.Peak Load,Service,AB,Electricity,Peak Load,Coal,Retrofit_existing_min,,,,,%,0,0,0,0,0.3,0.5,1,1,1,1,1,
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
