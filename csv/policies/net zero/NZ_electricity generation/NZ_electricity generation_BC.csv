@@ -1,0 +1,4 @@
+﻿CIMS.CAN.BC.Petroleum Crude.Methane Fuel,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.BC,Service,BC,Electricity,,,Service requested,,,CIMS.CAN.BC.Electricity.Utility Generation,activity_data_region,MWh,49518225.3735,49381909.5075,43944024.0216,50033240.8535322,53301570.8778,59268086.0377206,65436756.0366533,72247466.1637506,79767040.4712386,88069258.112372,97235577.2339358,Remove transmission losses; added back using multipliers below
+CIMS.CAN.BC.Electricity,Sector,BC,Electricity,,,Service requested,,,CIMS.CAN.BC.Electricity.Utility Generation,,MWh,0,0,0,0,0,0,0,0,0,0,0,

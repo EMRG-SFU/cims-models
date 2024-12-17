@@ -1,0 +1,36 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.MB,Region,MB,Construction,,,Service requested,,,CIMS.CAN.MB.Construction,,tCO2e,335000,454000,302000,363000,374000,374000,374000,374000,374000,374000,374000,
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Service provided,,,,,tCO2e,,,,,,,,,,,,
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Competition type,Sector,,,,,,,,,,,,,,,,
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.CAN.MB.Biodiesel,JCIMS,,1.8,1.8,1.9141508982703,2.08337634533833,2.1831574043583,2.84232261187302,2.73088442144286,2.63241680682958,2.5300679249112,2.52955333995074,2.52865630556284,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Biogas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Black Liquor,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Coal,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.5206138121793,0.63580249051724,0.86522676579303,0.92340220377578,1.09369138138417,1.19515920669733,1.28384460592477,1.35654747851981,1.41269961392618,1.42295345473989,1.44053838387329,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.CAN.MB.Electricity,CER,,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.CAN.MB.Ethanol,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Fuel Oil,CER,,1.52120533256196,1.46313670712893,1.32717415233617,1.26765174124368,1.04060298646212,0.82279366657213,0.6729290793291,0.71313117860517,0.7671278258752,0.81725638818216,0.85461188525114,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Gasoline,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.CAN.MB.Hydrogen,JCIMS,,0.99999999982763,0.99999999991568,0.99999999992788,1.00000000009596,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Jet Fuel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.LPG,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Natural Gas,CER,,1.17478873830557,1.1998296597679,1.30311389937472,1.51867142905179,1.2944285301284,0.95493719904292,0.78459192922371,0.87388432557619,0.93347191058395,0.98666923799555,1.03470318941315,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Petroleum Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Propane,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Refinery Fuel Gas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Solid Biomass,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Uranium,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Waste Fuel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.MB.Construction,Sector,MB,Construction,,,Service requested,,,CIMS.CAN.MB.Construction.Transport,,tCO2e,1,1,1,1,1,1,1,1,1,1,1,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,,Service provided,,,,,tCO2e,,,,,,,,,,,,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,,Competition type,Tech Compete,,,,,,,,,,,,,,,,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Diesel,Technology,,,,,,,,,,,,,,,,,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Diesel,Market share,,,,,%,1,,,,,,,,,,,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Diesel,Lifetime,,,,,Years,20,20,20,20,20,20,20,20,20,20,20,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Diesel,Service requested,,,CIMS.CAN.MB.Fuel Blends.Diesel_Transportation,,GJ,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Electric,Technology,,,,,,,,,,,,,,,,,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Electric,Market share,,,,,%,0,,,,,,,,,,,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Electric,Lifetime,,,,,Years,20,20,20,20,20,20,20,20,20,20,20,
+CIMS.CAN.MB.Construction.Transport,Service,MB,Construction,Transport,Electric,Service requested,,,CIMS.CAN.MB.Electricity,,GJ,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,

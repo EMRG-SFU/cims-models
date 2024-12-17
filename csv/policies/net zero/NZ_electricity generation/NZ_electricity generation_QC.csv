@@ -1,0 +1,4 @@
+﻿CIMS.CAN.QC.Chemical Products.Chemical Product.Ammonia Methanol.Ammonia Synthesis,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.QC,Service,QC,Electricity,,,Service requested,,,CIMS.CAN.QC.Electricity.Utility Generation,activity_data_region,MWh,147425349.467063,148586492.0916,155390929.869,168585706.5525,174372494.331,192408404.995147,212434426.329473,234544772.049176,258956380.310415,285908768.366888,315666382.620436,Remove transmission losses; added back using multipliers below
+CIMS.CAN.QC.Electricity,Sector,QC,Electricity,,,Service requested,,,CIMS.CAN.QC.Electricity.Utility Generation,,MWh,0,0,0,0,0,0,0,0,0,0,0,

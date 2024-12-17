@@ -1,0 +1,11 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.QC.Natural Gas Production,Sector,QC,Natural Gas Production,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Mining,Sector,QC,Mining,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Petroleum Refining,Sector,QC,Petroleum Refining,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Industrial Minerals,Sector,QC,Industrial Minerals,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Iron and Steel,Sector,QC,Iron and Steel,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Chemical Products,Sector,QC,Chemical Products,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Pulp and Paper,Sector,QC,Pulp and Paper,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Light Industrial.Manufacturing.Food Tobacco and Beverage,Sector,QC,Food Tobacco and Beverage,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,
+CIMS.CAN.QC.Light Industrial.Manufacturing.Transportation Equipment,Sector,QC,Transportation Equipment,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,3,6.83416433308258,None,None,None,None,None,

@@ -1,6 +1,6 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.BC,Region,BC,Forestry,,,Service requested,,,CIMS.CAN.BC.Forestry,,tCO2e,1000000,1300000,700000,1000000,1100000,1100000,1100000,1100000,1100000,1100000,1100000,
+CIMS.CAN.BC,Region,BC,Forestry,,,Service requested,,,CIMS.CAN.BC.Forestry,,tCO2e,968000,1251000,722000,985000,1099000,1099000,1099000,1099000,1099000,1099000,1099000,
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Service provided,,,,,tCO2e,,,,,,,,,,,,
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Competition type,Sector,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.CAN.BC.Biodiesel,JCIMS,,1.18531070447968,1.46113190686282,1.9141508982703,2.08337634533833,2.1831574043583,2.84232261187302,2.73088442144286,2.63241680682958,2.5300679249112,2.52955333995074,2.52865630556284,Use Agriculture values as proxy - TO DO: review!
@@ -8,7 +8,7 @@ CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.Black Liquor,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.Coal,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.52061381217929,0.63580249051724,0.86522676579303,0.92340220377578,1.09369138138417,1.19515920669733,1.28384460592477,1.35654747851981,1.41269961392618,1.42295345473989,1.44053838387329,Use Agriculture values as proxy - TO DO: review!
+CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.5206138121793,0.63580249051724,0.86522676579303,0.92340220377578,1.09369138138417,1.19515920669733,1.28384460592477,1.35654747851981,1.41269961392618,1.42295345473989,1.44053838387329,Use Agriculture values as proxy - TO DO: review!
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.CAN.BC.Electricity,CER,,1.67,1.67,1.67,1.67,1.67,1.67,1.67,1.67,1.67,1.67,1.67,Use Agriculture values as proxy - TO DO: review!
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.CAN.BC.Ethanol,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
 CIMS.CAN.BC.Forestry,Sector,BC,Forestry,,,Price multiplier,,,CIMS.Generic Fuels.Fuel Oil,CER,,1.01600537757731,1.01600537757731,1.12937969303903,1.1700038420687,1.06007477314638,1.16857029995883,1.23312899103829,1.18138017230694,1.1078112969818,1.02222620339895,0.96565680121895,Use Agriculture values as proxy - TO DO: review!
@@ -29,7 +29,7 @@ CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,,Competition type,T
 CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Diesel,Technology,,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Diesel,Market share,,,,,%,1,,,,,,,,,,,
 CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Diesel,Lifetime,,,,,Years,20,20,20,20,20,20,20,20,20,20,20,
-CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Diesel,Service requested,,,CIMS.Generic Fuels.Diesel,,GJ,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,
+CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Diesel,Service requested,,,CIMS.CAN.BC.Fuel Blends.Diesel_Transportation,,GJ,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,
 CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Electric,Technology,,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Electric,Market share,,,,,%,0,,,,,,,,,,,
 CIMS.CAN.BC.Forestry.Transport,Service,BC,Forestry,Transport,Electric,Lifetime,,,,,Years,20,20,20,20,20,20,20,20,20,20,20,

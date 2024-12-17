@@ -1,3 +1,6 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN,Region,CAN,,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,30,68.34164333,110.0649,177.2606221,285.4800045,459.768402,740.4616092,
+CIMS.CAN,Region,CAN,,,,Tax,CO2,Combustion,,Govt of Canada,$/tCO2e,0,0,0,0,30,68.34164333,120.4413267,212.2587705,374.0724789,659.243522,1161.812338,
+CIMS.CAN,Region,CAN,,,,Tax,CO2,Process,,Govt of Canada,$/tCO2e,0,0,0,0,0,0,120.4413267,212.2587705,374.0724789,659.243522,1161.812338,
+CIMS.CAN,Region,CAN,,,,Tax,CH4,Process,,Govt of Canada,$/tCO2e,0,0,0,0,0,0,120.4413267,212.2587705,374.0724789,659.243522,1161.812338,
+CIMS.CAN,Region,CAN,,,,Tax,N2O,Process,,Govt of Canada,$/tCO2e,0,0,0,0,0,0,120.4413267,212.2587705,374.0724789,659.243522,1161.812338,

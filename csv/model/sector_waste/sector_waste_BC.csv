@@ -1,6 +1,6 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.BC,Region,BC,Waste,,,Service requested,,,CIMS.CAN.BC.Waste,,tonne,4467553,4845367,5153651,5443987,5835796,6255803.87198132,6706040.11598358,7188680.2971235,7706056.55803957,8260668.88792737,8855197.20261841,
+CIMS.CAN.BC,Region,BC,Waste,,,Service requested,,,CIMS.CAN.BC.Waste,,tCO2e,2971000,2728000,2942000,2527000,1900000,1806881.09481,1718325.94251673,1634110.87381845,1554023.18143474,1477860.58285838,1405430.70943773,
 CIMS.CAN.BC.Waste,Sector,BC,Waste,,,Service provided,,,,,tonne,,,,,,,,,,,,
 CIMS.CAN.BC.Waste,Sector,BC,Waste,,,Competition type,Sector,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Waste,Sector,BC,Waste,,,Price multiplier,,,CIMS.CAN.BC.Biodiesel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,

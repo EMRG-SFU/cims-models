@@ -1,7 +1,8 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.ON.Transportation Personal.Diesel Blend,Service,ON,Transportation Personal,Diesel Blend,Biodiesel,Market share new_min,,,,,,0,0,0,0,0.034981906,0.034981906,0.034981906,0.034981906,0.034981906,0.034981906,0.034981906,
-CIMS.CAN.ON.Transportation Personal.Gasoline Blend,Service,ON,Transportation Personal,Gasoline Blend,Ethanol,Market share new_min,,,,,,0,0,0,0,0.069286453,0.076476082,0.105733824,0.105733824,0.105733824,0.105733824,0.105733824,
-CIMS.CAN.ON.Transportation Freight.Diesel Blend,Service,ON,Transportation Freight,Diesel Blend,Biodiesel,Market share new_min,,,,,,0,0,0,0,0.034981906,0.034981906,0.034981906,0.034981906,0.034981906,0.034981906,0.034981906,
-CIMS.CAN.ON.Transportation Freight.Gasoline Blend,Service,ON,Transportation Freight,Gasoline Blend,Ethanol,Market share new_min,,,,,,0,0,0,0,0.069286453,0.076476082,0.105733824,0.105733824,0.105733824,0.105733824,0.105733824,
-CIMS.CAN.ON.Transportation Freight.Flex Blend,Service,ON,Transportation Freight,Flex Blend,Ethanol,Market share new_min,,,,,,0,0,0,0,0.069286453,0.076476082,0.105733824,0.105733824,0.105733824,0.105733824,0.105733824,
+CIMS.CAN.ON.Fuel Blends.Gasoline_Transportation,Service,ON,,Gasoline_Transportation,,Market share_class_min,Gasoline_Transportation,,,,,0,0,0,0.03406202338587,0.06928645294726,0.07647608176819,0.105733824303,0.105733824303,0.105733824303,0.105733824303,0.105733824303,2011-2015 (?) federl standard; 2016 (?) to 2030 Ontario standard
+CIMS.CAN.ON.Fuel Blends.Gasoline_Transportation,Service,ON,,Gasoline_Transportation,Ethanol,Market share_class,Gasoline_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Fuel Blends.Gasoline_Transportation,Service,ON,,Gasoline_Transportation,Renewable Gasoline,Market share_class,Gasoline_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Fuel Blends.Diesel_Transportation,Service,ON,,Diesel_Transportation,,Market share new_min,Diesel_Transportation,,,,,0,0,0,0.01744535793062,0.03498190591074,0.03498190591074,0.03498190591074,0.03498190591074,0.03498190591074,0.03498190591074,0.03498190591074,2011-2015 (?) federl standard; 2016 (?) to 2030 Ontario standard
+CIMS.CAN.ON.Fuel Blends.Diesel_Transportation,Service,ON,,Diesel_Transportation,Biodiesel,Market share_class,Diesel_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.ON.Fuel Blends.Diesel_Transportation,Service,ON,,Diesel_Transportation,Renewable Diesel,Market share_class,Diesel_Transportation,,,,,,,,,,,,,,,,

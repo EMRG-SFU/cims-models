@@ -1,35 +1,35 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿CIMS.CAN.BC.Transportation Personal.Transit.Public Bus,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.BC,Region,BC,Construction,,,Service requested,,,CIMS.CAN.BC.Construction,,tCO2e,600000,700000,500000,600000,600000,600000,600000,600000,600000,600000,600000,
+CIMS.CAN.BC,Region,BC,Construction,,,Service requested,,,CIMS.CAN.BC.Construction,,tCO2e,581000,745000,471000,630000,647000,647000,647000,647000,647000,647000,647000,
 CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Service provided,,,,,tCO2e,,,,,,,,,,,,
 CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Competition type,Sector,,,,,,,,,,,,,,,,
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Biodiesel,JCIMS,,1.8,1.8,1.9141508982703,2.08337634533833,2.1831574043583,2.84232261187302,2.73088442144286,2.63241680682958,2.5300679249112,2.52955333995074,2.52865630556284,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Biogas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Black Liquor,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Coal,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.52061381217929,0.63580249051724,0.86522676579303,0.92340220377578,1.09369138138417,1.19515920669733,1.28384460592477,1.35654747851981,1.41269961392618,1.42295345473989,1.44053838387329,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Electricity,CER,,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Ethanol,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Fuel Oil,CER,,1.83114685916557,1.72633836883846,1.55096541413164,1.57763281241403,1.35866532026277,1.08481861808721,0.91174174342983,0.9501983082972,1.00619763220411,1.06089935205649,1.10174544632714,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Gasoline,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Hydrogen,JCIMS,,0.99999999982763,0.99999999991568,0.99999999992788,1.00000000009596,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Jet Fuel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.LPG,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Natural Gas,CER,,1.37687296364612,1.52534213133466,2.22043223785056,2.67673781222676,1.8642143745646,1.33862176974357,1.01526918417611,1.07067045063627,1.14372215699349,1.21340766667337,1.27315808638067,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Petroleum Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Propane,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Refinery Fuel Gas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Solid Biomass,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Uranium,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
-CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Waste Fuel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Use Agriculture values as proxy - TO DO: review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Biodiesel,JCIMS,,1.8,1.8,1.9141508982703,2.08337634533833,2.1831574043583,2.84232261187302,2.73088442144286,2.63241680682958,2.5300679249112,2.52955333995074,2.52865630556284,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Biogas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Black Liquor,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Coal,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.5206138121793,0.63580249051724,0.86522676579303,0.92340220377578,1.09369138138417,1.19515920669733,1.28384460592477,1.35654747851981,1.41269961392618,1.42295345473989,1.44053838387329,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Electricity,CER,,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,1.55,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Ethanol,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Fuel Oil,CER,,1.83114685916557,1.72633836883846,1.55096541413164,1.57763281241403,1.35866532026277,1.08481861808721,0.91174174342983,0.9501983082972,1.00619763220411,1.06089935205649,1.10174544632714,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Gasoline,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.CAN.BC.Hydrogen,JCIMS,,0.99999999982763,0.99999999991568,0.99999999992788,1.00000000009596,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,0.99999999992842,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Jet Fuel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.LPG,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Natural Gas,CER,,1.37687296364612,1.52534213133466,2.22043223785056,2.67673781222676,1.8642143745646,1.33862176974357,1.01526918417611,1.07067045063627,1.14372215699349,1.21340766667337,1.27315808638067,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Petroleum Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Propane,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Refinery Fuel Gas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Solid Biomass,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Uranium,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
+CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Price multiplier,,,CIMS.Generic Fuels.Waste Fuel,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,Review!
 CIMS.CAN.BC.Construction,Sector,BC,Construction,,,Service requested,,,CIMS.CAN.BC.Construction.Transport,,tCO2e,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,,Service provided,,,,,tCO2e,,,,,,,,,,,,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,,Competition type,Tech Compete,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Diesel,Technology,,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Diesel,Market share,,,,,%,1,,,,,,,,,,,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Diesel,Lifetime,,,,,Years,20,20,20,20,20,20,20,20,20,20,20,
-CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Diesel,Service requested,,,CIMS.Generic Fuels.Diesel,,GJ,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,
+CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Diesel,Service requested,,,CIMS.CAN.BC.Fuel Blends.Diesel_Transportation,,GJ,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,14.2379155691607,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Electric,Technology,,,,,,,,,,,,,,,,,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Electric,Market share,,,,,%,0,,,,,,,,,,,
 CIMS.CAN.BC.Construction.Transport,Service,BC,Construction,Transport,Electric,Lifetime,,,,,Years,20,20,20,20,20,20,20,20,20,20,20,

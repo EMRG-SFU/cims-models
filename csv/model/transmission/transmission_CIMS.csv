@@ -1,0 +1,25 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.Transmission,Service,CIMS,,Transmission,,Service provided,,,,,GJ,,,,,,,,,,,,
+CIMS.Transmission,Service,CIMS,,Transmission,,Competition type,Fixed Ratio,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS BC,Service,CIMS,,CCS TS BC,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS BC,Service,CIMS,,CCS TS BC,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS BC,Service,CIMS,,CCS TS BC,,LCC_financial,,,,Lutes 2012,$/tCO2,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,$/CO2 CCS Transportation and Storage
+CIMS.Generic Fuels.CCS TS AB,Service,CIMS,,CCS TS AB,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS AB,Service,CIMS,,CCS TS AB,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS AB,Service,CIMS,,CCS TS AB,,LCC_financial,,,,Lutes 2012,$/tCO2,5.2,5.2,5.2,5.2,5.2,5.2,5.2,5.2,5.2,5.2,5.2,$/CO2 CCS Transportation and Storage
+CIMS.Generic Fuels.CCS TS SK,Service,CIMS,,CCS TS SK,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS SK,Service,CIMS,,CCS TS SK,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS SK,Service,CIMS,,CCS TS SK,,LCC_financial,,,,Lutes 2012,$/tCO2,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,4.5,$/CO2 CCS Transportation and Storage
+CIMS.Generic Fuels.CCS TS MB,Service,CIMS,,CCS TS MB,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS MB,Service,CIMS,,CCS TS MB,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS MB,Service,CIMS,,CCS TS MB,,LCC_financial,,,,Lutes 2012,$/tCO2,7.6,7.6,7.6,7.6,7.6,7.6,7.6,7.6,7.6,7.6,7.6,$/CO2 CCS Transportation and Storage
+CIMS.Generic Fuels.CCS TS ON,Service,CIMS,,CCS TS ON,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS ON,Service,CIMS,,CCS TS ON,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS ON,Service,CIMS,,CCS TS ON,,LCC_financial,,,,Lutes 2012,$/tCO2,12,12,12,12,12,12,12,12,12,12,12,$/CO2 CCS Transportation and Storage
+CIMS.Generic Fuels.CCS TS QC,Service,CIMS,,CCS TS QC,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS QC,Service,CIMS,,CCS TS QC,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS QC,Service,CIMS,,CCS TS QC,,LCC_financial,,,,Lutes 2012,$/tCO2,24,24,24,24,24,24,24,24,24,24,24,$/CO2 CCS Transportation and Storage
+CIMS.Generic Fuels.CCS TS AT,Service,CIMS,,CCS TS AT,,Service provided,,,,,tCO2,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS AT,Service,CIMS,,CCS TS AT,,Competition type,Supply - Fixed Price,,,,,,,,,,,,,,,,
+CIMS.Generic Fuels.CCS TS AT,Service,CIMS,,CCS TS AT,,LCC_financial,,,,Lutes 2012,$/tCO2,18,18,18,18,18,18,18,18,18,18,18,$/CO2 CCS Transportation and Storage
