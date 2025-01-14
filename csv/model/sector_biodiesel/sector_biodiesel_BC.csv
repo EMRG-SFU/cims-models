@@ -1,4 +1,4 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿CIMS.CAN.BC.Biodiesel.Steam,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Service provided,,,,,GJ,,,,,,,,,,,,
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Competition type,Sector,,,,,,,,,,,,,,,,
@@ -8,7 +8,7 @@ CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuel
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuels.Black Liquor,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuels.Coal,JCIMS,,0.96578665005778,1.11911353386197,1.43884353681404,1.53956258439101,1.53956258439101,1.53956258439101,1.53956258439101,1.53956258439101,1.53956258439101,1.53956258439101,1.53956258439101,
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuels.Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
-CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.54859699214972,0.66997710344828,0.91173301617669,0.97303540491035,1.15247768716666,1.25939944464703,1.35285171603436,1.42946239422464,1.48863272713949,1.49943771559117,1.51796784100095,
+CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuels.Diesel,JCIMS,,0.54859699214972,0.66997710344828,0.91173301617669,0.97303540491035,1.15247768716666,1.25939944464703,1.35285171603436,1.42946239422463,1.48863272713949,1.49943771559117,1.51796784100095,
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.CAN.BC.Electricity,CER,,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,1.3,
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.CAN.BC.Ethanol,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Biodiesel,Sector,BC,Biodiesel,,,Price multiplier,,,CIMS.Generic Fuels.Fuel Oil,CER,,1.01600537757731,1.03317649831559,1.09856517506478,1.14101941085181,1.12388540664271,1.14964163811373,1.21041992022893,1.17780522825203,1.1062466691364,1.02686919551468,0.98463639385729,
