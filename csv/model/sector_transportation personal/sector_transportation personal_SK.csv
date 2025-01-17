@@ -1,4 +1,4 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.SK,Region,SK,Transportation Personal,,,Service requested,,,CIMS.CAN.SK.Transportation Personal,,k*pkm,17458549.8888623,18866478.2396207,25788830.6203996,25835957.6021791,24841484.3106665,25610429.4423456,26635523.4551733,27658056.8330424,28812871.6431806,30107043.9926626,31548426.9674868,
 CIMS.CAN.SK.Transportation Personal,Sector,SK,Transportation Personal,,,Service provided,,,,,k*pkm,,,,,,,,,,,,
@@ -214,7 +214,7 @@ CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transpor
 CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 500,FCC,,,,ANL - ESD-2206 Report - Light Duty - Autonomie Results,$,21424.200082504,17139.3600660032,13711.4880528026,10969.1904422421,8775.35235379364,7020.28188303491,5616.22550642793,4492.98040514234,3594.38432411388,2875.5074592911,2300.40596743288,
 CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 500,Service requested,,,CIMS.CAN.SK.Electricity,,GJ,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,0.03605157238037,
 CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 800,Technology,,,,,,,,,,,,,,,,,
-CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 800,Available,,,,,Year,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,2025,
+CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 800,Available,,,,,Year,2030,2030,2030,2030,2030,2030,2030,2030,2030,2030,2030,
 CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 800,Unavailable,,,,,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 800,Lifetime,,,,,Years,16,16,16,16,16,16,16,16,16,16,16,
 CIMS.CAN.SK.Transportation Personal.Passenger Vehicle Motors,Service,SK,Transportation Personal,Passenger Vehicle Motors,BEV 800,Market share,,,,,%,0,,,,,,,,,,,
