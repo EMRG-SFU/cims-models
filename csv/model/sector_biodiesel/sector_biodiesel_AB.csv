@@ -75,7 +75,7 @@ CIMS.CAN.AB.Biodiesel.Agricultural Input,Service,AB,Biodiesel,Agricultural Input
 CIMS.CAN.AB.Biodiesel.Agricultural Input,Service,AB,Biodiesel,Agricultural Input,Agricultural Production Biodiesel,FOM,,,,,$,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,10.136137191239,
 CIMS.CAN.AB.Biodiesel.Agricultural Input,Service,AB,Biodiesel,Agricultural Input,Agricultural Production Biodiesel,Service requested,,,CIMS.Generic Fuels.Diesel,,GJ,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,0.065030501,
 CIMS.CAN.AB.Biodiesel.Steam,Service,AB,Biodiesel,Steam,,Service provided,,,,,GJ,,,,,,,,,,,,
-CIMS.CAN.AB.Biodiesel.Steam,Service,AB,Biodiesel,Steam,,Competition type,Node Tech Compete,,,,,,,,,,,,,,,,
+CIMS.CAN.AB.Biodiesel.Steam,Service,AB,Biodiesel,Steam,,Competition type,Tech Compete,,,,,,,,,,,,,,,,
 CIMS.CAN.AB.Biodiesel.Steam,Service,AB,Biodiesel,Steam,,Discount rate_financial,,,,,%,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4,
 CIMS.CAN.AB.Biodiesel.Steam,Service,AB,Biodiesel,Steam,,Heterogeneity,,,,,,10,10,10,10,10,10,10,10,10,10,10,
 CIMS.CAN.AB.Biodiesel.Steam,Service,AB,Biodiesel,Steam,Electric,Technology,,,,,,,,,,,,,,,,,
