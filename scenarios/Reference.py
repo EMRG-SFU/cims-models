@@ -20,7 +20,7 @@ print("The current folder is",os.getcwd())
 # Use child folder "name" to move into a directory within a parent folder
 import os
 
-get_ipython().run_line_magic('cd', '-q "cims-models"')
+get_ipython().run_line_magic('cd', '-q ".."')
 print("The current folder is now", os.getcwd())
 
 
