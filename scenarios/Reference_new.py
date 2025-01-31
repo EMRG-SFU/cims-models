@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -7,6 +8,12 @@
 
 
 import os
+from os import path
+from datetime import datetime
+import pandas as pd
+import numpy as np
+
+import CIMS
 
 # Check current folder
 print("The current folder is",os.getcwd())
@@ -22,6 +29,8 @@ import os
 
 get_ipython().run_line_magic('cd', '-q ".."')
 print("The current folder is now", os.getcwd())
+
+
 
 
 # +++  Definition of model/scenario/
@@ -281,27 +290,7 @@ scenario_name = 'Reference'  # Set this to current scenario (e.g., "Reference", 
 
 # ---
 
-# ### Model Validator
 
-# In[ ]:
-
-
-### Validate model ###
-
-# Need to reload functions in case changes were made to code
-get_ipython().run_line_magic('reload_ext', 'autoreload')
-get_ipython().run_line_magic('autoreload', '2')
-
-import CIMS
-from os import path
-from datetime import datetime
-import pandas as pd
-import numpy as np
-
-
-
-#################### Global parameters ###########################
-time_start = datetime.now()
 
 
 # Leave the column list as-is to run the simulation
@@ -350,170 +339,21 @@ if bool(update_files):
 else:
     print('None')
 
-model_validator = CIMS.ModelValidator(
-            csv_file_paths = load_paths,
-            col_list = col_list,
-            year_list = year_list,
-            sector_list = sector_list,
-            scenario_files = update_paths,
-            default_values_csv_path = default_path,
-            )
-model_validator.validate(verbose=False)
-
-print('\nValidator: ', datetime.now() - time_start)
 
 
-# In[ ]:
+model = CIMS.Model(
+        csv_init_file_paths = load_paths,
+        csv_update_file_paths = update_paths,
+        col_list = col_list,
+        year_list = year_list,
+        sector_list = sector_list,
+        default_values_csv_path = default_path,
+        )
 
 
-### Show validator outputs ###
-
-model_validator.warnings['inconsistent_tech_refs']
-
-
-# ### Run CIMS
-
-# In[ ]:
-
-
-### Run model ###
-
-# Need to reload functions in case changes were made to code
-get_ipython().run_line_magic('reload_ext', 'autoreload')
-get_ipython().run_line_magic('autoreload', '2')
-
-import CIMS
-import os
-import pandas as pd
-import numpy as np
-from datetime import datetime
-
-
-time0_start = datetime.now()
-
-
-#################### Global parameters ###########################
-
-# Leave the column list as-is to run the simulation
-col_list1 = [
-    'Branch',
-    'Region',
-    'Sector',
-    'Technology',
-    'Parameter',
-    'Context',
-    'Sub_Context',
-    'Target',
-    'Source',
-    'Unit',
-]
-col_list2 = pd.Series(np.arange(2000,2051,5), dtype='string').tolist()
-col_list = col_list1 + col_list2
-
-
-#################### Build Model ###########################
-time_start = datetime.now()
-
-print(f'Loading base model: {base_model}')
-load_paths = []
-for reg in region_list:
-    cur_path = f'{model_path}/{base_model}/{base_model}_{reg}.csv'
-    if os.path.exists(cur_path):
-        print(f'\t{reg} - loaded')
-        load_paths.append(cur_path)
-    else:
-        print(f'\t{reg} - file does not exist')
-
-model_reader = CIMS.ModelReader(
-            csv_file_paths = load_paths,
-            col_list = col_list,
-            year_list = year_list,
-            sector_list = sector_list,
-            default_values_csv_path = default_path,
-            )
-model = CIMS.Model(model_reader)
-
-
-print(f'\nLoading model updates files:')
-if bool(update_files):
-    update_paths = []
-    for dir, file in update_files.items():
-        for file in update_files[dir]:
-            print(f'\n{file}')
-            for reg in region_list:
-                cur_path = f'{dir}/{file}/{file}_{reg}.csv'
-                if os.path.exists(cur_path):
-                    print(f'\t{reg} - loaded')
-                    update_paths.append(cur_path)
-                else:
-                    print(f'\t{reg} - file does not exist')
-            
-    model_reader = CIMS.ScenarioReader(
-                csv_file_paths = update_paths,
-                col_list = col_list,
-                year_list = year_list,
-                sector_list = sector_list,
-                )
-    model = model.update(model_reader)
-else:
-    print('None')
-
-print(f'\nModel files: ', datetime.now() - time_start)
-print()
-
-
-#################### Run ###########################
-time_start = datetime.now()
-
+model.validate_files()
+model.build_graph()
+model.validate_graph()
 model.run(equilibrium_threshold=0.05, max_iterations=10, show_warnings=False, print_eq=True)
 
-print()
-print('Simulation time: ', datetime.now() - time_start)
-
-print()
-print('Total time: ', datetime.now() - time0_start)
-
-
-
-#################### Export results ###########################
-results_path = f'results/{scenario_name}'
-isExist = os.path.exists(results_path)
-if not isExist:
-   # Create a new directory because it does not exist
-   os.makedirs(results_path)
-
-CIMS.log_model(model=model,
-                output_file = f'{results_path}/results_general.csv',
-                path = 'results/results_general.txt')
-
-print()
-print(f"Results exported to '{scenario_name}'")
-
-
-# In[ ]:
-
-
-### Export tech results ###
-import os
-
-results_path = f'results/{scenario_name}'
-isExist = os.path.exists(results_path)
-if not isExist:
-   # Create a new directory because it does not exist
-   os.makedirs(results_path)
-
-CIMS.log_model(model=model,
-                output_file = f'{results_path}/results_tech.csv',
-                path = 'results/results_tech.txt')
-print('\n')
-print('Results exported')
-
-
-# In[ ]:
-
-
-### Print service request loops after running model ###
-
-import pprint
-pprint.pp(model.loops)
 
