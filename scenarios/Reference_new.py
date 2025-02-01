@@ -10,6 +10,7 @@
 import os
 from os import path
 from datetime import datetime
+from IPython import get_ipython
 import pandas as pd
 import numpy as np
 
@@ -351,9 +352,56 @@ model = CIMS.Model(
         )
 
 
-model.validate_files()
-model.build_graph()
-model.validate_graph()
+# ::TODO:: Turn these back on!
+
+#model.validate_files()
+#model.build_graph()
+#model.validate_graph()
+
+
 model.run(equilibrium_threshold=0.05, max_iterations=10, show_warnings=False, print_eq=True)
+
+
+
+
+
+
+
+## Below is just exporting and saving, same as before.
+
+
+
+
+
+
+
+#################### Export results ###########################
+results_path = f'results/{scenario_name}'
+isExist = os.path.exists(results_path)
+if not isExist:
+   # Create a new directory because it does not exist
+   os.makedirs(results_path)
+
+CIMS.log_model(model=model,
+                output_file = f'{results_path}/results_general.csv',
+                path = 'results/results_general.txt')
+
+print('\n')
+print(f"Results exported to '{scenario_name}'")
+
+### Export tech results ###
+import os
+
+results_path = f'results/{scenario_name}'
+isExist = os.path.exists(results_path)
+if not isExist:
+   # Create a new directory because it does not exist
+   os.makedirs(results_path)
+
+CIMS.log_model(model=model,
+                output_file = f'{results_path}/results_tech.csv',
+                path = 'results/results_tech.txt')
+print('\n')
+print(f"Tech results exported to '{scenario_name}'")
 
 
