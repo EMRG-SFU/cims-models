@@ -352,12 +352,16 @@ model = CIMS.Model(
         )
 
 
-# ::TODO:: Turn these back on!
+# ::TODO:: Ultimately would like this type of API/flow, with the model object assembly
+#          separated into two phases, pre- and post-graph building, with each phase having
+#          its own separate validation (i.e. first validation phase for input files and params,
+#          and second phase for graph logic and structure).
+#
+# model.validate_files()
+# model.build_graph()
+# model.validate_graph()
 
-#model.validate_files()
-#model.build_graph()
-#model.validate_graph()
-
+model.validate_files()
 
 model.run(equilibrium_threshold=0.05, max_iterations=10, show_warnings=False, print_eq=True)
 
