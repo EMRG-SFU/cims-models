@@ -95,7 +95,7 @@ def tokenizeWindows( p, pathToCimsModels ):
     else:
         isAbsPath = False
 
-    winlogger.info(f",{isAbsPath},{p3[0]},{str(p3).replace(",","|")},{p}")
+    winlogger.info(f",{isAbsPath},{p3[0]},{str(p3).replace(',','|')},{p}")
 
     if isAbsPath:
         try:
@@ -127,7 +127,7 @@ def tokenizeNormal( p, pathToCimsModels ):
     else:
         isAbsPath = False
 
-    normlogger.info(f",{isAbsPath},{p2[0]},{str(p2).replace(",","|")},{p}")
+    normlogger.info(f",{isAbsPath},{p2[0]},{str(p2).replace(',','|')},{p}")
 
     if isAbsPath:
         try:
