@@ -389,7 +389,7 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
                 log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=True)
                 continue
 
-            log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK and File Found")
+            log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK and File Found", pathOk=True, fileFound=True)
 
         else:
             # The path doesn't exist. On the filesystem.
@@ -415,7 +415,7 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
                 log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
                 continue
 
-            log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK but File Not Found")
+            log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK but File Not Found", pathOk=True, fileFound=False)
 
         if not dryRun:
             wb._external_links[index].file_link.target = newPath
