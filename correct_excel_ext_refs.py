@@ -108,7 +108,7 @@ def tokenizeWindows( p, pathToCimsModels ):
     else:
         p4 = p3
 
-    return(p4)
+    return((p4, isAbsPath))
 
 def tokenizeNormal( p, pathToCimsModels ):
     """
@@ -140,7 +140,7 @@ def tokenizeNormal( p, pathToCimsModels ):
     else:
         p3 = p2
 
-    return(p3)
+    return((p3, isAbsPath))
 
 
 #############################################################
@@ -165,9 +165,9 @@ def getSystemPath(cmRoot, filePath, *args, **kwargs):
     external ref path SHOULD be.
     """
     try:
-        exPathTokens = tokenizeWindows(filePath, cmRoot)
+        exPathTokens, isAbsPath = tokenizeWindows(filePath, cmRoot)
     except UnexpectedFwdSlashes:
-        exPathTokens = tokenizeNormal(filePath, cmRoot)
+        exPathTokens, isAbsPath = tokenizeNormal(filePath, cmRoot)
 
     fullExtRefPath = os.path.abspath(os.path.join(*exPathTokens)).replace("%20", " ")
 
@@ -314,13 +314,13 @@ def log_info( msg=None, xl_path_val=None, xl_path=None, xl_path_corrected=None, 
     with open("excel_external_reference_correction.csv", "a") as f:
         def noneToStr(m):
             return( "" if (m is None) else m )
-        f.write(f"OK,{pathOk},{fileFound},{xl_filename},{xl_path_val},{xl_path},{xl_path_corrected},{noneToStr(msg)}\n")
+        f.write(f"OK,{pathOk},{fileFound},{xl_path_val != xl_path_corrected},{xl_filename},{xl_path_val},{xl_path},{xl_path_corrected},{noneToStr(msg)}\n")
 
 def log_failure( msg=None, xl_path_val=None, xl_path=None, xl_filename=None, pathOk=None, fileFound=None):
     with open("excel_external_reference_correction.csv", "a") as f:
         def noneToStr(m):
             return( "" if (m is None) else m )
-        f.write(f"FAIL,{pathOk},{fileFound},{xl_filename},{xl_path_val},{xl_path},,{noneToStr(msg)}\n")
+        f.write(f"FAIL,{pathOk},{fileFound},True,{xl_filename},{xl_path_val},{xl_path},,{noneToStr(msg)}\n")
 
 #############################################################
 #############################################################
@@ -342,23 +342,34 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
         try:
             try:
                 # Tokenizes RELATIVE to cims-models
-                oldPathTokens = tokenizeWindows(oldPath, pathToCimsModels)
+                oldPathTokens, isAbsPath = tokenizeWindows(oldPath, pathToCimsModels)
             except UnexpectedFwdSlashes:
-                oldPathTokens = tokenizeNormal(oldPath, pathToCimsModels)
+                oldPathTokens, isAbsPath = tokenizeNormal(oldPath, pathToCimsModels)
 
             # Ah... make sure these are dealt with correctly. The relative external links are from
             # the perspective of the excel files, but below this was being dropped into `os.path.abspath`
             # which is from the perspective of where this script is running, so it was backing out too
             # far and failing.
-            fullExtRefPath = os.path.abspath(
-                os.path.join(
-                    os.path.split(xl_path)[0],
-                    os.path.join(*oldPathTokens)
-            ))
+
+            if isAbsPath:
+                fullExtRefPath = os.path.abspath(
+                    os.path.join(
+                        pathToCimsModels,
+                        os.path.join(*oldPathTokens)
+                )).replace("%20", " ")
+            else:
+                fullExtRefPath = os.path.abspath(
+                    os.path.join(
+                        os.path.split(xl_path)[0],
+                        os.path.join(*oldPathTokens)
+                )).replace("%20", " ")
+
+
+
             #fullExtRefPath = os.path.abspath(os.path.join(*oldPathTokens)).replace("%20", " ")
 
-            from IPython import embed; embed(header="check: ")
-        
+            #from IPython import embed; embed(header="check here: ")
+
         except CIMSModelsNotFound:
             log_failure(xl_path_val=oldPath, xl_path=None, xl_filename=xl_path, msg="cims-models not in path", pathOk=False, fileFound=False)
             continue
@@ -447,7 +458,7 @@ def buildLookupTable(cmRoot):
     fpDict = {}
     for (dirpath, dirnames, filenames) in os.walk(cmRoot):
         for f in filenames:
-            if os.path.splitext(f)[1] == ".xlsx":
+            if (os.path.splitext(f)[1] == ".xlsx") or (os.path.splitext(f)[1] == ".xlsb"):
                 fullSysPath = os.path.join(dirpath, f)
                 fpDict[fullSysPath.lower()] = fullSysPath
             else:
@@ -482,7 +493,7 @@ if __name__ == "__main__":
         def isMsg(m):
             return( "" if (m is None) else m )
         #f.write(f"OK,{xl_filename},{xl_path},{xl_path_corrected},{isMsg(msg)}\n")
-        f.write(f"CorrectionStatus,PathOK,FileFound,Filename,ExtLinkVal,ExtLinkPath,ExtLinkPath_corrected,Message/Error\n")
+        f.write(f"CorrectionStatus,PathOK,FileFound,CorrectionNeeded,Filename,ExtLinkVal,ExtLinkPath,ExtLinkPath_corrected,Message/Error\n")
 
     whereAreWe = os.path.abspath('.')
     if os.path.split(whereAreWe)[1] != 'cims-models':
