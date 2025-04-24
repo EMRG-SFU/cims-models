@@ -311,13 +311,13 @@ def find_excel_files( dirPath ):
 # A couple of useful loggers
 #
 def log_info( msg=None, xl_path_val=None, xl_path=None, xl_path_corrected=None, xl_filename=None, pathOk=None, fileFound=None ):
-    with open("excel_external_reference_correction.log", "a") as f:
+    with open("excel_external_reference_correction.csv", "a") as f:
         def noneToStr(m):
             return( "" if (m is None) else m )
         f.write(f"OK,{pathOk},{fileFound},{xl_filename},{xl_path_val},{xl_path},{xl_path_corrected},{noneToStr(msg)}\n")
 
 def log_failure( msg=None, xl_path_val=None, xl_path=None, xl_filename=None, pathOk=None, fileFound=None):
-    with open("excel_external_reference_correction.log", "a") as f:
+    with open("excel_external_reference_correction.csv", "a") as f:
         def noneToStr(m):
             return( "" if (m is None) else m )
         f.write(f"FAIL,{pathOk},{fileFound},{xl_filename},{xl_path_val},{xl_path},,{noneToStr(msg)}\n")
@@ -476,7 +476,7 @@ if __name__ == "__main__":
     time_start = datetime.now()
 
     # Reset the info/failure log files
-    with open("excel_external_reference_correction.log", "w") as f:
+    with open("excel_external_reference_correction.csv", "w") as f:
         def isMsg(m):
             return( "" if (m is None) else m )
         #f.write(f"OK,{xl_filename},{xl_path},{xl_path_corrected},{isMsg(msg)}\n")
