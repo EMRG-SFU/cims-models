@@ -356,6 +356,8 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
                     os.path.join(*oldPathTokens)
             ))
             #fullExtRefPath = os.path.abspath(os.path.join(*oldPathTokens)).replace("%20", " ")
+
+            from IPython import embed; embed(header="check: ")
         
         except CIMSModelsNotFound:
             log_failure(xl_path_val=oldPath, xl_path=None, xl_filename=xl_path, msg="cims-models not in path", pathOk=False, fileFound=False)
