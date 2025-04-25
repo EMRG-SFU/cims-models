@@ -513,7 +513,7 @@ if __name__ == "__main__":
 
 
         elif os.path.isfile(sys.argv[1]):
-            correct_ext_links(sys.argv[1], whereAreWe, pathLookupTable, "_corr")
+            correct_ext_links(sys.argv[1], whereAreWe, pathLookupTable)
 
         else:
             raise RuntimeError("Argument seems to be neither a directory nor a file.")
