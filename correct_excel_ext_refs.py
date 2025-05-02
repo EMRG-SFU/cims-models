@@ -347,22 +347,6 @@ def check_path_relative(p):
 
     return(True)
 
-#def check_ext_links_relative(xl_path, *args, **kwargs):
-#    """
-#    This checks that external reference links are relative links, in the unix-y style (separated using
-#    forward slashes as path component delimiters).
-#    """
-#    
-#    wb = op.open(xl_path)
-#    for index in range(0, len(wb._external_links)):
-#        pathToTest = wb._external_links[index].file_link.target
-#        if check_path_relative(pathToTest):
-#            continue
-#        else:
-#            return(False)
-#
-#    wb.close()
-#    return(True)
 
 
 #############################################################
@@ -613,27 +597,7 @@ def iterate_list(pathList,
         correctionFunc(p, pathToCimsModels, pathLookupTable, corrExt, cmdArgs=cmdArgs)
 
 
-if __name__ == "__main__":# Here are all the necessary windows-style filepath conditions, and we want to fail if we
-    # find any of these things.
-    if re.match("^file:/", p):
-        return(False)
-    if re.search("\\\\", p):
-        return(False)
-    if re.match("[a-zA-Z]:", p):
-        return(False)
-
-    # So we almost certainly don't have a windows-style filepath, so we split it by forward
-    # slashes, and make sure the first item in the list isn't "", as this only happens when the
-    # path begins with a forward slash (i.e. is an absolute path). We accept anything else as a
-    # valid relative path.
-
-    p2 = re.split("/", p)
-    if not len(p2) >= 1:
-        return(False)
-    if p2[0] == "":
-        return(False)
-
-    return(True)
+if __name__ == "__main__":
 
     time_start = datetime.now()
 
@@ -754,6 +718,7 @@ if __name__ == "__main__":# Here are all the necessary windows-style filepath co
     ###############################################
 
     elif args.command_name == "CORRECT":
+
         # Reset the info/failure log files
         if not args.no_log:
             with open("excel_external_reference_correction.csv", "w") as f:
