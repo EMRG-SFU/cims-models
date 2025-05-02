@@ -13,6 +13,12 @@ import logging
 from datetime import datetime
 
 
+argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+argParser.add_argument("-d", "--dry-run", help="Run as normal, but don't actually change external reference links (useful for logging what WOULD be done)", action="store_true", default=False)
+argParser.add_argument("-nl", "--no-log", help="Suppress log file generation (excel_external_reference_correction.csv)", action="store_true", default=False)
+argParser.add_argument("-s", "--strict", help="Different strictness levels\n  0: log all file path errors but continue\n  1: fail when an unfixable path encountered\n  2: fail when file referred to by path can't be found in `cims-models` folder hierarchy.", type=int, action="store", default=0, choices=[0,1,2])
+argParser.add_argument("files", nargs="*")
+
 
 #############################################################
 #############################################################
@@ -33,7 +39,27 @@ logging.basicConfig(filename="paths_for_token.log",
 winlogger = logging.getLogger("winlogger")
 normlogger = logging.getLogger("normlogger")
 
+class CIMSModelsNotFound(Exception):
+    """
+    How to fail when `cims-models` is not found within the external link
+    path we're trying to correct.
+    """
+    pass
 
+class EmptyPathError(Exception):
+    """
+    How to fail when the parsed path doesn't contain anything. I don't think this case can
+    actually happen anymore, but this exception is still here and handled everywhere.
+    """
+    pass
+
+class ExtRefFileNotFound(Exception):
+    """
+    How to fail when the file referred to by an excel external reference isn't found within
+    the users `cims-models` file hierarchy. This is only an error at certain levels of 
+    strictness.
+    """
+    pass
 #############################################################
 #############################################################
 #############################################################
@@ -101,7 +127,7 @@ def tokenizeWindows( p, pathToCimsModels ):
         try:
             startInd = p3.index('cims-models')
         except:
-            raise CIMSModelsNotFound('')
+            raise CIMSModelsNotFound(f"'cims-models' not found in path: {p}")
         # Get rid of all the file path items above 
         # and including `cims-models`.
         p4 = p3[(startInd+1):]
@@ -133,7 +159,7 @@ def tokenizeNormal( p, pathToCimsModels ):
         try:
             startInd = p2.index('cims-models')
         except:
-            raise CIMSModelsNotFound('')
+            raise CIMSModelsNotFound(f"'cims-models' not found in path: {p}")
         # Get rid of all the file path items above
         # and including`cims-models`.
         p3 = p2[(startInd+1):]
@@ -195,12 +221,7 @@ def getSystemPath(cmRoot, filePath, *args, **kwargs):
 
 
 
-class CIMSModelsNotFound(Exception):
-    """
-    How to fail when `cims-models` is not found within the external link
-    path we're trying to correct.
-    """
-    pass
+
 
 def repathWindowsRelative( p, pathToCimsModels, num_backups ):
     #print(f"calling repathWindowsRelative for {p}")
@@ -216,7 +237,7 @@ def repathWindowsRelative( p, pathToCimsModels, num_backups ):
     try:
         startInd = p3.index('cims-models')
     except:
-        raise CIMSModelsNotFound('')
+        raise CIMSModelsNotFound(f"'cims-models' not found in path: {p}")
 
     p4 = p3[(startInd+1):]
 
@@ -234,7 +255,7 @@ def repathNormalRelative( p, pathToCimsModels, num_backups ):
     try:
         startInd = p2.index('cims-models')
     except:
-        raise CIMSModelsNotFound('')
+        raise CIMSModelsNotFound(f"'cims-models' not found in path: {p}")
 
     # Get rid of all the file path items above
     # and including`cims-models`.
@@ -328,7 +349,7 @@ def log_failure( msg=None, xl_path_val=None, xl_path=None, xl_filename=None, pat
 # The main function for link correction.
 #
 
-def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, dryRun=False):
+def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, cmdArgs=None):
 
     wb = op.open(xl_path)
 
@@ -371,10 +392,16 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
             #from IPython import embed; embed(header="check here: ")
 
         except CIMSModelsNotFound:
-            log_failure(xl_path_val=oldPath, xl_path=None, xl_filename=xl_path, msg="cims-models not in path", pathOk=False, fileFound=False)
+            if not cmdArgs.no_log:
+                log_failure(xl_path_val=oldPath, xl_path=None, xl_filename=xl_path, msg="cims-models not in path", pathOk=False, fileFound=False)
+            if cmdArgs.strict >= 1:
+                raise
             continue
         except EmptyPathError:
-            log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=None, xl_filename=xl_path, pathOk=False, fileFound=False)
+            if not cmdArgs.no_log:
+                log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=None, xl_filename=xl_path, pathOk=False, fileFound=False)
+            if cmdArgs.strict >= 1 :
+                raise
             continue
         
         if fullExtRefPath.lower() in pathLookupTable.keys():
@@ -390,25 +417,43 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
                 try:
                     newPath = repathNormalRelative(pathToUse, pathToCimsModels, num_backups)
                 except CIMSModelsNotFound:
-                    log_failure(xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, msg="IMPOSSIBLE. cims-models not in path", pathOk=False, fileFound=True)
+                    if not cmdArgs.no_log:
+                        log_failure(xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, msg="IMPOSSIBLE. cims-models not in path", pathOk=False, fileFound=True)
+                    if cmdArgs.strict >= 1:
+                        raise
                     continue
                 except EmptyPathError:
-                    log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=True)
+                    if not cmdArgs.no_log:
+                        log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=True)
+                    if cmdArgs.strict >= 1:
+                        raise
                     continue
             except CIMSModelsNotFound:
-                log_failure(xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, msg="cims-models not in path", pathOk=False, fileFound=True)
+                if not cmdArgs.no_log:
+                    log_failure(xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, msg="cims-models not in path", pathOk=False, fileFound=True)
+                if cmdArgs.strict >= 1:
+                    raise
                 continue
             except EmptyPathError:
-                log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=True)
+                if not cmdArgs.no_log:
+                    log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=True)
+                if cmdArgs.strict >= 1:
+                    raise
                 continue
-
-            log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK and File Found", pathOk=True, fileFound=True)
+            
+            if not cmdArgs.no_log:
+                log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK and File Found", pathOk=True, fileFound=True)
 
         else:
             # The path doesn't exist. On the filesystem.
             # In this case we want to prepare it for use by Excel AS IF IT WERE here on the
             # filesystem. I guess in case it's just running late and shows up later? But anyway,
-            # we log that this has occurred.
+            # we log that this has occurred (if logging enabled).
+
+            # If the strict level is 2, we fail here
+            if cmdArgs.strict >= 2:
+                raise ExtRefFileNotFound(f"File referred to cannot be found in `cims-models` hierarchy: {fullExtRufPath}")
+
             pathToUse = fullExtRefPath
             try:
                 newPath = repathWindowsRelative(pathToUse, pathToCimsModels, num_backups)
@@ -416,21 +461,33 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
                 try:
                     newPath = repathNormalRelative(pathToUse, pathToCimsModels, num_backups)
                 except CIMSModelsNotFound:
-                    log_failure(msg="Filepath not found on system AND `cims-models` not in filepath.",xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                    if not cmdArgs.no_log:
+                        log_failure(msg="Filepath not found on system AND `cims-models` not in filepath.",xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                    if cmdArgs.strict >= 1:
+                        raise
                     continue
                 except EmptyPathError:
-                    log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                    if not cmdArgs.no_log:
+                        log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                    if cmdArgs.strict >= 1:
+                        raise
                     continue
             except CIMSModelsNotFound:
-                log_failure(msg="Filepath not found on system AND `cims-models` not in filepath.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                if not cmdArgs.no_log:
+                    log_failure(msg="Filepath not found on system AND `cims-models` not in filepath.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                if cmdArgs.strict >= 1:
+                    raise
                 continue
             except EmptyPathError:
-                log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                if not cmdArgs.no_log:
+                    log_failure( msg="Path is empty.", xl_path_val=oldPath, xl_path=pathToUse, xl_filename=xl_path, pathOk=False, fileFound=False)
+                if cmdArgs.strict >= 1:
+                    raise
                 continue
+            if not cmdArgs.no_log:
+                log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK but File Not Found", pathOk=True, fileFound=False)
 
-            log_info(xl_path_val=oldPath, xl_path=pathToUse, xl_path_corrected=newPath, xl_filename=xl_path, msg="Path OK but File Not Found", pathOk=True, fileFound=False)
-
-        if not dryRun:
+        if not cmdArgs.dry_run:
             wb._external_links[index].file_link.target = newPath
             wb._external_links[index].file_link.id = 'rId1'
 
@@ -441,8 +498,10 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
         temp_f_splt = os.path.splitext(temp_splt[1])
         xl_path_corrected = os.path.join(temp_splt[0], temp_f_splt[0] + corrExt + temp_f_splt[1])
 
-    if not dryRun:
+    if not cmdArgs.dry_run:
         wb.save(xl_path_corrected)
+    
+    wb.close()
 
 
 
@@ -470,7 +529,8 @@ def correct_list(pathList,
                  pathToCimsModels, 
                  pathLookupTable, 
                  corrExt=None,
-                 correctionFunc=correct_ext_links):
+                 correctionFunc=correct_ext_links,
+                 cmdArgs=None):
     """
     `pathList`: a list of relative paths to xlsx files, rooted at `cims-models`.
     `pathToCimsModels`: (unused, but just in case) Absolute path to `cims-models` dir.
@@ -481,19 +541,22 @@ def correct_list(pathList,
     for p in pathList:
         if (not os.path.isfile(p)) or (os.path.splitext(p)[1] != ".xlsx"):
             raise RuntimeError(f"Supplied path is not xlsx file: {p}")
-        correctionFunc(p, pathToCimsModels, pathLookupTable, corrExt)
+        correctionFunc(p, pathToCimsModels, pathLookupTable, corrExt, cmdArgs=cmdArgs)
 
 
 if __name__ == "__main__":
 
     time_start = datetime.now()
 
+    args = argParser.parse_args()
+
     # Reset the info/failure log files
-    with open("excel_external_reference_correction.csv", "w") as f:
-        def isMsg(m):
-            return( "" if (m is None) else m )
-        #f.write(f"OK,{xl_filename},{xl_path},{xl_path_corrected},{isMsg(msg)}\n")
-        f.write(f"CorrectionStatus,PathOK,FileFound,CorrectionNeeded,Filename,ExtLinkVal,ExtLinkPath,ExtLinkPath_corrected,Message/Error\n")
+    if not args.no_log:
+        with open("excel_external_reference_correction.csv", "w") as f:
+            def isMsg(m):
+                return( "" if (m is None) else m )
+            #f.write(f"OK,{xl_filename},{xl_path},{xl_path_corrected},{isMsg(msg)}\n")
+            f.write(f"CorrectionStatus,PathOK,FileFound,CorrectionNeeded,Filename,ExtLinkVal,ExtLinkPath,ExtLinkPath_corrected,Message/Error\n")
 
     whereAreWe = os.path.abspath('.')
     if os.path.split(whereAreWe)[1] != 'cims-models':
@@ -503,17 +566,17 @@ if __name__ == "__main__":
     # in this table are these paths.lowered().
     pathLookupTable = buildLookupTable(whereAreWe)
 
-    if len(sys.argv) == 1:
-        correct_list(find_excel_files('.'), whereAreWe, pathLookupTable, correctionFunc=correct_ext_links)
+    if len(args.files) == 0:
+        correct_list(find_excel_files('.'), whereAreWe, pathLookupTable, correctionFunc=correct_ext_links, cmdArgs=args)
 
 
-    elif len(sys.argv) == 2:
-        if os.path.isdir(sys.argv[1]):
-            correct_list(find_excel_files(sys.argv[1]), whereAreWe, pathLookupTable, correctionFunc=correct_ext_links)
+    elif len(args.files) == 1:
+        if os.path.isdir(args.files[0]):
+            correct_list(find_excel_files(args.files[0]), whereAreWe, pathLookupTable, correctionFunc=correct_ext_links, cmdArgs=args)
 
 
-        elif os.path.isfile(sys.argv[1]):
-            correct_ext_links(sys.argv[1], whereAreWe, pathLookupTable)
+        elif os.path.isfile(args.files[0]):
+            correct_ext_links(args.files[0], whereAreWe, pathLookupTable, cmdArgs=args)
 
         else:
             raise RuntimeError("Argument seems to be neither a directory nor a file.")
@@ -521,7 +584,7 @@ if __name__ == "__main__":
         # Here we assume that all positional arguments are pathnames pointing to specific 
         # excel files. There can be any number of these. We correct the external references in
         # each of them.
-        correct_list(sys.argv[1:], whereAreWe, pathLookupTable, correctionFunc=correct_ext_links)
+        correct_list(args.files, whereAreWe, pathLookupTable, correctionFunc=correct_ext_links, cmdArgs=args)
 
     time_end = datetime.now()
     print(f"Finished link correction in {time_end - time_start}.")
