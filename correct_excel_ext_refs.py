@@ -386,8 +386,8 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
 
 
         # In strictest condition, we want to fail HERE if the path right out of the spreadsheet is not a relative path.
-        if cmdArgs.checkRelative and (not check_path_relative(oldPath)):
-            raise PathNotRelative(f"Excel file at {xl_path} contains a non-relative path, {oldPath}, with strictness >= 3.")
+        if hasattr(cmdArgs, 'checkRelative') and cmdArgs.checkRelative and (not check_path_relative(oldPath)):
+            raise PathNotRelative(f"Excel file at {xl_path} contains a non-relative path, {oldPath}.")
 
         try:
             try:
