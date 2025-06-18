@@ -1,4 +1,0 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
-Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.BC,Service,BC,Electricity,,,Service requested,,,CIMS.CAN.BC.Electricity.Utility Generation,activity_data_region,MWh,49518225.3735,49381909.5075,43944024.0216,50033240.8535322,53301570.8778,57541941.1771769,60477158.479476,63562101.3634197,66804407.338429,70212103.5036631,73793626.4210113,Remove transmission losses; added back using multipliers below
-CIMS.CAN.BC.Electricity,Sector,BC,Electricity,,,Service requested,,,CIMS.CAN.BC.Electricity.Utility Generation,,MWh,0,0,0,0,0,0,0,0,0,0,0,

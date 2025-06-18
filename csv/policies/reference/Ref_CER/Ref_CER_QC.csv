@@ -1,0 +1,11 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Coal,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Coal CCS,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Fuel Oil,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Natural Gas SC,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Natural Gas CC,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Shoulder Load,Service,QC,Electricity,Shoulder Load,Coal,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Shoulder Load,Service,QC,Electricity,Shoulder Load,Fuel Oil,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Shoulder Load,Service,QC,Electricity,Shoulder Load,Natural Gas SC,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,
+CIMS.CAN.QC.Electricity.Utility Generation.Shoulder Load,Service,QC,Electricity,Shoulder Load,Natural Gas CC,Market share new_max,,,,,%,1,1,1,1,1,1,0.5,0.25,0,0,0,

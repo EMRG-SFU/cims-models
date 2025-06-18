@@ -1,0 +1,11 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.BC.Fuel Blends.Gasoline_Transportation,Service,BC,,Gasoline_Transportation,,Market share_class_min,Gasoline_Transportation,,,,,0,0,0.02715849209566,0.04660583493596,0.04660583493596,0.076476,0.1268808,0.105734,0.105734,0.105734,0.105734,
+CIMS.CAN.BC.Fuel Blends.Gasoline_Transportation,Service,BC,,Gasoline_Transportation,Ethanol,Market share_class,Gasoline_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.BC.Fuel Blends.Gasoline_Transportation,Service,BC,,Gasoline_Transportation,Renewable Gasoline,Market share_class,Gasoline_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.BC.Fuel Blends.Diesel_Transportation,Service,BC,,Diesel_Transportation,,Market share_class_min,Diesel_Transportation,,,,,0,0,0.02357274031852,0.05261036081435,0.10605444941081,0.133095,0.133095,0.133095,0.133095,0.133095,0.133095,
+CIMS.CAN.BC.Fuel Blends.Diesel_Transportation,Service,BC,,Diesel_Transportation,Biodiesel,Market share_class,Diesel_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.BC.Fuel Blends.Diesel_Transportation,Service,BC,,Diesel_Transportation,Renewable Diesel,Market share_class,Diesel_Transportation,,,,,,,,,,,,,,,,
+CIMS.CAN.BC.Fuel Blends.Diesel_Industrial,Service,BC,,Diesel_Industrial,,Market share_class_min,Diesel_Industrial,,,,,0,0,0.02357274031852,0.05261036081435,0.10605444941081,0.133095,0.133095,0.133095,0.133095,0.133095,0.133095,
+CIMS.CAN.BC.Fuel Blends.Diesel_Industrial,Service,BC,,Diesel_Industrial,Biodiesel,Market share_class,Diesel_Industrial,,,,,,,,,,,,,,,,
+CIMS.CAN.BC.Fuel Blends.Diesel_Industrial,Service,BC,,Diesel_Industrial,Renewable Diesel,Market share_class,Diesel_Industrial,,,,,,,,,,,,,,,,

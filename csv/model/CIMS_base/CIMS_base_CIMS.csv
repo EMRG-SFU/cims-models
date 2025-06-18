@@ -10,3 +10,4 @@ CIMS,Root,CIMS,,,,Tax_foresight,Cement,,,,,Myopic,Myopic,Myopic,Myopic,Myopic,My
 CIMS,Root,CIMS,,,,Retrofit_heterogeneity,,,,,,30,30,30,30,30,30,30,30,30,30,30,
 CIMS,Root,CIMS,,,,Retrofit_existing_max,,,,,%,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,
 CIMS,Root,CIMS,,,,Service requested,,,CIMS.CAN,n/a,unit,1,1,1,1,1,1,1,1,1,1,1,
+CIMS,Root,CIMS,,,,Service requested,,,CIMS.RoW,n/a,unit,1,1,1,1,1,1,1,1,1,1,1,
