@@ -1,0 +1,4 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.MB,Service,MB,Electricity,,,Service requested,,,CIMS.CAN.MB.Electricity.Utility Generation,activity_data_region,MWh,28488518.1623118,32455372.4178,29605670.219,31440367.132,32647733.9804,34173465.8160498,35916656.0194171,37748766.442392,39674332.9098317,41698122.6192462,43825145.9431299,
+CIMS.CAN.MB.Electricity,Sector,MB,Electricity,,,Service requested,,,CIMS.CAN.MB.Electricity.Utility Generation,activity_data_generic,MWh,0,0,0,0,0,0,0,0,0,0,0,
