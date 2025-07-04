@@ -99,7 +99,6 @@ CIMS.CAN.QC.Iron and Steel.Steel Product.Slabs.Slab Finishing.Finishing Mills,Se
 CIMS.CAN.QC.Iron and Steel.Steam,Service,QC,Iron and Steel,Steam,Coal CCS,Market share new_max,,,,,%,0,0,0,0,0.001,1,1,1,1,1,1,
 CIMS.CAN.QC.Iron and Steel.Steam,Service,QC,Iron and Steel,Steam,NG CCS,Market share new_max,,,,,%,0,0,0,0,0.001,1,1,1,1,1,1,
 CIMS.CAN.QC.Iron and Steel.Steam,Service,QC,Iron and Steel,Steam,BPST NG 30 MW CCS,Market share new_max,,,,,%,0,0,0,0,0.001,1,1,1,1,1,1,
-CIMS.CAN.QC.Iron and Steel.Steam,Service,QC,Iron and Steel,Steam,Coal steam turbine CCS,Market share new_max,,,,,%,0,0,0,0,0.001,1,1,1,1,1,1,
 CIMS.CAN.QC.Iron and Steel.Ventilation,Service,QC,Iron and Steel,Ventilation,High Eff backward inclined fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
 CIMS.CAN.QC.Iron and Steel.Ventilation,Service,QC,Iron and Steel,Ventilation,High Eff airfoil fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
 CIMS.CAN.QC.Iron and Steel.Conveyance,Service,QC,Iron and Steel,Conveyance,High Eff belt conveyor,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
@@ -271,3 +270,4 @@ CIMS.CAN.QC.Pulp and Paper.Methane Blend,Service,QC,Pulp and Paper,Methane Blend
 CIMS.CAN.QC.Light Industrial.Methane Blend,Service,QC,Light Industrial,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.QC.Residential.Methane Blend,Service,QC,Residential,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.QC.Commercial.Methane Blend,Service,QC,Commercial,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
+,,,,,,,,,,,,,,,,,,,,,,,
