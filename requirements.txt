@@ -1,0 +1,2 @@
+jupyter
+cims @ git+https://github.com/EMRG-SFU/cims@staging

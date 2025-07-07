@@ -1,0 +1,1 @@
+This empty directory is provided to receive results from a "Reference" scenario run. Results files (.csv) will not be tracked in git.

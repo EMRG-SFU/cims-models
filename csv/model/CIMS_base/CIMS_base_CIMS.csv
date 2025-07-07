@@ -1,0 +1,13 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS,Root,CIMS,,,,Service provided,,,,,unit,,,,,,,,,,,,
+CIMS,Root,CIMS,,,,Competition type,Root,,,,,,,,,,,,,,,,
+CIMS,Root,CIMS,,,,Currency,,,,n/a,CAD,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,2020,
+CIMS,Root,CIMS,,,,Emissions_GWP,CH4,,,IPCC AR5,tCO2e/tGHG,28,28,28,28,28,28,28,28,28,28,28,
+CIMS,Root,CIMS,,,,Emissions_GWP,N2O,,,IPCC AR5,tCO2e/tGHG,265,265,265,265,265,265,265,265,265,265,265,
+CIMS,Root,CIMS,,,,Emissions_GWP,SF6,,,IPCC AR5,tCO2e/tGHG,23500,23500,23500,23500,23500,23500,23500,23500,23500,23500,23500,
+CIMS,Root,CIMS,,,,Tax_foresight,Cement,,,,,Myopic,Myopic,Myopic,Myopic,Myopic,Myopic,Myopic,Myopic,Myopic,Myopic,Myopic,
+CIMS,Root,CIMS,,,,Retrofit_heterogeneity,,,,,,30,30,30,30,30,30,30,30,30,30,30,
+CIMS,Root,CIMS,,,,Retrofit_existing_max,,,,,%,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,0.05,
+CIMS,Root,CIMS,,,,Service requested,,,CIMS.CAN,n/a,unit,1,1,1,1,1,1,1,1,1,1,1,
+CIMS,Root,CIMS,,,,Service requested,,,CIMS.RoW,n/a,unit,1,1,1,1,1,1,1,1,1,1,1,

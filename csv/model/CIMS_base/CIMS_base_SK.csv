@@ -1,0 +1,7 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN,Region,CAN,,,,Service requested,,,CIMS.CAN.SK,n/a,unit,1,1,1,1,1,1,1,1,1,1,1,
+CIMS.CAN.SK,Region,SK,,,,Service provided,,,,,unit,,,,,,,,,,,,
+CIMS.CAN.SK,Region,SK,,,,Competition type,Region,,,,,,,,,,,,,,,,
+CIMS.CAN.SK,Region,SK,,,,Attribute,Population,,,StatCan,persons,1007565,993500,1051443,1120967,1179300,1296800,1398300,1495100,1583800,1641209.78292877,1697133.4199157,
+CIMS.CAN.SK,Region,SK,,,,Attribute,GDP,,,StatCan,$ million,67851.8482767246,75416.6845226557,80371.2826822702,92750.6070975528,91073.7001274762,102792.923232619,113861.412738874,125221.422013438,138324.746608231,152739.626610976,167920.236023272,

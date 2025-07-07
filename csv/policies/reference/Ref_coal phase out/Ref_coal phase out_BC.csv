@@ -1,0 +1,6 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.BC.Electricity.Utility Generation.Base Load,Service,BC,Electricity,Base Load,Coal,Unavailable,,,,,Year,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,
+CIMS.CAN.BC.Electricity.Utility Generation.Base Load,Service,BC,Electricity,Base Load,Coal,Retrofit_existing_min,,,,,%,0,0,0,0,0.3,0.5,1,1,1,1,1,
+CIMS.CAN.BC.Electricity.Utility Generation.Shoulder Load,Service,BC,Electricity,Shoulder Load,Coal,Unavailable,,,,,Year,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,2021,
+CIMS.CAN.BC.Electricity.Utility Generation.Shoulder Load,Service,BC,Electricity,Shoulder Load,Coal,Retrofit_existing_min,,,,,%,0,0,0,0,0.3,0.5,1,1,1,1,1,

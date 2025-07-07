@@ -1,0 +1,5 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.RoW.Natural Gas Exports,Sector,RoW,Natural Gas Exports,,,Service provided,,,,,GJ,,,,,,,,,,,,
+CIMS.RoW.Natural Gas Exports,Sector,RoW,Natural Gas Exports,,,Competition type,Sector,,,,,,,,,,,,,,,,
+CIMS.RoW.Natural Gas Exports,Sector,RoW,Natural Gas Exports,,,Service requested,,,CIMS.CAN.Natural Gas Market,,GJ,,,,,,,,,,,,

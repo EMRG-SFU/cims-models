@@ -1,0 +1,4 @@
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Nuclear,Retrofit_existing_min,,,,,%,0,0,0,1,0,0,0,0,0,0,0,Gentilly-2 shutdown in 2012
+CIMS.CAN.QC.Electricity.Utility Generation.Base Load,Service,QC,Electricity,Base Load,Nuclear,Market share new_max,,,,,%,0,0,0,0,0,0,,,,,,2030 and later blank to allow refurbishment of Gentilly-2
