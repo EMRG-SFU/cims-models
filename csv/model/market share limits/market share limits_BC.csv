@@ -1,4 +1,4 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿CIMS.CAN.BC.Natural Gas.Production.Supply.CCS,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.BC.Coal Mining.Coal.Raw Product.Transportation,Service,BC,Coal Mining,Transportation,Conveyance,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,
 CIMS.CAN.BC.Coal Mining.Ventilation,Service,BC,Coal Mining,Ventilation,High Eff backward inclined fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
@@ -278,7 +278,6 @@ CIMS.CAN.BC.Transportation Personal.Passenger Vehicles,Service,BC,Transportation
 CIMS.CAN.BC.Waste.Sites.Large Sites,Service,BC,Waste,Large Sites,Large Sites No Control,Market share new_max,,,,,%,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,0.345331549,
 CIMS.CAN.BC.Agriculture.Process.Soils,Service,BC,Agriculture,Soils,Zero Tillage,Market share new_max,,,,,%,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,
 CIMS.CAN.BC.Coal Mining.Methane Blend,Service,BC,Coal Mining,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
-CIMS.CAN.BC.Petroleum Crude.Methane Blend,Service,BC,Petroleum Crude,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Mining.Methane Blend,Service,BC,Mining,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Petroleum Refining.Methane Blend,Service,BC,Petroleum Refining,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Industrial Minerals.Methane Blend,Service,BC,Industrial Minerals,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
@@ -289,7 +288,6 @@ CIMS.CAN.BC.Light Industrial.Methane Blend,Service,BC,Light Industrial,Methane B
 CIMS.CAN.BC.Residential.Methane Blend,Service,BC,Residential,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Commercial.Methane Blend,Service,BC,Commercial,Methane Blend,Biogas,Market share new_max,,,,,%,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Coal Mining.Methane Blend,Service,BC,Coal Mining,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
-CIMS.CAN.BC.Petroleum Crude.Methane Blend,Service,BC,Petroleum Crude,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Mining.Methane Blend,Service,BC,Mining,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Petroleum Refining.Methane Blend,Service,BC,Petroleum Refining,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Industrial Minerals.Methane Blend,Service,BC,Industrial Minerals,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
@@ -299,3 +297,5 @@ CIMS.CAN.BC.Pulp and Paper.Methane Blend,Service,BC,Pulp and Paper,Methane Blend
 CIMS.CAN.BC.Light Industrial.Methane Blend,Service,BC,Light Industrial,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Residential.Methane Blend,Service,BC,Residential,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
 CIMS.CAN.BC.Commercial.Methane Blend,Service,BC,Commercial,Methane Blend,Biomass Gasification,Market share new_max,,,,,%,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,0.03,Quick method to simulate ethanol feedstock limits (with FIC) - REPLACE WITH SOMETHING BETTER!
+,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,
