@@ -1,11 +1,12 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON.Natural Gas.Production.Supply.Extraction.Off road transport,Service,ON,Natural Gas,Off road transport,Transport Efficient,FIC,,,,,$,120,120,120,120,120,120,120,120,120,120,120,
-CIMS.CAN.ON.Natural Gas.Production.Supply.Processing,Service,ON,Natural Gas,Processing,Processing,FIC,,,,,$,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,
+CIMS.CAN.ON.Natural Gas.Production.Supply.Processing,Service,ON,Natural Gas,Processing,Processing,FIC,,,,,$,500,500,500,500,500,500,500,500,500,500,500,
 CIMS.CAN.ON.Natural Gas.Production.Supply.Direct Heat,Service,ON,Natural Gas,Direct Heat,Cogeneration,FIC,,,,,$,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,
 CIMS.CAN.ON.Natural Gas.Production.Supply.Direct Drive Small,Service,ON,Natural Gas,Direct Drive Small,Reciprocating compressor Efficient,FIC,,,,,$,160,160,160,160,160,160,160,160,160,160,160,
 CIMS.CAN.ON.Natural Gas.Production.Supply.Direct Drive Small,Service,ON,Natural Gas,Direct Drive Small,Reciprocating compressor Electric,FIC,,,,,$,80,80,80,80,80,80,80,80,80,80,80,
 CIMS.CAN.ON.Natural Gas.Production.Supply.Venting.Point Venting,Service,ON,Natural Gas,Point Venting,No VRU,FIC,,,,,$,200,200,200,200,200,200,200,200,200,200,200,
+CIMS.CAN.ON.Natural Gas.Production.Supply.Fugitive,Service,ON,Natural Gas,Fugitive,Low LDAR,FIC,,,,,$,-285,-285,-285,-285,-285,-285,-285,-285,-285,-285,-285,
 CIMS.CAN.ON.Natural Gas.OG Diesel Blend,Service,ON,Natural Gas,OG Diesel Blend,Biodiesel,FIC,,,,,$,7,7,7,7,7,7,7,7,7,7,7,
 CIMS.CAN.ON.Natural Gas.OG Gasoline Blend,Service,ON,Natural Gas,OG Gasoline Blend,Ethanol,FIC,,,,,$,14,14,14,14,14,14,14,14,14,14,14,
 CIMS.CAN.ON.Petroleum Refining.Refined Petroleum Products.Alkylates.Isoparaffins.Isomerization,Service,ON,Petroleum Refining,Isomerization,Isomerization tower,FIC,,,,,$,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,39692.6775431861,
