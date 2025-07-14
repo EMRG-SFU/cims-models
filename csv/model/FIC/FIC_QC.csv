@@ -1,11 +1,12 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.QC.Natural Gas.Production.Supply.Extraction.Off road transport,Service,QC,Natural Gas,Off road transport,Transport Efficient,FIC,,,,,$,120,120,120,120,120,120,120,120,120,120,120,
-CIMS.CAN.QC.Natural Gas.Production.Supply.Processing,Service,QC,Natural Gas,Processing,Processing,FIC,,,,,$,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,
+CIMS.CAN.QC.Natural Gas.Production.Supply.Processing,Service,QC,Natural Gas,Processing,Processing,FIC,,,,,$,500,500,500,500,500,500,500,500,500,500,500,
 CIMS.CAN.QC.Natural Gas.Production.Supply.Direct Heat,Service,QC,Natural Gas,Direct Heat,Cogeneration,FIC,,,,,$,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,-400000,
 CIMS.CAN.QC.Natural Gas.Production.Supply.Direct Drive Small,Service,QC,Natural Gas,Direct Drive Small,Reciprocating compressor Efficient,FIC,,,,,$,160,160,160,160,160,160,160,160,160,160,160,
 CIMS.CAN.QC.Natural Gas.Production.Supply.Direct Drive Small,Service,QC,Natural Gas,Direct Drive Small,Reciprocating compressor Electric,FIC,,,,,$,80,80,80,80,80,80,80,80,80,80,80,
 CIMS.CAN.QC.Natural Gas.Production.Supply.Venting.Point Venting,Service,QC,Natural Gas,Point Venting,No VRU,FIC,,,,,$,200,200,200,200,200,200,200,200,200,200,200,
+CIMS.CAN.QC.Natural Gas.Production.Supply.Fugitive,Service,QC,Natural Gas,Fugitive,Low LDAR,FIC,,,,,$,-285,-285,-285,-285,-285,-285,-285,-285,-285,-285,-285,
 CIMS.CAN.QC.Natural Gas.OG Diesel Blend,Service,QC,Natural Gas,OG Diesel Blend,Biodiesel,FIC,,,,,$,7,7,7,7,7,7,7,7,7,7,7,
 CIMS.CAN.QC.Natural Gas.OG Gasoline Blend,Service,QC,Natural Gas,OG Gasoline Blend,Ethanol,FIC,,,,,$,14,14,14,14,14,14,14,14,14,14,14,
 CIMS.CAN.QC.Mining.Steam,Service,QC,Mining,Steam,Boiler Hydrogen HR and reg burner,FIC,,,,,$,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,15668162.1880998,
