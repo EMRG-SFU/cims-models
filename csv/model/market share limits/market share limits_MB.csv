@@ -1,6 +1,5 @@
-﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿CIMS.CAN.MB.Natural Gas.Production.Supply.CCS,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.MB.Petroleum Crude.Steam,Service,MB,Petroleum Crude,Steam,BPST NG 30 MW CCS,Market share new_max,,,,,%,0,0,0,0,0.001,1,1,1,1,1,1,
 CIMS.CAN.MB.Mining.Final Product.Metal Underground.Size Reduced Product.Raw Product.Transportation,Service,MB,Mining,Transportation,Diesel truck,Market share new_min,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
 CIMS.CAN.MB.Mining.Final Product.Metal Underground.Tailing Disposal,Service,MB,Mining,Tailing Disposal,Underground tailings disposal,Market share new_min,,,,,%,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,0.9,
 CIMS.CAN.MB.Mining.Ventilation,Service,MB,Mining,Ventilation,High Eff backward inclined fan,Market share new_max,,,,,%,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,
