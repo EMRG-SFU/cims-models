@@ -298,7 +298,7 @@ def repathNormalRelative( p, pathToCimsModels, num_backups ):
 #############################################################
 #############################################################
 #############################################################
-# Recursively find xlsx files, rooted at `dirPath`
+# Recursively find xlsx and xlsm files, rooted at `dirPath`
 #
 def find_excel_files( dirPath ):
     """
@@ -314,12 +314,14 @@ def find_excel_files( dirPath ):
             if re.match("^~", f):
                 # These are temp files used by excel, when file is open.
                 continue
-            if os.path.splitext(f)[1] == '.xlsx':
+            if (os.path.splitext(f)[1] == ".xlsx") or (os.path.splitext(f)[1] == ".xlsm"):
                 #print(f"Working on: {f}")
                 #wb = op.open(os.path.join(dirpath,f))
                 #retDict[os.path.join(dirpath, f)] = [a.file_link.target for a in wb._external_links]
                 #wb.close()
                 retList.append(os.path.join(dirpath,f))
+            elif (os.path.splitext(f)[1] == ".xlsb") or (os.path.splitext(f)[1] == ".xls"):
+                print(f"Openpyxl does not accept .xlsb or .xls formats; convert to .xlsx or .xlsm to allow external file link validation --> {os.path.normpath(os.path.join(dirpath,f))}")
 
     return(retList)
 
@@ -395,11 +397,6 @@ def correct_ext_links(xl_path, pathToCimsModels, pathLookupTable, corrExt=None, 
                 oldPathTokens, isAbsPath = tokenizeWindows(oldPath, pathToCimsModels)
             except UnexpectedFwdSlashes:
                 oldPathTokens, isAbsPath = tokenizeNormal(oldPath, pathToCimsModels)
-
-            # Ah... make sure these are dealt with correctly. The relative external links are from
-            # the perspective of the excel files, but below this was being dropped into `os.path.abspath`
-            # which is from the perspective of where this script is running, so it was backing out too
-            # far and failing.
 
             if isAbsPath:
                 fullExtRefPath = os.path.abspath(
@@ -570,7 +567,7 @@ def buildLookupTable(cmRoot):
     fpDict = {}
     for (dirpath, dirnames, filenames) in os.walk(cmRoot):
         for f in filenames:
-            if (os.path.splitext(f)[1] == ".xlsx") or (os.path.splitext(f)[1] == ".xlsb"):
+            if (os.path.splitext(f)[1] == ".xlsx") or (os.path.splitext(f)[1] == ".xlsb") or (os.path.splitext(f)[1] == ".xls") or (os.path.splitext(f)[1] == ".csv"):
                 fullSysPath = os.path.join(dirpath, f)
                 fpDict[fullSysPath.lower()] = fullSysPath
             else:
@@ -592,8 +589,8 @@ def iterate_list(pathList,
     """
 
     for p in pathList:
-        if (not os.path.isfile(p)) or (os.path.splitext(p)[1] != ".xlsx"):
-            raise RuntimeError(f"Supplied path is not xlsx file: {p}")
+        if (not os.path.isfile(p)) or ((os.path.splitext(p)[1] != ".xlsx") and (os.path.splitext(p)[1] != ".xlsm")):
+            raise RuntimeError(f"Supplied path is not Excel file: {p}")
         correctionFunc(p, pathToCimsModels, pathLookupTable, corrExt, cmdArgs=cmdArgs)
 
 
@@ -756,7 +753,7 @@ if __name__ == "__main__":
             iterate_list(args.files, whereAreWe, pathLookupTable, correctionFunc=correct_ext_links, cmdArgs=args)
 
         time_end = datetime.now()
-        print(f"Finished link correction in {time_end - time_start}.")
+        print(f"\nFinished link correction in {time_end - time_start}.")
 
     else:
         raise RuntimeError("Incorrect command, must be [CORRECT, VERIFY, INSPECT]")

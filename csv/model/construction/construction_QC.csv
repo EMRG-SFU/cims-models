@@ -1,6 +1,6 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.QC,Region,QC,Construction,,,Service requested,,,CIMS.CAN.QC.Construction,activity_data_region,tCO2e,1064000,1309000,1524000,1293000,1649000,1649000,1649000,1649000,1649000,1649000,1649000,
+CIMS.CAN.QC,Region,QC,Construction,,,Service requested,,,CIMS.CAN.QC.Construction,activity_data_region,tCO2e,1063788.893,1309479.902,1523729.244,1293119.155,1649032.734,1649032.734,1649032.734,1649032.734,1649032.734,1649032.734,1649032.734,
 CIMS.CAN.QC.Construction,Sector,QC,Construction,,,Service provided,,,,activity_data_generic,tCO2e,,,,,,,,,,,,
 CIMS.CAN.QC.Construction,Sector,QC,Construction,,,Competition type,Sector,,,,,,,,,,,,,,,,
 CIMS.CAN.QC.Construction,Sector,QC,Construction,,,Price multiplier,,,CIMS.CAN.QC.Biodiesel,JCIMS,,1.8,1.8,1.9141508982703,2.08337634533833,2.1831574043583,2.84232261187302,2.73088442144286,2.63241680682958,2.5300679249112,2.52955333995074,2.52865630556284,Review!

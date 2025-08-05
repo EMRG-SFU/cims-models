@@ -1,6 +1,6 @@
 ﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
-CIMS.CAN.AB,Region,AB,Forestry,,,Service requested,,,CIMS.CAN.AB.Forestry,activity_data_region,tCO2e,358000,378000,327000,264000,237000,237000,237000,237000,237000,237000,237000,
+CIMS.CAN.AB,Region,AB,Forestry,,,Service requested,,,CIMS.CAN.AB.Forestry,activity_data_region,tCO2e,358315.176,378500.005,327590.246,263706.215,237177.156,237177.156,237177.156,237177.156,237177.156,237177.156,237177.156,
 CIMS.CAN.AB.Forestry,Sector,AB,Forestry,,,Service provided,,,,activity_data_generic,tCO2e,,,,,,,,,,,,
 CIMS.CAN.AB.Forestry,Sector,AB,Forestry,,,Competition type,Sector,,,,,,,,,,,,,,,,
 CIMS.CAN.AB.Forestry,Sector,AB,Forestry,,,Price multiplier,,,CIMS.CAN.AB.Biodiesel,JCIMS,,1.18531070447968,1.46113190686282,1.9141508982703,2.08337634533833,2.1831574043583,2.84232261187302,2.73088442144286,2.63241680682958,2.5300679249112,2.52955333995074,2.52865630556284,Use Agriculture values as proxy - TO DO: review!
