@@ -1,4 +1,4 @@
-,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.AT,Region,AT,Transportation Freight,,,service_request,,,CIMS.CAN.AT.Transportation Freight,annual_region,k*tkm,67197348.8750069,83794108.9518194,75205397.9315233,67051791.8515368,63342461.8570012,62677373.0728769,61545574.3404667,60455532.1460257,59406757.9176412,58398809.4516435,57431291.2587443,
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,service_provide,,,,constant_tech,k*tkm,,,,,,,,,,,,
@@ -16,7 +16,7 @@ CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.CAN.AT.Hydrogen,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Jet Fuel,JCIMS,,1.0623863246622,1.07673007249484,1.03696859551974,1.0708861122499,1.06315902970365,1.0571244722405,1.05234746804082,1.05057680512495,1.04725842488397,1.04725842488397,1.04725842488397,
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.LPG,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
-CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Natural Gas,AFDC 2023,,0.93491761471353,1.45639565493712,3.73391059028097,7.37940144854917,7.12151311888982,9.59389316231547,9.59389316231547,9.59389316231547,9.59389316231547,9.59389316231547,9.59389316231547,
+CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Natural Gas,AFDC 2023,,0.93478918687278,1.45619559265752,3.73422452192746,7.38948921877485,7.11864544402204,9.57864849058727,9.57864849058727,9.57864849058727,9.57864849058727,9.57864849058727,9.57864849058727,
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Petroleum Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Propane,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.AT.Transportation Freight,Sector,AT,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Refinery Fuel Gas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,

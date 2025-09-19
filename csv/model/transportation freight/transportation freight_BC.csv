@@ -1,4 +1,4 @@
-,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.BC,Region,BC,Transportation Freight,,,service_request,,,CIMS.CAN.BC.Transportation Freight,annual_region,k*tkm,115706152.475928,83620223.3365055,79552486.9992778,97989329.5169226,119394411.107651,119930140.181916,124865172.563258,130137020.258877,135768107.453671,141782381.955563,148205419.135188,
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,service_provide,,,,constant_tech,k*tkm,,,,,,,,,,,,
@@ -16,7 +16,7 @@ CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.CAN.BC.Hydrogen,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Jet Fuel,JCIMS,,0.91985582098094,0.97397537887021,0.96679004299691,1.02183309825564,1.04060421735024,1.03112593677924,1.02456572234927,1.02050454888254,1.01809634415125,1.01809634415125,1.01809634415125,
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.LPG,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
-CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Natural Gas,AFDC 2023,,0.93491761471353,1.45639565493712,3.73391059028097,7.37940144854917,7.12151311888982,9.59389316231547,9.59389316231547,9.59389316231547,9.59389316231547,9.59389316231547,9.59389316231547,
+CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Natural Gas,AFDC 2023,,0.93478918687278,1.45619559265752,3.73422452192746,7.38948921877485,7.11864544402204,9.57864849058727,9.57864849058727,9.57864849058727,9.57864849058727,9.57864849058727,9.57864849058727,
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Petroleum Coke,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Propane,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.BC.Transportation Freight,Sector,BC,Transportation Freight,,,multiplier_price,,,CIMS.Generic Fuels.Refinery Fuel Gas,JCIMS,,1,1,1,1,1,1,1,1,1,1,1,
