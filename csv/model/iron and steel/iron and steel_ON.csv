@@ -1,4 +1,4 @@
-CIMS.CAN.ON.Iron and Steel.Molten Steel.Integrated,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON,Region,ON,Iron and Steel,,,service_request,,,CIMS.CAN.ON.Iron and Steel,activity_data_region,tonne,13993000,13914000,12828000,11003000,10212000,11510000,11510000,11510000,11510000,11510000,11510000,
 CIMS.CAN.ON.Iron and Steel,Sector,ON,Iron and Steel,,,service_provide,,,,activity_data_generic,tonne,,,,,,,,,,,,
@@ -1518,7 +1518,7 @@ CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Ligh
 CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,available,,,,tech_data_generic,Year,1990,1990,1990,1990,1990,1990,1990,1990,1990,1990,1990,
 CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,unavailable,,,,tech_data_generic,Year,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,
 CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,lifetime,,,,tech_data_generic,Years,30,30,30,30,30,30,30,30,30,30,30,
-CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,market_share_total,,,,tech_data_region,%,0.06,,,,,,,,,,,
+CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,market_share_total,,,,tech_data_region,%,0.42,,,,,,,,,,,
 CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,output,,,,tech_data_generic,node unit,27.5,27.5,27.5,27.5,27.5,27.5,27.5,27.5,27.5,27.5,27.5,
 CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,fcc,,,,tech_data_generic,$,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,1288.00441028375,
 CIMS.CAN.ON.Iron and Steel.Lighting,Service,ON,Iron and Steel,Lighting,Base Lighting,fom,,,,tech_data_generic,$,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,14.2212450454733,

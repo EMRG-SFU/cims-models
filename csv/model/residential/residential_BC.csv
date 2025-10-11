@@ -3090,7 +3090,7 @@ CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,t
 CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,available,,,,constant_tech,Year,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,
 CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,unavailable,,,,constant_tech,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,lifetime,,,,constant_tech,Years,8,8,8,8,8,8,8,8,8,8,8,
-CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,market_share_total,,,,annual_tech,%,0.38,,,,,,,,,,,
+CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,market_share_total,,,,annual_tech,%,0.08,,,,,,,,,,,
 CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,output,,,,constant_tech,node unit,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,
 CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,fcc,,,,constant_tech,$,6,6,6,6,6,6,6,6,6,6,6,
 CIMS.CAN.BC.Residential.Dwellings.Lighting,Service,BC,Residential,Lighting,CFL,service_request,,,CIMS.CAN.BC.Electricity,annual_tech,GJ,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,

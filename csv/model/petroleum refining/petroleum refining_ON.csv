@@ -1,4 +1,4 @@
-,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON,Region,ON,Petroleum Refining,,,service_request,,,CIMS.CAN.ON.Petroleum Refining,activity_data_region,m3 of RPP,22652800,22092114.9547192,21545307.563415,19475251.5800232,19475251.5800232,18520770.4719013,17613068.4352599,16749852.8301399,15928943.3787524,15148266.658614,14405850.8655738,
 CIMS.CAN.ON.Petroleum Refining,Sector,ON,Petroleum Refining,,,service_provide,,,,activity_data_generic,m3 of RPP,,,,,,,,,,,,
@@ -1811,7 +1811,7 @@ CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refinin
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,available,,,,tech_data_generic,Year,1980,1980,1980,1980,1980,1980,1980,1980,1980,1980,1980,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,unavailable,,,,tech_data_generic,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,lifetime,,,,tech_data_generic,Years,25,25,25,25,25,25,25,25,25,25,25,
-CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,market_share_total,,,,tech_data_region,%,0.093,,,,,,,,,,,
+CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,market_share_total,,,,tech_data_region,%,0.167,,,,,,,,,,,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,output,,,,tech_data_generic,node unit,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,11758.1976,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,fcc,,,,tech_data_generic,$,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,66729.9297803195,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 5,Service,ON,Petroleum Refining,Size 5,Eff AC motor 201 500 hp,fom,,,,tech_data_generic,$,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,5620.21696080861,
@@ -1860,7 +1860,7 @@ CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refinin
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,available,,,,tech_data_generic,Year,1930,1930,1930,1930,1930,1930,1930,1930,1930,1930,1930,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,unavailable,,,,tech_data_generic,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,lifetime,,,,tech_data_generic,Years,25,25,25,25,25,25,25,25,25,25,25,
-CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,market_share_total,,,,tech_data_region,%,0.093,,,,,,,,,,,
+CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,market_share_total,,,,tech_data_region,%,0.167,,,,,,,,,,,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,output,,,,tech_data_generic,node unit,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,23516.3952,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,fcc,,,,tech_data_generic,$,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,90885.0941786049,
 CIMS.CAN.ON.Petroleum Refining.Machine Drive.Size 6,Service,ON,Petroleum Refining,Size 6,Eff AC motor 500 hp,fom,,,,tech_data_generic,$,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,12587.4583673569,
