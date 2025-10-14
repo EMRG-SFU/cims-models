@@ -1,4 +1,4 @@
-,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.AT.Electricity,Sector,AT,Electricity,,,service_provide,,,,activity_data_generic,GJ,,,,,,,,,,,,
 CIMS.CAN.AT.Electricity,Sector,AT,Electricity,,,competition,Sector,,,,,,,,,,,,,,,,
@@ -395,7 +395,7 @@ CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak
 CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,unavailable,,,,tech_data_generic,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,lifetime,,,,tech_data_generic,Years,30,30,30,30,30,30,30,30,30,30,30,
 CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,market_share_total,,,,tech_data_region,%,0,,,,,,,,,,,
-CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,output,,,,tech_data_generic,MWh,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,16231.7647058824,
+CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,output,,,,tech_data_generic,MWh,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,16231.7647058823,
 CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,fcc,,,,tech_data_generic,$,153198150,153198150,153198150,153198150,153198150,153198150,153198150,153198150,153198150,153198150,153198150,
 CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,fom,,,,tech_data_generic,$,2235870,2235870,2235870,2235870,2235870,2235870,2235870,2235870,2235870,2235870,2235870,
 CIMS.CAN.AT.Electricity.Utility Generation.Peak Load,Service,AT,Electricity,Peak Load,Natural Gas SC,service_request,,,CIMS.Generic Fuels.VOM,tech_multi_generic,$,6.14,6.14,6.14,6.14,6.14,6.14,6.14,6.14,6.14,6.14,6.14,

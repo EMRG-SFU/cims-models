@@ -1,4 +1,4 @@
-﻿CIMS.CAN.ON.Residential.Dwellings.Building Type.High Density.Vintage.<1960 Bldg Code,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON,Region,ON,Residential,,,service_request,,,CIMS.CAN.ON.Residential,annual_region,household,4467553,4845367,5153651,5443987,5835796,6095790.85670395,6367368.93624717,6651046.29134333,6947361.96575161,7256879.01856772,7580185.59414891,
 CIMS.CAN.ON.Residential,Sector,ON,Residential,,,service_provide,,,,constant_tech,household,,,,,,,,,,,,
@@ -2008,7 +2008,7 @@ CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,t
 CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,available,,,,constant_tech,Year,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,
 CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,unavailable,,,,constant_tech,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,lifetime,,,,constant_tech,Years,8,8,8,8,8,8,8,8,8,8,8,
-CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,market_share_total,,,,annual_tech,%,0.38,,,,,,,,,,,
+CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,market_share_total,,,,annual_tech,%,0.08,,,,,,,,,,,
 CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,output,,,,constant_tech,node unit,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,4.2,
 CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,fcc,,,,constant_tech,$,6,6,6,6,6,6,6,6,6,6,6,
 CIMS.CAN.ON.Residential.Dwellings.Lighting,Service,ON,Residential,Lighting,CFL,service_request,,,CIMS.CAN.ON.Electricity,annual_tech,GJ,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,0.010460877,

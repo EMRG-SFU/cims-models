@@ -1,4 +1,4 @@
-,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON,Region,ON,Commercial,,,service_request,,,CIMS.CAN.ON.Commercial,annual_region,m2,227206499.999999,249358700,272318200,287350399.999999,297809199.999999,307296666.563103,317086380.409992,327187970.393631,337611372.118492,348366837.712899,359464945.912697,
 CIMS.CAN.ON.Commercial,Sector,ON,Commercial,,,service_provide,,,,constant_tech,m2,,,,,,,,,,,,
@@ -779,7 +779,7 @@ CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing
 CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,available,,,,constant_tech,Year,1950,1950,1950,1950,1950,1950,1950,1950,1950,1950,1950,
 CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,unavailable,,,,constant_tech,Year,2001,2001,2001,2001,2001,2001,2001,2001,2001,2001,2001,
 CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,lifetime,,,,constant_tech,Years,24,24,24,24,24,24,24,24,24,24,24,
-CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,market_share_total,,,,annual_region_tech,%,0.813,,,,,,,,,,,
+CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,market_share_total,,,,annual_region_tech,%,0.773,,,,,,,,,,,
 CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,output,,,,constant_tech,node unit,1,1,1,1,1,1,1,1,1,1,1,
 CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,fcc,,,,constant_tech,$,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,1.246122841,
 CIMS.CAN.ON.Commercial.HVAC (Cold),Service,ON,Commercial,HVAC (Cold),NG existing,fom,,,,constant_tech,$,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,0.036650672,

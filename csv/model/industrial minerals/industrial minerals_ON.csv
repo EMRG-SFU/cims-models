@@ -1,4 +1,4 @@
-,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+﻿,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
 Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
 CIMS.CAN.ON,Region,ON,Industrial Minerals,,,service_request,,,CIMS.CAN.ON.Industrial Minerals,activity_data_region,tonne,6637787,6823081,5698229,6119802,6315814,6732297,7176244,7649466,8153893,8691585,9264732,
 CIMS.CAN.ON.Industrial Minerals,Sector,ON,Industrial Minerals,,,service_provide,,,,activity_data_generic,tonne,,,,,,,,,,,,
@@ -284,7 +284,7 @@ CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidize
 CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,available,,,,tech_data_generic,Year,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,2011,
 CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,unavailable,,,,tech_data_generic,Year,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,2101,
 CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,lifetime,,,,tech_data_generic,Years,35,35,35,35,35,35,35,35,35,35,35,
-CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,market_share_total,,,,tech_data_region,%,0,,,,,,,,,,,
+CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,market_share_total,,,,tech_data_region,%,1,,,,,,,,,,,
 CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,output,,,,tech_data_generic,node unit,620000,620000,620000,620000,620000,620000,620000,620000,620000,620000,620000,
 CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,fcc,,,,tech_data_generic,$,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,250136434.947286,
 CIMS.CAN.ON.Industrial Minerals.Products.Cement.Portland cement.Clinker.Fluidized bed,Service,ON,Industrial Minerals,Fluidized bed,Fluidized bed distillate oil,fom,,,,tech_data_generic,$,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,11039758.1170822,
