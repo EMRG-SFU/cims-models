@@ -1,0 +1,3 @@
+,<-- Navigate by typing to search,,,,,,,,,,,,,,,,,,,,,,
+Branch,Type,Region,Sector,Service,Technology,Parameter,Context,Sub_Context,Target,Source,Unit,2000,2005,2010,2015,2020,2025,2030,2035,2040,2045,2050,Comments
+CIMS.CAN.AT,Region,AT,Natural Gas,,,service_request,,,CIMS.CAN.AT.Natural Gas,Net Zero scenario assumption,1000 m3,3569000,4105600,3476500,2195900,49600,28474.2329362986,15842.5784131286,9354.88380823572,5523.9650711566,3261.84597616215,1926.08733675021,
