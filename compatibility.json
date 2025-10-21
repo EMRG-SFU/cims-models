@@ -1,7 +1,19 @@
 {
     "CIMS": {
         "v0.1": {
-            "all_models": ["v0.0.0-alpha"]
+            "all_models": [
+                "v0.0.0-alpha"
+            ]
+        },
+        "v0.2.0-alpha": {
+            "all_models": [
+                "v0.2.0-alpha"
+            ]
+        },
+        "v1.0.0-beta": {
+            "all_models": [
+                "v1.0.0-beta"
+            ]
         }
     }
 }
