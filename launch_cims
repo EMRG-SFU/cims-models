@@ -232,13 +232,13 @@ print_color "DONE\n" "$LGRN"
 # Step 3: Install dependencies
 if [ "$CREATE_NEW_ENV" = true ]; then
     print_color "Installing dependencies..." "$LBLUE"
-    pip install -q --upgrade pip
-    pip install -q -r requirements.txt
+    pip install -q --upgrade pip --disable-pip-version-check
+    pip install -q -r requirements.txt --disable-pip-version-check
     print_color "DONE\n" "$LGRN"
 elif [ "$_arg_update" = "on" ]; then
     print_color "Updating dependencies..." "$LBLUE"
-    pip install -q --upgrade pip
-    pip install -q -r requirements.txt
+    pip install -q --upgrade pip --disable-pip-version-check
+    pip install -q -r requirements.txt --disable-pip-version-check
     print_color "DONE\n" "$LGRN"
 fi
 
