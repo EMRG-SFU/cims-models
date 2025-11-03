@@ -161,9 +161,12 @@ create_virtual_env() {
     IFS=':' read -r -a dirs <<< "$PATH"
     for dir in "${dirs[@]}"; do
         if [ -d "$dir" ]; then
-            while IFS= read -r -d $'\0' f; do
-                if check_python_version "$f"; then options[i++]="$f"; fi
-            done < <(find "$dir" -regex ".*/python3\.[0-9]*" -maxdepth 1 -print0)
+			for f in "$dir"/python3.*; do
+				if [ -x "$f" ] && check_python_version "$f"; then
+					options[i++]="$f"
+				fi
+			done
+
         fi
     done
 
@@ -218,7 +221,12 @@ fi
 
 # Step 2: Activate the virtual environment
 print_color "Activating ${_arg_venv_name} virtual environment..." "$LBLUE"
-source "${_arg_venv_name}/bin/activate"
+# source "${_arg_venv_name}/bin/activate"
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+    source "${_arg_venv_name}/Scripts/activate"
+else
+    source "${_arg_venv_name}/bin/activate"
+fi
 print_color "DONE\n" "$LGRN"
 
 # Step 3: Install dependencies
