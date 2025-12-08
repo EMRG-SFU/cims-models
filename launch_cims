@@ -128,11 +128,9 @@ set -o pipefail
 
 # Formatting
 RED='\e[0;31m'    # Red
-LBLUE='\e[0;36m'  # Light Blue
-LGRN='\e[0;92m'   # LIGHT GREEN
-YLW="\e[0;33m"   # Yellow
+LGRN='\e[0;92m'   # Light Green
+YLW="\e[0;33m"    # Yellow
 NC='\e[0m'        # No Color
-LBLUE='\e[0m'  # Light Blue
 
 # Function to print colored messages to stderr
 print_color() {
@@ -144,34 +142,68 @@ print_color() {
     else
         printf "${COLOR}${MSG}${NC}"
     fi
-
 }
 
 # Function to compare Python versions
 check_python_version() {
     local python_path=$1
-    $python_path -c "import sys; assert sys.version_info >= (${MIN_PYTHON})" 2>/dev/null
+    "$python_path" -c "import sys; assert sys.version_info >= (${MIN_PYTHON})" 2>/dev/null
 }
 
 # Function to create virtual environment
 create_virtual_env() {
-    # Find locations of python3 installations which satisfy the minimum required Python version
     local options=()
     local i=0
-    IFS=':' read -r -a dirs <<< "$PATH"
-    for dir in "${dirs[@]}"; do
-        if [ -d "$dir" ]; then
-			for f in "$dir"/python3.*; do
-				if [ -x "$f" ] && check_python_version "$f"; then
-					options[i++]="$f"
-				fi
-			done
 
+    # 1. Prefer well-known commands if present (python3, python, py)
+    for cmd in python3 python py; do
+        if command -v "$cmd" >/dev/null 2>&1; then
+            options[i++]="$(command -v "$cmd")"
         fi
     done
 
-    # Sort the list of Python versions in descending order
-    IFS=$'\n' sorted_options=($(sort -rV <<<"${options[*]}"))
+    # 2. Scan PATH for python3.* executables
+    IFS=':' read -r -a dirs <<< "$PATH"
+    for dir in "${dirs[@]}"; do
+        if [ -d "$dir" ]; then
+            for f in "$dir"/python3.*; do
+                if [ -x "$f" ]; then
+                    options[i++]="$f"
+                fi
+            done
+        fi
+    done
+
+    # 3. De-duplicate and keep only interpreters that satisfy MIN_PYTHON
+    local unique=()
+    local seen exe
+    for exe in "${options[@]}"; do
+        [ -x "$exe" ] || continue
+        # de-dupe
+        local already=false
+        for seen in "${unique[@]}"; do
+            if [ "$seen" = "$exe" ]; then
+                already=true
+                break
+            fi
+        done
+        $already && continue
+        # version filter
+        if check_python_version "$exe"; then
+            unique+=("$exe")
+        fi
+    done
+
+    if [ "${#unique[@]}" -eq 0 ]; then
+        local py_prompt
+        py_prompt=$(echo "$MIN_PYTHON" | sed 's/,/./')
+        print_color "No Python interpreter >= ${py_prompt} found on PATH.\n" "$RED"
+        print_color "Please install Python >= ${py_prompt} and rerun this script.\n" "$RED"
+        exit 1
+    fi
+
+    # 4. Sort the list of Python versions in descending order
+    IFS=$'\n' sorted_options=($(printf "%s\n" "${unique[@]}" | sort -rV))
     unset IFS
 
     # Pre-select the most recent Python version
@@ -179,79 +211,109 @@ create_virtual_env() {
 
     # Create a selection menu of options with recommended message
     local prompt
-    prompt=$(printf "${YLW}Select an installed version of Python to use in your virtual environment: $NC")
+    prompt=$(printf "${YLW}Select an installed version of Python to use in your virtual environment: ${NC}")
     PS3="${prompt}"
     local options_with_recommendation=()
-    for option in "${sorted_options[@]}"; do
-        version=$(basename "$option")
-        if [[ "$option" == "$recommended_python" ]]; then
-            options_with_recommendation+=("${version} (${option}) - RECOMMENDED")
+    local version
+    for exe in "${sorted_options[@]}"; do
+        version=$(basename "$exe")
+        if [[ "$exe" == "$recommended_python" ]]; then
+            options_with_recommendation+=("${version} (${exe}) - RECOMMENDED")
         else
-            options_with_recommendation+=("${version} (${option})")
+            options_with_recommendation+=("${version} (${exe})")
         fi
     done
 
     select SELECTED_PYTHON in "${options_with_recommendation[@]}" "I'll install another Python version"; do
         if [[ "$REPLY" -eq $((${#options_with_recommendation[@]} + 1)) ]]; then
-            local py_prompt=$(echo "$MIN_PYTHON" | sed 's/,/./')
+            local py_prompt
+            py_prompt=$(echo "$MIN_PYTHON" | sed 's/,/./')
             print_color "Please install Python >= ${py_prompt} and rerun this script.\n" "$RED"
             exit 0
         fi
-        SELECTED_PYTHON=$(echo "$SELECTED_PYTHON" | sed 's/ - RECOMMENDED//' | sed 's/.*(\(.*\)).*/\1/')
-        print_color "Selected ${SELECTED_PYTHON}\n" "$LGRN"
-        break
+        if [ -n "$SELECTED_PYTHON" ]; then
+            SELECTED_PYTHON=$(echo "$SELECTED_PYTHON" | sed 's/ - RECOMMENDED//' | sed 's/.*(\(.*\)).*/\1/')
+            print_color "Selected ${SELECTED_PYTHON}\n" "$LGRN"
+            break
+        fi
+        print_color "Invalid selection.\n" "$RED"
     done
 
-    print_color "Building ${_arg_venv_name}..." "$LBLUE"
+    print_color "Building ${_arg_venv_name}..." "$NC"
     "$SELECTED_PYTHON" -m venv "${_arg_venv_name}"
     print_color "DONE\n" "$LGRN"
 }
 
 # Step 1: Setup Virtual Environment
-print_color "Checking for ${_arg_venv_name} virtual environment..." "$LBLUE"
+print_color "Checking for ${_arg_venv_name} virtual environment..." "$NC"
 if [ -d "${_arg_venv_name}" ]; then
     CREATE_NEW_ENV=false
     print_color "FOUND\n" "$LGRN"
 else
     CREATE_NEW_ENV=true
-    print_color "NOT FOUND\n" "$LBLUE"
+    print_color "NOT FOUND\n" "$NC"
     print_color "Creating ${_arg_venv_name} virtual environment...\n" "$YLW"
     create_virtual_env
 fi
 
 # Step 2: Activate the virtual environment
-print_color "Activating ${_arg_venv_name} virtual environment..." "$LBLUE"
-# source "${_arg_venv_name}/bin/activate"
+print_color "Activating ${_arg_venv_name} virtual environment..." "$NC"
 if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+    # Windows-style venv layout
+    # shellcheck disable=SC1091
     source "${_arg_venv_name}/Scripts/activate"
 else
+    # POSIX-style venv layout
+    # shellcheck disable=SC1091
     source "${_arg_venv_name}/bin/activate"
 fi
 print_color "DONE\n" "$LGRN"
 
 # Step 3: Install dependencies
-if [ "$CREATE_NEW_ENV" = true ]; then
-    print_color "Installing dependencies..." "$LBLUE"
-    pip install -q --upgrade pip --disable-pip-version-check
-    pip install -q -r requirements.txt --disable-pip-version-check
-    print_color "DONE\n" "$LGRN"
-elif [ "$_arg_update" = "on" ]; then
-    print_color "Updating dependencies..." "$LBLUE"
-    pip install -q --upgrade pip --disable-pip-version-check
-    pip install -q -r requirements.txt --disable-pip-version-check
-    print_color "DONE\n" "$LGRN"
+REQ_FILE="requirements.txt"
+if [ ! -f "$REQ_FILE" ]; then
+    HAS_REQS=false
+    print_color "requirements.txt not found in current directory; skipping dependency installation.\n" "$YLW"
+else
+    HAS_REQS=true
 fi
 
-# Step 4: Launch JupyterLab (if not disabled)
+if [ "$CREATE_NEW_ENV" = true ] && [ "$HAS_REQS" = true ]; then
+    print_color "Installing dependencies..." "$NC"
+    pip install -q --upgrade pip --disable-pip-version-check
+    pip install -q -r "$REQ_FILE" --disable-pip-version-check
+    print_color "DONE\n" "$LGRN"
+elif [ "$CREATE_NEW_ENV" = false ] && [ "$_arg_update" = "on" ] && [ "$HAS_REQS" = true ]; then
+    print_color "Updating dependencies..." "$NC"
+    pip install -q --upgrade pip --disable-pip-version-check
+    pip install -q -r "$REQ_FILE" --disable-pip-version-check
+    print_color "DONE\n" "$LGRN"
+elif [ "$HAS_REQS" = true ]; then
+    print_color "Skipping dependency installation (use --update to force).\n" "$YLW"
+fi
+
+# Step 4: Launch JupyterLab
 if [ "$_arg_jupyter" = "on" ]; then
-    print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$LBLUE"
-    jupyter lab --log-level=40 --notebook-dir=./ ./scenarios/Reference.ipynb
-    print_color "Closing Jupyter Lab..." "$LBLUE"
-	print_color "DONE\n" "$LGRN"
+    if ! command -v jupyter >/dev/null 2>&1; then
+        print_color "Jupyter is not installed in this virtual environment.\n" "$RED"
+        print_color "Add 'jupyterlab' to requirements.txt and re-run with --update to install it.\n" "$YLW"
+    else
+        NOTEBOOK="./scenarios/Reference.ipynb"
+        if [ -f "$NOTEBOOK" ]; then
+            print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$NC"
+            jupyter lab --log-level=40 --notebook-dir=./ "$NOTEBOOK"
+        else
+            print_color "Notebook $NOTEBOOK not found. Launching JupyterLab in repository root instead.\n" "$YLW"
+            print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$NC"
+            jupyter lab --log-level=40 --notebook-dir=./
+        fi
+        print_color "Closing Jupyter Lab..." "$NC"
+        print_color "DONE\n" "$LGRN"
+    fi
 fi
 
 # Deactivate the virtual environment
-print_color "Deactivating ${_arg_venv_name} virtual environment..." "$LBLUE"
+print_color "Deactivating ${_arg_venv_name} virtual environment..." "$NC"
 deactivate
 print_color "DONE\n" "$LGRN"
 
