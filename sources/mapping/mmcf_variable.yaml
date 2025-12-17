@@ -1,0 +1,202 @@
+Use Final: 
+    quantity_requested: 
+        <<: *defaults_mmcf
+        sector:
+            Economy:
+                Industry:
+                    Hydrogen: null
+                    Biofuels: null
+                Electricity: null
+        # energy:
+        #     Total:
+        #         Coal:
+        #             Thermal Coal: 
+        #                 sector_exclude: "{region}.Coal Mining" 
+        #         Gas: 
+        #             Natural Gas: 
+        #                 sector_exclude: "{region}.Natural Gas"
+        #         Oil:
+        #             Diesel: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             Fuel Oil: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             Gasoline: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             Jet Fuel: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             LPG: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             Petroleum Coke: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             Propane: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #             Refinery Fuel Gas: 
+        #                 sector_exclude: "{region}.Petroleum Crude" 
+        #         Biomass Liquids: 
+        #             Biodiesel: 
+        #                 sector_exclude: "{region}.Biodiesel" 
+        #             Ethanol: 
+        #                 sector_exclude: "{region}.Ethanol" 
+        merge_replace: multiplier: 1e-06 # GJ to PJ
+    stock_total: 
+        <<: *defaults_mmcf
+        sector: null
+        sector:
+            Economy:
+                Electricity: # only want stock from Electricity, use greater disaggregation to get stock_total
+                    Base Load: 
+                        include: "{region}.Electricity.Utility Generation.Base Load" 
+                    Shoulder Load: 
+                        include: "{region}.Electricity.Utility Generation.Shoulder Load" 
+                    Peak Load: 
+                        include: "{region}.Electricity.Utility Generation.Peak Load"
+        tech:
+            Total: 
+                Electricity: null
+        tech:
+            Total: 
+                Electricity: # only keep Geoexchange
+                    Geoexchange: 
+                        include: "Geoexchange"
+        merge_replace: multiplier: 3.6e-06 # MWh to PJ
+Use Primary: 
+    quantity_requested: 
+        <<: *defaults_mmcf
+        energy:
+            Total:
+                Electricity: null
+        merge_replace: multiplier: 1e-06 # GJ to PJ
+    stock_total: 
+        <<: *defaults_mmcf
+        sector: null
+        sector:
+            Economy:
+                Electricity: # only want stock from Electricity, use greater disaggregation to get stock_total
+                    Base Load: 
+                        include: "{region}.Electricity.Utility Generation.Base Load" 
+                    Shoulder Load: 
+                        include: "{region}.Electricity.Utility Generation.Shoulder Load" 
+                    Peak Load: 
+                        include: "{region}.Electricity.Utility Generation.Peak Load"
+        tech:
+            Total:
+                Electricity: # only want primary electricity techs
+                    Coal: null
+                    Fuel Oil: null
+                    Natural Gas: null
+                    Waste: null
+                    Biomass: null
+        merge_replace: multiplier: 3.6e-06 # MWh to PJ
+Production: 
+    quantity_provided: 
+        <<: *defaults_mmcf
+        # merge_replace: multiplier: 1
+    quantity_requested: 
+        <<: *defaults_mmcf
+        merge_replace: multiplier: 1e-06
+    quantity_distributed: 
+        <<: *defaults_mmcf
+        merge_replace: multiplier: 1e-06
+    stock_total: 
+        <<: *defaults_mmcf
+        sector: null
+        sector:
+            Economy:
+                Electricity: # only want stock from Electricity, use greater disaggregation to get stock_total
+                    Base Load: 
+                        include: "{region}.Electricity.Utility Generation.Base Load" 
+                    Shoulder Load: 
+                        include: "{region}.Electricity.Utility Generation.Shoulder Load" 
+                    Peak Load: 
+                        include: "{region}.Electricity.Utility Generation.Peak Load"
+        merge_replace: multiplier: 3.6e-06
+Emissions: 
+    emissions_: 
+        <<: *defaults_mmcf
+        merge_replace: multiplier: 1e-06 # tCO2e to MtCO2e
+Price: 
+    tax: 
+        <<: *defaults_mmcf
+        region:
+            Canada:
+                include: "CAN"
+        sector: null
+        sector:
+            Economy:
+                include: "{region}"
+        merge_replace: multiplier: 1
+    lcc_financial: 
+        <<: *defaults_mmcf
+        merge_replace: multiplier: 1
+    multiplier_price: 
+        <<: *defaults_mmcf
+        sector: null
+        sector:
+            Economy: 
+                Industry:
+                    Oil and Gas: 
+                        Upstream Oil and Gas: 
+                            Natural Gas Production: 
+                                include: "{region}.Natural Gas" 
+                            Crude Oil Production: 
+                                include: "{region}.Petroleum Crude" 
+                        Downstream Oil and Gas: 
+                            Petroleum Refining: 
+                                include: "{region}.Petroleum Refining" 
+                    Hydrogen: 
+                        include: "{region}.Hydrogen" 
+                    Biofuels: 
+                        Ethanol: 
+                            include: "{region}.Ethanol" 
+                        Biodiesel: 
+                            include: "{region}.Biodiesel" 
+                    Heavy Industry: 
+                        Mining: 
+                            include: "{region}.Mining" 
+                        Smelting and Refining (Non-Ferrous): 
+                            include: "{region}.Metal Smelting" 
+                        Pulp and Paper: 
+                            include: "{region}.Pulp and Paper" 
+                        Iron and Steel: 
+                            include: "{region}.Iron and Steel" 
+                        Industrial Minerals: 
+                            include: "{region}.Industrial Minerals"
+                        Chemicals and Fertilizers: 
+                            include: "{region}.Chemical Products" 
+                    Coal Production: 
+                        include: "{region}.Coal Mining" 
+                    Light Industry: 
+                        Light Manufacturing: 
+                            include: "{region}.Light Industrial" 
+                        Construction: 
+                            include: "{region}.Construction" 
+                        Forest Resources: 
+                            include: "{region}.Forestry" 
+                Electricity: 
+                    include: "{region}.Electricity" 
+                Transport: 
+                    Passenger Transport: 
+                        include: "{region}.Transportation Personal" 
+                    Freight Transport: 
+                        include: "{region}.Transportation Freight" 
+                Buildings: 
+                    Commercial: 
+                        include: "{region}.Commercial" 
+                    Residential: 
+                        include: "{region}.Residential" 
+                Agriculture: 
+                    include: "{region}.Agriculture"
+                Waste: 
+                    include: "{region}.Waste" 
+        merge_replace: multiplier: 1
+Carbon Sequestration: 
+    emissions_total_cumul_avoided: 
+        <<: *defaults_mmcf
+        ghg_gas: 
+            GHG: # only include CO2
+                CH4: null
+                N2O: null
+                SF6: null
+                PFC: null
+                HFC: null
+        merge_replace: multiplier: -1e-06 # tCO2e to MtCO2e (report as NEGATIVE)
