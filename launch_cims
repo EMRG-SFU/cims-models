@@ -145,7 +145,6 @@ RED='\e[0;31m'    # Red
 LGRN='\e[0;92m'   # Light Green
 YLW="\e[0;33m"    # Yellow
 NC='\e[0m'        # No Color
-LBLUE='\e[0m'     # (kept as in original, effectively no-color for "blue")
 
 # NEW: on Windows, disable ANSI colors (match behaviour of new script)
 if [ "$OS" = "windows" ]; then
@@ -174,11 +173,47 @@ check_python_version() {
     "$python_path" -c "import sys; assert sys.version_info >= (${MIN_PYTHON})" 2>/dev/null
 }
 
+# Function to extract version number from Python executable
+get_python_version() {
+    local python_path=$1
+    "$python_path" -c "import sys; print('{}.{}.{}'.format(*sys.version_info[:3]))" 2>/dev/null || echo "0.0.0"
+}
+        
+# Function to compare two version strings (returns 0 if v1 >= v2)
+version_gte() {
+    local v1=$1
+    local v2=$2
+    printf '%s\n%s\n' "$v1" "$v2" | sort -V -C 2>/dev/null && return 0
+    # Fallback for systems without sort -V
+    local IFS=.
+    local i ver1=($v1) ver2=($v2)
+    for ((i=0; i<${#ver1[@]} || i<${#ver2[@]}; i++)); do
+        if ((10#${ver1[i]:-0} > 10#${ver2[i]:-0})); then
+            return 0
+        elif ((10#${ver1[i]:-0} < 10#${ver2[i]:-0})); then
+            return 1
+        fi
+    done
+    return 0
+}
+
 # Function to create virtual environment
 create_virtual_env() {
     local options=()
     local i=0
 
+    # Determine path separator based on OS
+    local path_sep=":"
+    if [ "$OS" = "windows" ]; then
+        # Windows paths can be : separated if using bash or gitbash. But are
+        # ; separated in some other terminals.
+        path_sep=":"
+        # Check if PATH contains semicolons AND Windows-style paths (C:\)
+        if [[ "$PATH" == *";"* ]] && [[ "$PATH" =~ [A-Za-z]:\\ ]]; then
+            path_sep=";"
+        fi
+    fi
+        
     # 1. Prefer well-known commands if present (python3, python, py)
     for cmd in python3 python py; do
         if command -v "$cmd" >/dev/null 2>&1; then
@@ -187,11 +222,11 @@ create_virtual_env() {
     done
 
     # 2. Scan PATH for python3.* executables
-    IFS=':' read -r -a dirs <<< "$PATH"
+    IFS="$path_sep" read -r -a dirs <<< "$PATH"
     for dir in "${dirs[@]}"; do
         if [ -d "$dir" ]; then
             for f in "$dir"/python3.*; do
-                if [ -x "$f" ]; then
+                if [ -x "$f" ] && [ -f "$f" ]; then
                     options[i++]="$f"
                 fi
             done
@@ -205,13 +240,16 @@ create_virtual_env() {
             "/c/Program Files/Python3"*
             "/c/Users/$USER/AppData/Local/Programs/Python/Python3"*
         )
-        for base in "${win_paths[@]}"; do
-            if [ -d "$base" ]; then
-                local exe="$base/python.exe"
-                if [ -x "$exe" ]; then
-                    options[i++]="$exe"
+        for pattern in "${win_paths[@]}"; do
+            # Use shell globbing to expand patterns
+            for base in $pattern; do
+                if [ -d "$base" ]; then
+                    local exe="$base/python.exe"
+                    if [ -x "$exe" ] && [ -f "$exe" ]; then
+                        options[i++]="$exe"
+                    fi
                 fi
-            fi
+            done
         done
     fi
 
@@ -219,7 +257,7 @@ create_virtual_env() {
     local unique=()
     local seen exe
     for exe in "${options[@]}"; do
-        [ -x "$exe" ] || continue
+        [ -x "$exe" ] && [ -f "$exe" ] || continue
         # de-dupe
         local already=false
         for seen in "${unique[@]}"; do
@@ -244,8 +282,42 @@ create_virtual_env() {
     fi
 
     # 5. Sort the list of Python versions in descending order
-    IFS=$'\n' sorted_options=($(printf "%s\n" "${unique[@]}" | sort -rV))
+    # Create array with version:path pairs for sorting
+    local versioned=()
+    for exe in "${unique[@]}"; do
+        local ver=$(get_python_version "$exe")
+        versioned+=("$ver:$exe")
+    done
+
+    # Sort using version comparison
+    local sorted_options=()    
+
+    IFS=$'\n' sorted_versioned=($(printf "%s\n" "${versioned[@]}" | sort -t: -k1 -rV 2>/dev/null || printf "%s\n" "${versioned[@]}"))
     unset IFS
+
+     # Extract paths from sorted version:path pairs
+    for item in "${sorted_versioned[@]}"; do
+        sorted_options+=("${item#*:}")
+    done
+        
+    # If sort -V failed, do manual sorting
+    if [ ${#sorted_options[@]} -eq 0 ]; then
+        for exe in "${unique[@]}"; do
+            local ver=$(get_python_version "$exe")
+            local inserted=false
+            for ((i=0; i<${#sorted_options[@]}; i++)); do
+                local existing_ver=$(get_python_version "${sorted_options[$i]}")
+                if version_gte "$ver" "$existing_ver"; then
+                    sorted_options=("${sorted_options[@]:0:$i}" "$exe" "${sorted_options[@]:$i}")
+                    inserted=true
+                    break
+                fi
+            done
+            if ! $inserted; then
+                sorted_options+=("$exe")
+            fi
+        done
+    fi
 
     # Pre-select the most recent Python version
     local recommended_python="${sorted_options[0]}"
@@ -257,11 +329,11 @@ create_virtual_env() {
     local options_with_recommendation=()
     local version
     for exe in "${sorted_options[@]}"; do
-        version=$(basename "$exe")
+        version=$(get_python_version "$exe")
         if [[ "$exe" == "$recommended_python" ]]; then
-            options_with_recommendation+=("${version} (${exe}) - RECOMMENDED")
+            options_with_recommendation+=("Python ${version} (${exe}) - RECOMMENDED")
         else
-            options_with_recommendation+=("${version} (${exe})")
+            options_with_recommendation+=("Python ${version} (${exe})")
         fi
     done
 
@@ -281,7 +353,22 @@ create_virtual_env() {
     done
 
     print_color "Building ${_arg_venv_name}..." "$NC"
-    "$SELECTED_PYTHON" -m venv "${_arg_venv_name}"
+    if ! "$SELECTED_PYTHON" -m venv "${_arg_venv_name}" 2>/dev/null; then
+        print_color "FAILED\n" "$RED"
+        print_color "The selected Python cannot create a virtual environment.\n" "$RED"
+        
+        # Check if this is Anaconda
+        if "$SELECTED_PYTHON" -c "import sys; exit(0 if 'conda' in sys.version.lower() or 'anaconda' in sys.executable.lower() else 1)" 2>/dev/null; then
+            print_color "This appears to be an Anaconda Python installation.\n" "$YLW"
+            print_color "Some Anaconda installations don't include venv. Try:\n" "$YLW"
+            print_color "  1. Using 'conda install venv' to add venv support\n" "$YLW"
+            print_color "  2. Using 'conda create' instead for Anaconda environments\n" "$YLW"
+            print_color "  3. Installing standard Python from python.org\n" "$YLW"
+        else
+            print_color "Try selecting a different Python installation.\n" "$YLW"
+        fi
+        exit 1
+    fi
     print_color "DONE\n" "$LGRN"
 }
 
@@ -299,14 +386,22 @@ fi
 
 # Step 2: Activate the virtual environment
 print_color "Activating ${_arg_venv_name} virtual environment..." "$NC"
-if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+if [ "$OS" = "windows" ]; then
     # Windows-style venv layout
-    # shellcheck disable=SC1091
-    source "${_arg_venv_name}/Scripts/activate"
+    if [ -f "${_arg_venv_name}/Scripts/activate" ]; then 
+        source "${_arg_venv_name}/Scripts/activate"
+    else
+        print_color "ERROR: Virtual environment activation script not found.\n" "$RED"
+        exit 1
+    fi
 else
     # POSIX-style venv layout
-    # shellcheck disable=SC1091
-    source "${_arg_venv_name}/bin/activate"
+    if [ -f "${_arg_venv_name}/bin/activate" ]; then 
+        source "${_arg_venv_name}/bin/activate"
+    else
+        print_color "ERROR: Virtual environment activation script not found.\n" "$RED"
+        exit 1
+    fi
 fi
 print_color "DONE\n" "$LGRN"
 
@@ -320,12 +415,12 @@ else
 fi
 
 if [ "$CREATE_NEW_ENV" = true ] && [ "$HAS_REQS" = true ]; then
-    print_color "Installing dependencies..." "$LBLUE"
+    print_color "Installing dependencies..." "$NC"
     pip install -q --upgrade pip --disable-pip-version-check
     pip install -q -r "$REQ_FILE" --disable-pip-version-check
     print_color "DONE\n" "$LGRN"
 elif [ "$CREATE_NEW_ENV" = false ] && [ "$_arg_update" = "on" ] && [ "$HAS_REQS" = true ]; then
-    print_color "Updating dependencies..." "$LBLUE"
+    print_color "Updating dependencies..." "$NC"
     pip install -q --upgrade pip --disable-pip-version-check
     pip install -q -r "$REQ_FILE" --disable-pip-version-check
     print_color "DONE\n" "$LGRN"
@@ -353,10 +448,12 @@ if [ "$_arg_jupyter" = "on" ]; then
     fi
 fi
 
-# Deactivate the virtual environment
-print_color "Deactivating ${_arg_venv_name} virtual environment..." "$NC"
-deactivate
-print_color "DONE\n" "$LGRN"
+# Deactivate the virtual environment (if function exists)
+if command -v deactivate >/dev/null 2>&1; then
+    print_color "Deactivating ${_arg_venv_name} virtual environment..." "$NC"
+    deactivate
+    print_color "DONE\n" "$LGRN"
+fi
 
 # Exit with a success code
 exit 0
