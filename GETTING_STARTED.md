@@ -1,7 +1,6 @@
-GETTING_STARTED.txt
-# Getting Started with CIMS Modelling
+# Getting Started with CIMS
 
-Welcome to the CIMS Modelling repository! This guide will help you set up and run the CIMS Python package for economic climate modeling.
+Welcome to the cims-models repository! This guide will help you set up and run the CIMS Python package for energy-economy modelling.
 
 ## Prerequisites
 
@@ -12,15 +11,15 @@ Before you begin, ensure you have the following installed on your computer:
 - **Git**:
   - Git is a version control system that you will use to clone the repository. Follow the [installation instructions](https://github.com/git-guides/install-git) for your operating system.
 - **Terminal or Command Prompt**
-  - **Windows**: Use Command Prompt or PowerShell.
+  - **Windows**: Use Git Bash or PowerShell.
   - **macOS**: Use Terminal.
   - **Linux**: Use Terminal.
 
 ## Step-by-Step Guide
-### 1. Clone the Modelling Repository
+### 1. Clone the Repository
 
 1. **Open Your Terminal**:
-   - **Windows**: Open Command Prompt or PowerShell.
+   - **Windows**: Open Git Bash or PowerShell.
    - **macOS/Linux**: Open Terminal.
   
 2. **Navigate to Your Desired Directory**:
@@ -29,27 +28,13 @@ Before you begin, ensure you have the following installed on your computer:
      cd ~/Documents/projects/
      ```
 
-3. **Generate a Personal Access Token (PAT)**:
-   - Go to GitHub's [Personal Access Tokens](https://github.com/settings/tokens) page.
-   - Click on **Generate new token** (if given an option, choose _Generate New Token (classic)_).
-   - Give your token a descriptive name, such as "CIMS Setup Token".
-   - Select the scopes or permissions you need. For most cases, you will only need `repo` permissions.
-   - Click **Generate token**.
-   - **Important**: Copy the token now. You won't be able to see it again! **Consider saving the PAT in a credential manager such as OnePassword or LastPass.** 
-
-4. **Clone the Repository Using the PAT**:
-   - Run the following command to clone the repository. When prompted for your GitHub password, use the PAT instead of your GitHub password:
+3. **Clone the Repository**:
+   - Run the following command to clone the repository:
      ```bash
      git clone https://github.com/EMRG-SFU/cims-models.git
      ```
-     - Example:
-       ```bash
-       git clone https://github.com/EMRG-SFU/cims-models.git
-       Username: your-github-username
-       Password: <paste your PAT here>
-       ```
 
-5. **Navigate to the Cloned Directory**:
+4. **Navigate to the Cloned Directory**:
    - Change to the directory of the cloned repository:
      ```bash
      cd cims-models
@@ -59,21 +44,28 @@ Before you begin, ensure you have the following installed on your computer:
 
 1. **Launch the Script**:
    - In the terminal, run the following command:
+
+      **Windows Git Bash/macOS/Linux**
      ```bash
      ./launch_cims
      ```
+      **Windows Powershell**
+     ```bash
+     .\launch_cims.ps1
+     ```
+
 2. **Script Actions**:
    - The script will perform the following actions:
      - **Check for Virtual Environment**:
-       - If a `cims-env` virtual environment exists, it will activate it.
        - If it doesn't exist, it will create a `cims-env` virtual environment.
-         - You will be prompted to select a Python version >= 3.9.
+       - You will be prompted to select a Python version >= 3.9.
      - **Activate the Virtual Environment**:
        - The script will activate the `cims-env` virtual environment.
      - **Install or Update Dependencies**:
        - The script will install or update the `CIMS` package and all its dependencies.
      - **Launch Jupyter Lab**:
        - Finally, the script will launch Jupyter Lab.
+
 3. **Advanced Options**:
    - For advanced users, the `launch_cims` script includes several optional parameters to customize the setup. Refer to the [Advanced Options](#5-advanced-options) section for more details.
   
@@ -85,11 +77,10 @@ Before you begin, ensure you have the following installed on your computer:
 
 2. **Explore and Run Notebooks**:
    - By default, the `Reference.ipynb` notebook will be opened. Alternatively, you can open another notebook or create your own. 
-   - Run the notebooks to begin modeling. If you're new to Jupyter, checkout [this video](https://www.youtube.com/watch?v=5pf0_bpNbkw) for an introduction. I'd suggest viewing the [Jupyter Notebook](https://www.youtube.com/watch?v=5pf0_bpNbkw&t=277s) & [Jupyter Lab](https://www.youtube.com/watch?v=5pf0_bpNbkw&t=541s) sections of the video.
+   - Run the notebooks to begin modelling. If you're new to Jupyter, checkout [this video](https://www.youtube.com/watch?v=5pf0_bpNbkw) for an introduction. I'd suggest viewing the [Jupyter Notebook](https://www.youtube.com/watch?v=5pf0_bpNbkw&t=277s) & [Jupyter Lab](https://www.youtube.com/watch?v=5pf0_bpNbkw&t=541s) sections of the video.
 
 3. **Exiting from Jupyter Lab**:
    - To exit Jupyter Lab, either press `Ctrl+C` in the terminal or use `File>Shut Down` in the Jupyter Lab toolbar.
-
 
 ### 4. Subsequent Runs
 
@@ -105,9 +96,6 @@ Before you begin, ensure you have the following installed on your computer:
 
 ## Troubleshooting
 
-- **Permission Denied to GitHub**:
-  - If you encounter a "Permission denied" error while cloning the repository, ensure you are using a Personal Access Token (PAT). Follow [this guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) to create and use a PAT.
-
 - **Python Version Issues**:
   - If the launch script fails due to an incompatible Python version, ensure you have Python 3.9 or higher installed. You can download the latest version from [here](https://www.python.org/downloads/).
 
@@ -116,14 +104,14 @@ Before you begin, ensure you have the following installed on your computer:
 - **Submit Issues**: If you encounter any problems, please submit an issue on our GitHub Issues page.
 - **CIMS Code Repository**: [CIMS GitHub Repository](https://github.com/EMRG-SFU/cims)
 
-### 5. Advanced Options
+### Advanced Options
 
 The `launch_cims` script includes several optional parameters that advanced users can utilize to customize their setup. Below is a brief overview of these options:
 
 1. **Custom Virtual Environment Name**:
-   - If you want to use a custom name for the virtual environment instead of the default `cims-env`, use the `--env-name` flag:
+   - If you want to use a custom name for the virtual environment instead of the default `cims-env`, use the `venv-name` flag:
      ```bash
-     ./launch_cims --env-name my_custom_env
+     ./launch_cims my_custom_env
      ```
 
 2. **Skip Launching Jupyter Lab**:

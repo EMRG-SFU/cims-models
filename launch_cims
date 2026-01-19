@@ -126,13 +126,34 @@ MIN_PYTHON=(3,9)
 set -e
 set -o pipefail
 
+# Detect OS
+detect_os() {
+    case "$(uname -s)" in
+        Darwin*)    echo "mac" ;;
+        Linux*)     echo "linux" ;;
+        CYGWIN*)    echo "windows" ;;
+        MINGW*)     echo "windows" ;;
+        MSYS*)      echo "windows" ;;
+        *)          echo "unknown" ;;
+    esac
+}
+
+OS=$(detect_os)
+
 # Formatting
 RED='\e[0;31m'    # Red
-LBLUE='\e[0;36m'  # Light Blue
-LGRN='\e[0;92m'   # LIGHT GREEN
-YLW="\e[0;33m"   # Yellow
+LGRN='\e[0;92m'   # Light Green
+YLW="\e[0;33m"    # Yellow
 NC='\e[0m'        # No Color
-LBLUE='\e[0m'  # Light Blue
+
+# NEW: on Windows, disable ANSI colors (match behaviour of new script)
+if [ "$OS" = "windows" ]; then
+    NO_COLOR=true
+    RED=''
+    LGRN=''
+    YLW=''
+    NC=''
+fi
 
 # Function to print colored messages to stderr
 print_color() {
@@ -144,108 +165,295 @@ print_color() {
     else
         printf "${COLOR}${MSG}${NC}"
     fi
-
 }
 
 # Function to compare Python versions
 check_python_version() {
     local python_path=$1
-    $python_path -c "import sys; assert sys.version_info >= (${MIN_PYTHON})" 2>/dev/null
+    "$python_path" -c "import sys; assert sys.version_info >= (${MIN_PYTHON})" 2>/dev/null
+}
+
+# Function to extract version number from Python executable
+get_python_version() {
+    local python_path=$1
+    "$python_path" -c "import sys; print('{}.{}.{}'.format(*sys.version_info[:3]))" 2>/dev/null || echo "0.0.0"
+}
+        
+# Function to compare two version strings (returns 0 if v1 >= v2)
+version_gte() {
+    local v1=$1
+    local v2=$2
+    printf '%s\n%s\n' "$v1" "$v2" | sort -V -C 2>/dev/null && return 0
+    # Fallback for systems without sort -V
+    local IFS=.
+    local i ver1=($v1) ver2=($v2)
+    for ((i=0; i<${#ver1[@]} || i<${#ver2[@]}; i++)); do
+        if ((10#${ver1[i]:-0} > 10#${ver2[i]:-0})); then
+            return 0
+        elif ((10#${ver1[i]:-0} < 10#${ver2[i]:-0})); then
+            return 1
+        fi
+    done
+    return 0
 }
 
 # Function to create virtual environment
 create_virtual_env() {
-    # Find locations of python3 installations which satisfy the minimum required Python version
     local options=()
     local i=0
-    IFS=':' read -r -a dirs <<< "$PATH"
-    for dir in "${dirs[@]}"; do
-        if [ -d "$dir" ]; then
-            while IFS= read -r -d $'\0' f; do
-                if check_python_version "$f"; then options[i++]="$f"; fi
-            done < <(find "$dir" -regex ".*/python3\.[0-9]*" -maxdepth 1 -print0)
+
+    # Determine path separator based on OS
+    local path_sep=":"
+    if [ "$OS" = "windows" ]; then
+        # Windows paths can be : separated if using bash or gitbash. But are
+        # ; separated in some other terminals.
+        path_sep=":"
+        # Check if PATH contains semicolons AND Windows-style paths (C:\)
+        if [[ "$PATH" == *";"* ]] && [[ "$PATH" =~ [A-Za-z]:\\ ]]; then
+            path_sep=";"
+        fi
+    fi
+        
+    # 1. Prefer well-known commands if present (python3, python, py)
+    for cmd in python3 python py; do
+        if command -v "$cmd" >/dev/null 2>&1; then
+            options[i++]="$(command -v "$cmd")"
         fi
     done
 
-    # Sort the list of Python versions in descending order
-    IFS=$'\n' sorted_options=($(sort -rV <<<"${options[*]}"))
+    # 2. Scan PATH for python3.* executables
+    IFS="$path_sep" read -r -a dirs <<< "$PATH"
+    for dir in "${dirs[@]}"; do
+        if [ -d "$dir" ]; then
+            for f in "$dir"/python3.*; do
+                if [ -x "$f" ] && [ -f "$f" ]; then
+                    options[i++]="$f"
+                fi
+            done
+        fi
+    done
+
+    # 3. On Windows (Git Bash / MSYS), also check common install locations
+    if [ "$OS" = "windows" ]; then
+        local win_paths=(
+            "/c/Python3"*
+            "/c/Program Files/Python3"*
+            "/c/Users/$USER/AppData/Local/Programs/Python/Python3"*
+        )
+        for pattern in "${win_paths[@]}"; do
+            # Use shell globbing to expand patterns
+            for base in $pattern; do
+                if [ -d "$base" ]; then
+                    local exe="$base/python.exe"
+                    if [ -x "$exe" ] && [ -f "$exe" ]; then
+                        options[i++]="$exe"
+                    fi
+                fi
+            done
+        done
+    fi
+
+    # 4. De-duplicate and keep only interpreters that satisfy MIN_PYTHON
+    local unique=()
+    local seen exe
+    for exe in "${options[@]}"; do
+        [ -x "$exe" ] && [ -f "$exe" ] || continue
+        # de-dupe
+        local already=false
+        for seen in "${unique[@]}"; do
+            if [ "$seen" = "$exe" ]; then
+                already=true
+                break
+            fi
+        done
+        $already && continue
+        # version filter
+        if check_python_version "$exe"; then
+            unique+=("$exe")
+        fi
+    done
+
+    if [ "${#unique[@]}" -eq 0 ]; then
+        local py_prompt
+        py_prompt=$(echo "$MIN_PYTHON" | sed 's/,/./')
+        print_color "No Python interpreter >= ${py_prompt} found.\n" "$RED"
+        print_color "Please install Python >= ${py_prompt} and rerun this script.\n" "$RED"
+        exit 1
+    fi
+
+    # 5. Sort the list of Python versions in descending order
+    # Create array with version:path pairs for sorting
+    local versioned=()
+    for exe in "${unique[@]}"; do
+        local ver=$(get_python_version "$exe")
+        versioned+=("$ver:$exe")
+    done
+
+    # Sort using version comparison
+    local sorted_options=()    
+
+    IFS=$'\n' sorted_versioned=($(printf "%s\n" "${versioned[@]}" | sort -t: -k1 -rV 2>/dev/null || printf "%s\n" "${versioned[@]}"))
     unset IFS
+
+     # Extract paths from sorted version:path pairs
+    for item in "${sorted_versioned[@]}"; do
+        sorted_options+=("${item#*:}")
+    done
+        
+    # If sort -V failed, do manual sorting
+    if [ ${#sorted_options[@]} -eq 0 ]; then
+        for exe in "${unique[@]}"; do
+            local ver=$(get_python_version "$exe")
+            local inserted=false
+            for ((i=0; i<${#sorted_options[@]}; i++)); do
+                local existing_ver=$(get_python_version "${sorted_options[$i]}")
+                if version_gte "$ver" "$existing_ver"; then
+                    sorted_options=("${sorted_options[@]:0:$i}" "$exe" "${sorted_options[@]:$i}")
+                    inserted=true
+                    break
+                fi
+            done
+            if ! $inserted; then
+                sorted_options+=("$exe")
+            fi
+        done
+    fi
 
     # Pre-select the most recent Python version
     local recommended_python="${sorted_options[0]}"
 
     # Create a selection menu of options with recommended message
     local prompt
-    prompt=$(printf "${YLW}Select an installed version of Python to use in your virtual environment: $NC")
+    prompt=$(printf "${YLW}Select an installed version of Python to use in your virtual environment: ${NC}")
     PS3="${prompt}"
     local options_with_recommendation=()
-    for option in "${sorted_options[@]}"; do
-        version=$(basename "$option")
-        if [[ "$option" == "$recommended_python" ]]; then
-            options_with_recommendation+=("${version} (${option}) - RECOMMENDED")
+    local version
+    for exe in "${sorted_options[@]}"; do
+        version=$(get_python_version "$exe")
+        if [[ "$exe" == "$recommended_python" ]]; then
+            options_with_recommendation+=("Python ${version} (${exe}) - RECOMMENDED")
         else
-            options_with_recommendation+=("${version} (${option})")
+            options_with_recommendation+=("Python ${version} (${exe})")
         fi
     done
 
     select SELECTED_PYTHON in "${options_with_recommendation[@]}" "I'll install another Python version"; do
         if [[ "$REPLY" -eq $((${#options_with_recommendation[@]} + 1)) ]]; then
-            local py_prompt=$(echo "$MIN_PYTHON" | sed 's/,/./')
+            local py_prompt
+            py_prompt=$(echo "$MIN_PYTHON" | sed 's/,/./')
             print_color "Please install Python >= ${py_prompt} and rerun this script.\n" "$RED"
             exit 0
         fi
-        SELECTED_PYTHON=$(echo "$SELECTED_PYTHON" | sed 's/ - RECOMMENDED//' | sed 's/.*(\(.*\)).*/\1/')
-        print_color "Selected ${SELECTED_PYTHON}\n" "$LGRN"
-        break
+        if [ -n "$SELECTED_PYTHON" ]; then
+            SELECTED_PYTHON=$(echo "$SELECTED_PYTHON" | sed 's/ - RECOMMENDED//' | sed 's/.*(\(.*\)).*/\1/')
+            print_color "Selected ${SELECTED_PYTHON}\n" "$LGRN"
+            break
+        fi
+        print_color "Invalid selection.\n" "$RED"
     done
 
-    print_color "Building ${_arg_venv_name}..." "$LBLUE"
-    "$SELECTED_PYTHON" -m venv "${_arg_venv_name}"
+    print_color "Building ${_arg_venv_name}..." "$NC"
+    if ! "$SELECTED_PYTHON" -m venv "${_arg_venv_name}" 2>/dev/null; then
+        print_color "FAILED\n" "$RED"
+        print_color "The selected Python cannot create a virtual environment.\n" "$RED"
+        
+        # Check if this is Anaconda
+        if "$SELECTED_PYTHON" -c "import sys; exit(0 if 'conda' in sys.version.lower() or 'anaconda' in sys.executable.lower() else 1)" 2>/dev/null; then
+            print_color "This appears to be an Anaconda Python installation.\n" "$YLW"
+            print_color "Some Anaconda installations don't include venv. Try:\n" "$YLW"
+            print_color "  1. Using 'conda install venv' to add venv support\n" "$YLW"
+            print_color "  2. Using 'conda create' instead for Anaconda environments\n" "$YLW"
+            print_color "  3. Installing standard Python from python.org\n" "$YLW"
+        else
+            print_color "Try selecting a different Python installation.\n" "$YLW"
+        fi
+        exit 1
+    fi
     print_color "DONE\n" "$LGRN"
 }
 
 # Step 1: Setup Virtual Environment
-print_color "Checking for ${_arg_venv_name} virtual environment..." "$LBLUE"
+print_color "Checking for ${_arg_venv_name} virtual environment..." "$NC"
 if [ -d "${_arg_venv_name}" ]; then
     CREATE_NEW_ENV=false
     print_color "FOUND\n" "$LGRN"
 else
     CREATE_NEW_ENV=true
-    print_color "NOT FOUND\n" "$LBLUE"
+    print_color "NOT FOUND\n" "$NC"
     print_color "Creating ${_arg_venv_name} virtual environment...\n" "$YLW"
     create_virtual_env
 fi
 
 # Step 2: Activate the virtual environment
-print_color "Activating ${_arg_venv_name} virtual environment..." "$LBLUE"
-source "${_arg_venv_name}/bin/activate"
+print_color "Activating ${_arg_venv_name} virtual environment..." "$NC"
+if [ "$OS" = "windows" ]; then
+    # Windows-style venv layout
+    if [ -f "${_arg_venv_name}/Scripts/activate" ]; then 
+        source "${_arg_venv_name}/Scripts/activate"
+    else
+        print_color "ERROR: Virtual environment activation script not found.\n" "$RED"
+        exit 1
+    fi
+else
+    # POSIX-style venv layout
+    if [ -f "${_arg_venv_name}/bin/activate" ]; then 
+        source "${_arg_venv_name}/bin/activate"
+    else
+        print_color "ERROR: Virtual environment activation script not found.\n" "$RED"
+        exit 1
+    fi
+fi
 print_color "DONE\n" "$LGRN"
 
-# Step 3: Install dependencies
-if [ "$CREATE_NEW_ENV" = true ]; then
-    print_color "Installing dependencies..." "$LBLUE"
-    pip install -q --upgrade pip
-    pip install -q -r requirements.txt
-    print_color "DONE\n" "$LGRN"
-elif [ "$_arg_update" = "on" ]; then
-    print_color "Updating dependencies..." "$LBLUE"
-    pip install -q --upgrade pip
-    pip install -q -r requirements.txt
-    print_color "DONE\n" "$LGRN"
+# Step 3: Install dependencies (resilient to missing requirements.txt)
+REQ_FILE="requirements.txt"
+if [ ! -f "$REQ_FILE" ]; then
+    HAS_REQS=false
+    print_color "requirements.txt not found in current directory; skipping dependency installation.\n" "$YLW"
+else
+    HAS_REQS=true
 fi
 
-# Step 4: Launch JupyterLab (if not disabled)
+if [ "$CREATE_NEW_ENV" = true ] && [ "$HAS_REQS" = true ]; then
+    print_color "Installing dependencies..." "$NC"
+    pip install -q --upgrade pip --disable-pip-version-check
+    pip install -q -r "$REQ_FILE" --disable-pip-version-check
+    print_color "DONE\n" "$LGRN"
+elif [ "$CREATE_NEW_ENV" = false ] && [ "$_arg_update" = "on" ] && [ "$HAS_REQS" = true ]; then
+    print_color "Updating dependencies..." "$NC"
+    pip install -q --upgrade pip --disable-pip-version-check
+    pip install -q -r "$REQ_FILE" --disable-pip-version-check
+    print_color "DONE\n" "$LGRN"
+elif [ "$HAS_REQS" = true ]; then
+    print_color "Skipping dependency installation (use --update to force).\n" "$YLW"
+fi
+
+# Step 4: Launch JupyterLab (if not disabled, now more robust)
 if [ "$_arg_jupyter" = "on" ]; then
-    print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$LBLUE"
-    jupyter lab --log-level=40 --notebook-dir=./ ./scenarios/Reference.ipynb
-    print_color "Closing Jupyter Lab..." "$LBLUE"
-	print_color "DONE\n" "$LGRN"
+    if ! command -v jupyter >/dev/null 2>&1; then
+        print_color "Jupyter is not installed in this virtual environment.\n" "$RED"
+        print_color "Add 'jupyterlab' to requirements.txt and re-run with --update to install it.\n" "$YLW"
+    else
+        NOTEBOOK="./scenarios/Reference.ipynb"
+        if [ -f "$NOTEBOOK" ]; then
+            print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$NC"
+            jupyter lab --log-level=40 --notebook-dir=./ "$NOTEBOOK"
+        else
+            print_color "Notebook $NOTEBOOK not found. Launching JupyterLab in repository root instead.\n" "$YLW"
+            print_color "Launching JupyterLab...Use Ctrl+C to exit\n" "$NC"
+            jupyter lab --log-level=40 --notebook-dir=./
+        fi
+        print_color "Closing Jupyter Lab..." "$NC"
+        print_color "DONE\n" "$LGRN"
+    fi
 fi
 
-# Deactivate the virtual environment
-print_color "Deactivating ${_arg_venv_name} virtual environment..." "$LBLUE"
-deactivate
-print_color "DONE\n" "$LGRN"
+# Deactivate the virtual environment (if function exists)
+if command -v deactivate >/dev/null 2>&1; then
+    print_color "Deactivating ${_arg_venv_name} virtual environment..." "$NC"
+    deactivate
+    print_color "DONE\n" "$LGRN"
+fi
 
 # Exit with a success code
 exit 0
