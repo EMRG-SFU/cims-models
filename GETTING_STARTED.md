@@ -1,4 +1,3 @@
-GETTING_STARTED.txt
 # Getting Started with CIMS
 
 Welcome to the cims-models repository! This guide will help you set up and run the CIMS Python package for energy-economy modelling.

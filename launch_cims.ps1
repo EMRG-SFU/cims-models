@@ -1,254 +1,361 @@
-# PowerShell launcher for CIMS virtual environment and Jupyter Lab
-# Usage: .\launch_cims.ps1 [-VenvName "cims-env"] [-NoJupyter] [-NoUpdate]
+<# 
+    PowerShell version of the CIMS setup script.
 
+    Behaviour mirrors the Bash script:
+      - Creates/uses a virtual environment
+      - Installs/updates dependencies from requirements.txt
+      - Optionally launches Jupyter Lab with ./scenarios/Reference.ipynb
+
+    Usage (rough equivalents to Bash):
+      ./setup.ps1
+      ./setup.ps1 -VenvName myenv
+      ./setup.ps1 -NoJupyter
+      ./setup.ps1 -NoUpdate
+      ./setup.ps1 -Help
+      ./setup.ps1 -Version
+#>
+
+[CmdletBinding()]
 param(
+    [Alias('n')]
     [string]$VenvName = "cims-env",
+
+    # Equivalent to Bash --no-jupyter (default is on)
     [switch]$NoJupyter,
+
+    # Equivalent to Bash --no-update (default is on)
     [switch]$NoUpdate,
-    [switch]$Help
+
+    [switch]$Help,
+    [switch]$Version
 )
 
-# Configuration
-$MIN_PYTHON_VERSION = @(3, 9)
-$LaunchJupyter = -not $NoJupyter
-$UpdateDeps = -not $NoUpdate
+# --- Help / Version ---
 
-# Show help
 if ($Help) {
-    Write-Host @"
-Usage: .\launch_cims.ps1 [-VenvName <name>] [-NoJupyter] [-NoUpdate]
-  -VenvName      Name of virtual environment (default: cims-env)
-  -NoJupyter     Skip launching Jupyter Lab
-  -NoUpdate      Skip updating dependencies
-  -Help          Show this help message
-
-Examples:
-  .\launch_cims.ps1
-  .\launch_cims.ps1 -VenvName my-env
-  .\launch_cims.ps1 -NoJupyter
-  .\launch_cims.ps1 -VenvName my-env -NoUpdate
-"@
-    exit 0
+    Write-Host "This script sets up a CIMS virtual environment, installs any required dependencies, and launches a modeling notebook in Jupyter Lab."
+    Write-Host "Usage: setup.ps1 [-VenvName <name>] [-NoJupyter] [-NoUpdate] [-Help] [-Version]"
+    Write-Host "  -VenvName   Specify the name of the virtual environment (default: 'cims-env')"
+    Write-Host "  -NoJupyter  Do not launch Jupyter Lab (on by default)"
+    Write-Host "  -NoUpdate   Do not update Python dependencies in existing virtual environment (on by default)"
+    Write-Host "  -Help       Prints help"
+    Write-Host "  -Version    Prints version"
+    return
 }
 
-# Color output functions
-function Write-Msg { Write-Host $args -ForegroundColor Cyan }
-function Write-Success { Write-Host $args -ForegroundColor Green }
-function Write-Err { Write-Host $args -ForegroundColor Red }
-function Write-Warn { Write-Host $args -ForegroundColor Yellow }
+if ($Version) {
+    Write-Host "setup.ps1 1.0"
+    return
+}
 
-# Check Python version
-function Test-PythonVersion {
-    param([string]$PythonPath)
-    
-    try {
-        $version = & $PythonPath -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')" 2>$null
-        if ($version) {
-            $major, $minor = $version.Split('.')
-            return ([int]$major -gt $MIN_PYTHON_VERSION[0]) -or `
-                   (([int]$major -eq $MIN_PYTHON_VERSION[0]) -and ([int]$minor -ge $MIN_PYTHON_VERSION[1]))
+# --- Strict mode / error handling ---
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+# --- Configuration ---
+
+$MinPythonMajor = 3
+$MinPythonMinor = 9
+
+# Default behaviour: jupyter ON, update ON
+$LaunchJupyter = -not $NoJupyter.IsPresent
+$UpdateDeps    = -not $NoUpdate.IsPresent
+
+# --- Color helpers (rough analogue of print_color) ---
+
+$NoColor = $false
+function Write-Color {
+    param(
+        [string]$Message,
+        [ValidateSet('Red','Green','Yellow','Cyan','None')]
+        [string]$Color = 'None',
+        [switch]$NoNewline
+    )
+    if ($NoColor) {
+        if ($NoNewline) {
+            Write-Host -NoNewline $Message
+        } else {
+            Write-Host $Message
         }
+    } else {
+        if ($Color -eq 'None') {
+            if ($NoNewline) {
+                Write-Host -NoNewline $Message
+            } else {
+                Write-Host $Message
+            }
+        } else {
+            if ($NoNewline) {
+                Write-Host -ForegroundColor $Color -NoNewline $Message
+            } else {
+                Write-Host -ForegroundColor $Color $Message
+            }
+        }
+    }
+}
+
+# --- Python version check ---
+
+function Test-PythonVersion {
+    param(
+        [string]$PythonPath
+    )
+    try {
+        & $PythonPath -c "import sys; assert sys.version_info >= ($MinPythonMajor, $MinPythonMinor)" 2>$null
+        return ($LASTEXITCODE -eq 0)
     } catch {
         return $false
     }
-    return $false
 }
 
-# Find all Python installations
-function Find-PythonVersions {
-    $pythonVersions = @()
-    
-    # Check common Python commands
-    $pythonCommands = @("python", "python3", "py")
-    
-    foreach ($cmd in $pythonCommands) {
+# --- Discover Python interpreters (similar logic to Bash script) ---
+
+function Get-PythonCandidates {
+    $candidates = @()
+
+    # 1. Prefer well-known commands if present (python3, python, py)
+    foreach ($cmd in @('python3', 'python', 'py')) {
         try {
-            $path = (Get-Command $cmd -ErrorAction SilentlyContinue).Source
-            if ($path -and (Test-PythonVersion $path)) {
-                $pythonVersions += $path
+            $gc = Get-Command $cmd -ErrorAction SilentlyContinue
+            if ($gc -and $gc.Source -and (Test-Path $gc.Source)) {
+                $candidates += $gc.Source
+            }
+        } catch { }
+    }
+
+    # 2. Scan PATH for python3.* executables
+    $pathDirs = $env:PATH -split ';'
+    foreach ($dir in $pathDirs) {
+        if (-not (Test-Path $dir)) { continue }
+        try {
+            $items = Get-ChildItem -Path $dir -Filter 'python3*' -File -ErrorAction SilentlyContinue
+            foreach ($item in $items) {
+                $candidates += $item.FullName
+            }
+        } catch { }
+    }
+
+    # 3. Windows-style common Python locations (equivalent to /c/... in Bash)
+    $winPaths = @(
+        'C:\Python3*',
+        'C:\Program Files\Python3*',
+        (Join-Path $env:LOCALAPPDATA 'Programs\Python\Python3*')
+    )
+    foreach ($pattern in $winPaths) {
+        $dirs = Get-ChildItem -Path $pattern -Directory -ErrorAction SilentlyContinue
+        foreach ($d in $dirs) {
+            $exe = Join-Path $d.FullName 'python.exe'
+            if (Test-Path $exe) {
+                $candidates += $exe
+            }
+        }
+    }
+
+    # Deduplicate by full path
+    $unique = $candidates | Sort-Object -Unique
+
+    # Filter by minimum Python version
+    $valid = @()
+    foreach ($exe in $unique) {
+        if (Test-PythonVersion -PythonPath $exe) {
+            $valid += $exe
+        }
+    }
+
+    if (-not $valid -or $valid.Count -eq 0) {
+        return @()
+    }
+
+    # Sort by actual Python version, descending
+    $withVersion = foreach ($exe in $valid) {
+        try {
+            $versionText = (& $exe --version 2>&1).Split()[1]
+            [PSCustomObject]@{
+                Path    = $exe
+                Version = [version]$versionText
             }
         } catch {
-            # Command not found, skip
-        }
-    }
-    
-    # Check py launcher with different versions
-    if (Get-Command py -ErrorAction SilentlyContinue) {
-        for ($minor = 9; $minor -le 15; $minor++) {
-            try {
-                $path = py -3.$minor -c "import sys; print(sys.executable)" 2>$null
-                if ($path -and (Test-Path $path) -and (Test-PythonVersion $path)) {
-                    $pythonVersions += $path
-                }
-            } catch {
-                # Version not available
+            # If we can't parse version, give it a very low version
+            [PSCustomObject]@{
+                Path    = $exe
+                Version = [version]'0.0.0'
             }
         }
     }
-    
-    # Check common installation directories
-    $commonPaths = @(
-        "$env:LOCALAPPDATA\Programs\Python\Python3*",
-        "C:\Python3*",
-        "C:\Program Files\Python3*"
+
+    $withVersion | Sort-Object Version -Descending
+}
+
+# --- Create virtual environment (includes interactive Python selection) ---
+
+function New-CimsVirtualEnv {
+    param(
+        [string]$Name
     )
-    
-    foreach ($pattern in $commonPaths) {
-        $dirs = Get-ChildItem -Path $pattern -Directory -ErrorAction SilentlyContinue
-        foreach ($dir in $dirs) {
-            $pythonExe = Join-Path $dir.FullName "python.exe"
-            if ((Test-Path $pythonExe) -and (Test-PythonVersion $pythonExe)) {
-                $pythonVersions += $pythonExe
+
+    $pyList = Get-PythonCandidates
+
+    if (-not $pyList -or $pyList.Count -eq 0) {
+        $min = "{0}.{1}" -f $MinPythonMajor, $MinPythonMinor
+        Write-Color "No Python interpreter >= $min found." Red
+        Write-Color "Please install Python >= $min and rerun this script." Red
+        exit 1
+    }
+
+    # Build menu
+    $menu = @()
+    $index = 1
+    foreach ($entry in $pyList) {
+        if ($index -eq 1) {
+            $menu += [PSCustomObject]@{
+                Index   = $index
+                Label   = "{0} (v{1}) - RECOMMENDED" -f $entry.Path, $entry.Version
+                Path    = $entry.Path
+                Version = $entry.Version
+            }
+        } else {
+            $menu += [PSCustomObject]@{
+                Index   = $index
+                Label   = "{0} (v{1})" -f $entry.Path, $entry.Version
+                Path    = $entry.Path
+                Version = $entry.Version
             }
         }
+        $index++
     }
-    
-    # Remove duplicates and return
-    return $pythonVersions | Sort-Object -Unique
-}
 
-# Get Python version string
-function Get-PythonVersionString {
-    param([string]$PythonPath)
-    
-    try {
-        $version = & $PythonPath --version 2>&1
-        return $version -replace "Python ", ""
-    } catch {
-        return "Unknown"
-    }
-}
+    $cancelIndex = $menu.Count + 1
 
-# Create virtual environment
-function New-VirtualEnvironment {
-    $pythonOptions = Find-PythonVersions
-    
-    if ($pythonOptions.Count -eq 0) {
-        Write-Err "No Python >= $($MIN_PYTHON_VERSION[0]).$($MIN_PYTHON_VERSION[1]) found."
-        Write-Err "Please install Python from https://www.python.org/downloads/"
-        exit 1
+    # Print menu
+    Write-Color ("Select an installed version of Python to use in your virtual environment:") Yellow
+    foreach ($m in $menu) {
+        Write-Host ("  [{0}] {1}" -f $m.Index, $m.Label)
     }
-    
-    # Create menu
-    Write-Warn "`nSelect Python version for virtual environment:"
-    
-    $menu = @()
-    for ($i = 0; $i -lt $pythonOptions.Count; $i++) {
-        $version = Get-PythonVersionString $pythonOptions[$i]
-        $path = $pythonOptions[$i]
-        if ($i -eq 0) {
-            $menu += "[$($i+1)] $path (v$version) - RECOMMENDED"
-        } else {
-            $menu += "[$($i+1)] $path (v$version)"
+    Write-Host ("  [{0}] I'll install another Python version" -f $cancelIndex)
+
+    # Read selection
+    while ($true) {
+        $choice = Read-Host "Enter selection number"
+        if ([string]::IsNullOrWhiteSpace($choice)) {
+            Write-Color "Invalid selection." Red
+            continue
         }
+
+        if (-not [int]::TryParse($choice, [ref]$null)) {
+            Write-Color "Invalid selection." Red
+            continue
+        }
+
+        $choiceInt = [int]$choice
+
+        if ($choiceInt -eq $cancelIndex) {
+            $min = "{0}.{1}" -f $MinPythonMajor, $MinPythonMinor
+            Write-Color "Please install Python >= $min and rerun this script." Red
+            exit 0
+        }
+
+        $selected = $menu | Where-Object { $_.Index -eq $choiceInt }
+        if ($null -ne $selected) {
+            Write-Color ("Selected {0}" -f $selected.Path) Green
+            $selectedPython = $selected.Path
+
+            Write-Color ("Building {0}..." -f $Name) None
+            & $selectedPython -m venv $Name
+            Write-Color "DONE" Green
+            return
+        }
+
+        Write-Color "Invalid selection." Red
     }
-    $menu += "[0] Cancel - I'll install another version"
-    
-    foreach ($item in $menu) {
-        Write-Host $item
-    }
-    
-    # Get selection
-    do {
-        $selection = Read-Host "`nEnter selection number"
-        $selectionNum = [int]$selection
-    } while ($selectionNum -lt 0 -or $selectionNum -gt $pythonOptions.Count)
-    
-    if ($selectionNum -eq 0) {
-        Write-Err "Installation cancelled."
-        exit 0
-    }
-    
-    $selectedPython = $pythonOptions[$selectionNum - 1]
-    $selectedVersion = Get-PythonVersionString $selectedPython
-    Write-Success "Selected Python $selectedVersion"
-    
-    # Create virtual environment
-    Write-Msg "Creating virtual environment: $VenvName"
-    & $selectedPython -m venv $VenvName
-    
-    if ($LASTEXITCODE -ne 0) {
-        Write-Err "Failed to create virtual environment"
-        exit 1
-    }
-    
-    Write-Success "Virtual environment created"
-    return $true
 }
 
-# Main script
-Write-Host "`n=== CIMS Environment Launcher ===" -ForegroundColor Cyan
-Write-Host ""
+# --- Step 1: Setup virtual environment ---
 
-# Check if virtual environment exists
-$installDeps = $false
+Write-Color ("Checking for {0} virtual environment..." -f $VenvName) None
 if (Test-Path $VenvName) {
-    Write-Msg "Virtual environment found: $VenvName"
-    $installDeps = $UpdateDeps
+    $createNewEnv = $false
+    Write-Color "FOUND" Green
 } else {
-    Write-Msg "Virtual environment not found"
-    $installDeps = New-VirtualEnvironment
+    $createNewEnv = $true
+    Write-Color "NOT FOUND" None
+    Write-Color ("Creating {0} virtual environment..." -f $VenvName) Yellow
+    New-CimsVirtualEnv -Name $VenvName
 }
 
-# Determine activation script path
+# --- Step 2: Activate virtual environment ---
+
+Write-Color ("Activating {0} virtual environment..." -f $VenvName) None
+
+# PowerShell-specific activation script
 $activateScript = Join-Path $VenvName "Scripts\Activate.ps1"
+if (-not (Test-Path $activateScript)) {
+    # Fallback: cmd-style activate script (if user runs from a mixed environment)
+    $activateScript = Join-Path $VenvName "Scripts\activate"
+}
 
 if (-not (Test-Path $activateScript)) {
-    Write-Err "Virtual environment activation script not found: $activateScript"
+    Write-Color ("Activation script not found in {0}\Scripts." -f $VenvName) Red
     exit 1
 }
 
-# Activate virtual environment
-Write-Msg "Activating virtual environment..."
-try {
-    & $activateScript
-    Write-Success "Activated"
-} catch {
-    Write-Err "Failed to activate virtual environment: $_"
-    exit 1
+. $activateScript  # dot-source so it alters current session
+Write-Color "DONE" Green
+
+# --- Step 3: Install/update dependencies ---
+
+$reqFile = "requirements.txt"
+if (-not (Test-Path $reqFile)) {
+    $hasReqs = $false
+    Write-Color "requirements.txt not found in current directory; skipping dependency installation." Yellow
+} else {
+    $hasReqs = $true
 }
 
-# Install/update dependencies
-if ($installDeps) {
-    if (Test-Path "requirements.txt") {
-        Write-Msg "Installing dependencies..."
-        python -m pip install --quiet --upgrade pip
-        python -m pip install --quiet -r requirements.txt
-        
-        if ($LASTEXITCODE -eq 0) {
-            Write-Success "Dependencies installed"
-        } else {
-            Write-Warn "Warning: Some dependencies may have failed to install"
-        }
-    } else {
-        Write-Warn "requirements.txt not found, skipping dependency installation"
-    }
+if ($createNewEnv -and $hasReqs) {
+    Write-Color "Installing dependencies..." Cyan
+    & pip install -q --upgrade pip --disable-pip-version-check
+    & pip install -q -r $reqFile --disable-pip-version-check
+    Write-Color "DONE" Green
+}
+elseif (-not $createNewEnv -and $UpdateDeps -and $hasReqs) {
+    Write-Color "Updating dependencies..." Cyan
+    & pip install -q --upgrade pip --disable-pip-version-check
+    & pip install -q -r $reqFile --disable-pip-version-check
+    Write-Color "DONE" Green
+}
+elseif ($hasReqs) {
+    Write-Color "Skipping dependency installation (use -NoUpdate:$false to force)." Yellow
 }
 
-# Launch Jupyter Lab
+# --- Step 4: Launch JupyterLab (if enabled) ---
+
 if ($LaunchJupyter) {
-    # Check if Jupyter is installed
-    $jupyterInstalled = Get-Command jupyter -ErrorAction SilentlyContinue
-    
-    if (-not $jupyterInstalled) {
-        Write-Err "Jupyter not found. Please add 'jupyterlab' to requirements.txt"
-        deactivate
-        exit 1
-    }
-    
-    # Check if notebook exists
-    $notebookPath = ".\scenarios\Reference.ipynb"
-    if (Test-Path $notebookPath) {
-        Write-Msg "Launching Jupyter Lab... (Press Ctrl+C to exit)"
-        jupyter lab --log-level=40 --notebook-dir=.\ $notebookPath
+    $jupyterPath = (Get-Command jupyter -ErrorAction SilentlyContinue)?.Source
+    if (-not $jupyterPath) {
+        Write-Color "Jupyter is not installed in this virtual environment." Red
+        Write-Color "Add 'jupyterlab' to requirements.txt and re-run with -NoUpdate:$false to install it." Yellow
     } else {
-        Write-Msg "Launching Jupyter Lab... (Press Ctrl+C to exit)"
-        jupyter lab --log-level=40 --notebook-dir=.\
+        $notebook = "./scenarios/Reference.ipynb"
+        if (Test-Path $notebook) {
+            Write-Color "Launching JupyterLab...Use Ctrl+C to exit" None
+            & jupyter lab --log-level=40 --notebook-dir=./ $notebook
+        } else {
+            Write-Color "Notebook $notebook not found. Launching JupyterLab in repository root instead." Yellow
+            Write-Color "Launching JupyterLab...Use Ctrl+C to exit" None
+            & jupyter lab --log-level=40 --notebook-dir=./
+        }
+        Write-Color "Closing Jupyter Lab..." None
+        Write-Color "DONE" Green
     }
 }
 
-# Deactivate
-Write-Msg "Deactivating virtual environment..."
-deactivate
-Write-Success "Done"
-Write-Host ""
+# --- Deactivate virtual environment ---
+
+Write-Color ("Deactivating {0} virtual environment..." -f $VenvName) None
+if (Get-Command deactivate -ErrorAction SilentlyContinue) {
+    deactivate
+}
+Write-Color "DONE" Green
+
+exit 0
