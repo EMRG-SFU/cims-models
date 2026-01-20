@@ -1,0 +1,316 @@
+defaults: &defaults
+    region:
+        Canada: 
+            include: "CAN"
+            Western: 
+                British Columbia: 
+                    include: "BC"
+                Alberta: 
+                    include: "AB"
+                Saskatchewan: 
+                    include: "SK"
+                Manitoba: 
+                    include: "MB"
+            Central:  
+                Ontario: 
+                    include: "ON" # "ON" treated as boolean in YAML
+                Quebec: 
+                    include: "QC"
+            Eastern:  
+                Atlantic: 
+                    include: "AT"
+                    New Brunswick: 
+                        include: "NB"
+                    Nova Scotia: 
+                        include: "NS"
+                    Prince Edward Island: 
+                        include: "PE"
+                    Newfoundland and Labrador: 
+                        include: "NL"
+            # Territories: 
+            #     include: "TR"
+            #     Yukon: 
+            #         include: "YT"
+            #     Northwest Territories: 
+            #         include: "NT"
+            #     Nunavut: 
+            #         include: "NU"
+    sector: 
+        multiplier: 1e-06 # GJ to PJ
+        CIMS:
+            Generic Fuels:
+                include: "CIMS.Generic Fuels.{energy}"
+        Economy: 
+            Industry:
+                Oil and Gas: 
+                    Upstream Oil and Gas: 
+                        Natural Gas Production: 
+                            multiplier: 37.3e-06 # 1000 m3 to PJ
+                            Supply: 
+                                include: "{region}.Natural Gas.Production.Supply" 
+                        Crude Oil Production: 
+                            multiplier: 38.5e-06 # m3 to PJ
+                            include: "{region}.Petroleum Crude" 
+                            Conventional Oil: 
+                                Conventional Light Oil: 
+                                    include: "{region}.Petroleum Crude.Production.Light Medium" 
+                                Conventional Heavy Oil: 
+                                    include: "{region}.Petroleum Crude.Production.Heavy" 
+                                Frontier Oil: 
+                                    include: "{region}.Petroleum Crude.Production.Exploration" 
+                            Oil Sands: 
+                                include: "{region}.Petroleum Crude.Production.Bitumen" 
+                                Mining and Extraction: 
+                                    include: "{region}.Petroleum Crude.Production.Bitumen.Mining" 
+                                In-Situ: 
+                                    include: "{region}.Petroleum Crude.Production.Bitumen.In-Situ" 
+                                Upgrading: 
+                                    include: "{region}.Petroleum Crude.Production.Bitumen.Upgrading" 
+                        Oil and Natural Gas and CO2 Transmission: 
+                            multiplier: 37.3e-06 # 1000 m3 to PJ
+                            include: "{region}.Natural Gas.Production.Transmission"
+                    Downstream Oil and Gas: 
+                        Petroleum Refining: 
+                            multiplier: 38.5e-06 # m3 to PJ
+                            include: "{region}.Petroleum Refining" 
+                        Natural Gas Distribution: 
+                            multiplier: 37.3e-06 # 1000 m3 to PJ
+                            include: "{region}.Natural Gas.Production.Distribution"
+                Hydrogen: 
+                    include: "{region}.Hydrogen" 
+                Biofuels: 
+                    Ethanol: 
+                        include: "{region}.Ethanol" 
+                    Biodiesel: 
+                        include: "{region}.Biodiesel" 
+                Heavy Industry: 
+                    Mining: 
+                        include: "{region}.Mining" 
+                    Smelting and Refining (Non-Ferrous): 
+                        include: "{region}.Metal Smelting" 
+                        Aluminum: 
+                            include: "{region}.Metal Smelting.Primary Metals.Aluminum" 
+                        Copper: 
+                            include: "{region}.Metal Smelting.Primary Metals.Copper" 
+                        Lead: 
+                            include: "{region}.Metal Smelting.Primary Metals.Lead" 
+                        Nickel: 
+                            include: "{region}.Metal Smelting.Primary Metals.Nickel" 
+                        Zinc: 
+                            include: "{region}.Metal Smelting.Primary Metals.Zinc" 
+                    Pulp and Paper: 
+                        include: "{region}.Pulp and Paper" 
+                    Iron and Steel: 
+                        include: "{region}.Iron and Steel" 
+                        Integrated: 
+                            include: "{region}.Iron and Steel.Molten Steel.Integrated" 
+                        Recycled: 
+                            include: "{region}.Iron and Steel.Molten Steel.Recycled" 
+                    Industrial Minerals: 
+                        include: "{region}.Industrial Minerals"
+                        Cement: 
+                            include: "{region}.Industrial Minerals.Products.Cement" 
+                        Lime and Gypsum: 
+                            include: "{region}.Industrial Minerals.Products.Lime" 
+                    Chemicals and Fertilizers: 
+                        include: "{region}.Chemical Products" 
+                Coal Production: 
+                    include: "{region}.Coal Mining" 
+                    multiplier: 26.8e-06 # tonne to PJ
+                Light Industry: 
+                    Light Manufacturing: 
+                        Glass: 
+                            include: "{region}.Industrial Minerals.Products.Glass"  
+                        Bricks: 
+                            include: "{region}.Industrial Minerals.Products.Bricks"  
+                        Light Industrial: 
+                            include: "{region}.Light Industrial" 
+                    Construction: 
+                        include: "{region}.Construction" 
+                    Forest Resources: 
+                        include: "{region}.Forestry" 
+            Electricity: 
+                multiplier: 1e-06 # GJ to PJ
+                include: "{region}.Electricity" 
+                Base Load: 
+                    multiplier: 3.6e-06 # MWh to PJ
+                    include: "{region}.Electricity.Utility Generation.Base Load" 
+                Shoulder Load: 
+                    multiplier: 3.6e-06 # MWh to PJ
+                    include: "{region}.Electricity.Utility Generation.Shoulder Load" 
+                Peak Load: 
+                    multiplier: 3.6e-06 # MWh to PJ
+                    include: "{region}.Electricity.Utility Generation.Peak Load" 
+            Transport: 
+                Passenger Transport: 
+                    multiplier: 1e-06 # pkm to Mpkm
+                    include: "{region}.Transportation Personal" 
+                    Cars and Light Trucks and Motorcycles: 
+                        include: "{region}.Transportation Personal.Passenger Vehicles" 
+                    Bus and Rail and Aviation: 
+                        Transit: 
+                            include: "{region}.Transportation Personal.Transit"  
+                        Bus: 
+                            include: "{region}.Transportation Personal.Intercity Bus"  
+                        Rail: 
+                            include: "{region}.Transportation Personal.Intercity Rail"  
+                        Air: 
+                            include: "{region}.Transportation Personal.Mode.Intercity Air" 
+                Freight Transport: 
+                    multiplier: 1e-06 # tkm to Mtkm
+                    include: "{region}.Transportation Freight.Freight" 
+                    Heavy Duty Trucks and Rail: 
+                        Light Medium: 
+                            include: "{region}.Transportation Freight.Freight.Land.Light Medium"  
+                        Trucks: 
+                            include: "{region}.Transportation Freight.Freight.Land.Heavy.Trucks"  
+                        Rail: 
+                            include: "{region}.Transportation Freight.Freight.Land.Heavy.Rail" 
+                    Aviation and Marine: 
+                        Air: 
+                            include: "{region}.Transportation Freight.Freight.Air"  
+                        Marine: 
+                            include: "{region}.Transportation Freight.Freight.Marine" 
+                Other Transport: 
+                    multiplier: 1e-06 # tkm to Mtkm
+                    include: "{region}.Transportation Freight.Off Road" 
+            Buildings: 
+                Commercial: 
+                    include: "{region}.Commercial" 
+                Residential: 
+                    include: "{region}.Residential" 
+            Agriculture: 
+                include: "{region}.Agriculture"
+                On Farm Fuel Use: 
+                    Heat: 
+                        include: "{region}.Agriculture.Heat"  
+                    Tractors: 
+                        include: "{region}.Agriculture.Tractors" 
+                Crop Production: 
+                    include: "{region}.Agriculture.Process.Soils" 
+                    service_exclude: "{region}.Agriculture.Tractors" 
+                Animal Production: 
+                    include: "{region}.Agriculture.Process.Enteric Fermentation and Manure Management" 
+                    service_exclude: "{region}.Agriculture.Tractors" 
+            Waste: 
+                include: "{region}.Waste" 
+                Solid Waste: null
+                Wastewater: null
+                Waste Incineration: null
+    energy: 
+        Total: 
+            Coal: 
+                Thermal Coal: 
+                    include: "CIMS.Generic Fuels.Coal" 
+                Metallurgical Coal: 
+                    include: "CIMS.Generic Fuels.Metallurgical Coal" 
+            Gas: 
+                Natural Gas: 
+                    include: "CIMS.Generic Fuels.Natural Gas" 
+            Oil: 
+                Diesel: 
+                    include: "CIMS.Generic Fuels.Diesel"
+                Fuel Oil: 
+                    include: "CIMS.Generic Fuels.Fuel Oil"
+                Gasoline: 
+                    include: "CIMS.Generic Fuels.Gasoline"
+                Jet Fuel: 
+                    include: "CIMS.Generic Fuels.Jet Fuel"
+                LPG: 
+                    include: "CIMS.Generic Fuels.LPG"
+                Petroleum Coke: 
+                    include: "CIMS.Generic Fuels.Petroleum Coke"
+                Propane: 
+                    include: "CIMS.Generic Fuels.Propane"
+                Refinery Fuel Gas: 
+                    include: "CIMS.Generic Fuels.Refinery Fuel Gas"
+            Biogas: 
+                include: "CIMS.Generic Fuels.Biogas" 
+            Biomass Liquids: 
+                Biodiesel: 
+                    include: "{region}.Biodiesel"
+                Ethanol: 
+                    include: "{region}.Ethanol"
+                Renewable Diesel: 
+                    include: "CIMS.Generic Fuels.Renewable Diesel" 
+            Biomass Solids: 
+                Black Liquor: 
+                    include: "CIMS.Generic Fuels.Black Liquor" 
+                Solid Biomass: 
+                    include: "CIMS.Generic Fuels.Solid Biomass" 
+            Electricity: 
+                include: "{region}.Electricity" 
+            Hydrogen: 
+                include: "{region}.Hydrogen" 
+    tech: 
+        Total: 
+            Electricity:
+                Coal: 
+                    Coal: 
+                        include: "Coal" 
+                    Coal CCS: 
+                        include: "Coal CCS" 
+                Fuel Oil: 
+                    include: "Fuel Oil" 
+                Natural Gas: 
+                    Natural Gas SC: 
+                        include: "Natural Gas SC" 
+                    Natural Gas CC: 
+                        include: "Natural Gas CC" 
+                    Natural Gas CC CCS: 
+                        include: "Natural Gas CC CCS" 
+                Waste: 
+                    include: "Waste" 
+                Biomass: 
+                    Biomass: 
+                        include: "Biomass" 
+                    Biomass CCS: 
+                        include: "Biomass CCS" 
+                Geoexchange: 
+                    include: "Geoexchange" 
+                Nuclear: 
+                    Nuclear Conventional: 
+                        include: "Nuclear" 
+                    Nuclear SMR: 
+                        include: "Nuclear SMR" 
+                Hydro: 
+                    Hydro Reservoir: 
+                        include: "Hydro Reservoir" 
+                    Hydro River: 
+                        include: "Hydro River" 
+                Solar: 
+                    Solar PV: 
+                        include: "Solar PV" 
+                    Solar PV + Battery: 
+                        include: "Solar PV + Battery" 
+                Wind: 
+                    Wind Onshore: 
+                        include: "Wind Onshore" 
+                    Wind + Battery: 
+                        include: "Wind + Battery" 
+                    Wind + Seasonal: 
+                        include: "Wind + Seasonal" 
+                    Wind Offshore: 
+                        include: "Wind Offshore" 
+    ghg_gas: 
+        GHG: 
+            CO2: 
+                include: CO2 
+            CH4: 
+                include: CH4 
+            N2O: 
+                include: N2O 
+            SF6: 
+                include: SF6 
+            PFC: 
+                include: PFC 
+            HFC: 
+                include: HFC 
+    ghg_type: 
+        ALL: 
+            Combustion: 
+                include: Combustion 
+            Process: 
+                include: Process 
+            Fugitive: 
+                include: Fugitive 

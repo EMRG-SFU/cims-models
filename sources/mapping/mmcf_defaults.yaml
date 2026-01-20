@@ -1,0 +1,23 @@
+defaults_mmcf: &defaults_mmcf
+    <<: *defaults
+    region:
+        Canada:
+            include: null
+    sector: 
+        Economy: 
+            Industry:
+                Oil and Gas: 
+                    Upstream Oil and Gas: 
+                        Natural Gas Production: 
+                            Supply: 
+                                include: "{region}.Natural Gas.Production.Supply" 
+                            Transmission: 
+                                include: "{region}.Natural Gas.Production.Transmission" 
+                            Distribution: 
+                                include: "{region}.Natural Gas.Production.Distribution" 
+                            include: "{region}.Natural Gas" 
+                        Oil and Natural Gas and CO2 Transmission: null ### Move to Natural Gas Production
+                    Downstream Oil and Gas: 
+                        Petroleum Refining: 
+                            include: "{region}.Petroleum Refining" 
+                        Natural Gas Distribution: null ### Move to Natural Gas Production
