@@ -4,12 +4,12 @@
     Behaviour mirrors the Bash script:
       - Creates/uses a virtual environment
       - Installs/updates dependencies from requirements.txt
-      - Optionally launches Jupyter Lab with ./scenarios/Reference.ipynb
+      - Optionally launches Marimo editor with ./scenarios/Reference.py
 
     Usage (rough equivalents to Bash):
       ./setup.ps1
       ./setup.ps1 -VenvName myenv
-      ./setup.ps1 -NoJupyter
+      ./setup.ps1 -NoMarimo
       ./setup.ps1 -NoUpdate
       ./setup.ps1 -Help
       ./setup.ps1 -Version
@@ -20,8 +20,8 @@ param(
     [Alias('n')]
     [string]$VenvName = "cims-env",
 
-    # Equivalent to Bash --no-jupyter (default is on)
-    [switch]$NoJupyter,
+    # Equivalent to Bash --no-marimo (default is on)
+    [switch]$NoMarimo,
 
     # Equivalent to Bash --no-update (default is on)
     [switch]$NoUpdate,
@@ -33,10 +33,10 @@ param(
 # --- Help / Version ---
 
 if ($Help) {
-    Write-Host "This script sets up a CIMS virtual environment, installs any required dependencies, and launches a modeling notebook in Jupyter Lab."
-    Write-Host "Usage: setup.ps1 [-VenvName <name>] [-NoJupyter] [-NoUpdate] [-Help] [-Version]"
+    Write-Host "This script sets up a CIMS virtual environment, installs any required dependencies, and launches a modeling notebook in the Marimo editor."
+    Write-Host "Usage: setup.ps1 [-VenvName <name>] [-NoMarimo] [-NoUpdate] [-Help] [-Version]"
     Write-Host "  -VenvName   Specify the name of the virtual environment (default: 'cims-env')"
-    Write-Host "  -NoJupyter  Do not launch Jupyter Lab (on by default)"
+    Write-Host "  -NoMarimo  Do not launch Marimo editor (on by default)"
     Write-Host "  -NoUpdate   Do not update Python dependencies in existing virtual environment (on by default)"
     Write-Host "  -Help       Prints help"
     Write-Host "  -Version    Prints version"
@@ -58,8 +58,8 @@ $ErrorActionPreference = 'Stop'
 $MinPythonMajor = 3
 $MinPythonMinor = 9
 
-# Default behaviour: jupyter ON, update ON
-$LaunchJupyter = -not $NoJupyter.IsPresent
+# Default behaviour: marimo ON, update ON
+$LaunchMarimo = -not $NoMarimo.IsPresent
 $UpdateDeps    = -not $NoUpdate.IsPresent
 
 # --- Color helpers (rough analogue of print_color) ---
@@ -328,24 +328,24 @@ elseif ($hasReqs) {
     Write-Color "Skipping dependency installation (use -NoUpdate:$false to force)." Yellow
 }
 
-# --- Step 4: Launch JupyterLab (if enabled) ---
+# --- Step 4: Launch Marimo editor (if enabled) ---
 
-if ($LaunchJupyter) {
-    $jupyterPath = (Get-Command jupyter -ErrorAction SilentlyContinue)?.Source
-    if (-not $jupyterPath) {
-        Write-Color "Jupyter is not installed in this virtual environment." Red
-        Write-Color "Add 'jupyterlab' to requirements.txt and re-run with -NoUpdate:$false to install it." Yellow
+if ($LaunchMarimo) {
+    $marimoPath = (Get-Command marimo -ErrorAction SilentlyContinue)?.Source
+    if (-not $marimoPath) {
+        Write-Color "Marimo is not installed in this virtual environment." Red
+        Write-Color "Add 'marimo' to requirements.txt and re-run with -NoUpdate:$false to install it." Yellow
     } else {
-        $notebook = "./scenarios/Reference.ipynb"
+        $notebook = "./scenarios/Reference.py"
         if (Test-Path $notebook) {
-            Write-Color "Launching JupyterLab...Use Ctrl+C to exit" None
-            & jupyter lab --log-level=40 --notebook-dir=./ $notebook
+            Write-Color "Launching Marimo editor...Use Ctrl+C to exit" None
+            & marimo $notebook
         } else {
-            Write-Color "Notebook $notebook not found. Launching JupyterLab in repository root instead." Yellow
-            Write-Color "Launching JupyterLab...Use Ctrl+C to exit" None
-            & jupyter lab --log-level=40 --notebook-dir=./
+            Write-Color "Notebook $notebook not found. Launching Marimo edoter in repository root instead." Yellow
+            Write-Color "Launching Marimo editor...Use Ctrl+C to exit" None
+            & marimo ./
         }
-        Write-Color "Closing Jupyter Lab..." None
+        Write-Color "Closing Marimo editor..." None
         Write-Color "DONE" Green
     }
 }
